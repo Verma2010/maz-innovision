@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAZ InnoVision - Digital Expo Showcase</title>
+    <title>MAZ InnoVision - PJ Campus Digital Expo</title>
     <style>
         /* OFFICIAL MAZ COLOR IDENTITY & EXPO COMBINATION */
         :root {
@@ -72,7 +72,6 @@
             border-bottom: 5px solid var(--expo-cyan);
         }
 
-        /* Subtle cyber grid pattern background effect */
         header::before {
             content: '';
             position: absolute;
@@ -129,16 +128,12 @@
 
         .card.expo-theme {
             border-top: 5px solid var(--expo-cyan);
-            background: linear-gradient(to bottom, #ffffff, #fdfeff);
         }
 
         h2 {
             color: var(--maz-green);
             font-size: 1.8rem;
             margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .expo-theme h2 {
@@ -178,7 +173,7 @@
             font-size: 1.3rem;
         }
 
-        /* CAMPUS / CREDITS BADGES */
+        /* BADGES */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
@@ -187,16 +182,21 @@
         }
 
         .badge {
-            background-color: #f3f4f6;
-            border: 1px solid #d1d5db;
-            padding: 8px 16px;
+            background-color: var(--maz-green);
+            color: white;
+            padding: 8px 18px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.95rem;
-            color: var(--maz-green);
+            border: 1px solid var(--maz-yellow);
         }
 
-        /* CLEAN FOOTER DESIGN */
+        .badge.student-led {
+            background-color: #7c3aed;
+            border-color: #a78bfa;
+        }
+
+        /* FOOTER DESIGN */
         footer {
             background-color: var(--expo-darkblue);
             color: #94a3b8;
@@ -212,7 +212,6 @@
             font-size: 0.95rem;
         }
 
-        /* ANIMATION EFFECETS */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -230,26 +229,30 @@
     <!-- BRANDED SITE NAVIGATION -->
     <nav>
         <div class="nav-brand">
-            <!-- Automatically loads school-logo.png if uploaded to your repository -->
             <img class="nav-logo" src="school-logo.png" alt="MAZ Logo" onerror="this.style.display='none'">
             <div class="nav-title">MAZ <span>International School</span></div>
+        </div>
+        <div class="badge-container" style="margin: 0;">
+            <span class="badge">PJ Campus</span>
         </div>
     </nav>
 
     <!-- EXPO HERO BANNER -->
     <header>
-        <!-- Automatically loads innovision-logo.png if uploaded to your repository -->
         <img class="hero-logo" src="innovision-logo.png" alt="MAZ InnoVision Logo" onerror="this.style.display='none'">
         <h1>MAZ <span>InnoVision</span></h1>
         <p>"Where Young Minds Spark Innovation"</p>
+        <div style="margin-top: 15px;">
+            <span class="badge student-led">✨ 100% Student-Led Initiative</span>
+        </div>
     </header>
 
     <div class="container">
         
-        <!-- SECTION 1: MISSION/ABOUT -->
+        <!-- SECTION 1: ABOUT & STUDENT LEADERSHIP -->
         <div class="card">
-            <h2>About Our Expo Exhibition</h2>
-            <p>Welcome to the official information hub for the MAZ International School Digital Expo project. Built entirely upon the principles of academic curiosity and technological exploration, our exhibition showcases how the next generation leverages digital systems to create impactful real-world solutions.</p>
+            <h2>About Our Exhibition</h2>
+            <p>Welcome to the official information hub for the MAZ International School Digital Expo project, proudly presented exclusively by the <strong>Petaling Jaya (PJ) Campus</strong>. Driven entirely by our student cohort, this project stands as a testament to student autonomy, technical ingenuity, and peer-led project management.</p>
         </div>
 
         <!-- SECTION 2: DIGITAL SHOWCASE EXTRACTIONS -->
@@ -275,13 +278,14 @@
 
         <!-- SECTION 3: OFFICIAL CREDITS & DETAILS -->
         <div class="card">
-            <h2>Exhibition Administration</h2>
-            <p><strong>Exhibition Entity:</strong> MAZ International School (Malaysia)</p>
-            <p><strong>Development Team:</strong> Digital Design Student Cohort</p>
-            <p><strong>Core Campuses represented:</strong></p>
+            <h2>Exhibition Administration & Team Credits</h2>
+            <p><strong>Exhibition Entity:</strong> MAZ International School (Petaling Jaya Campus)</p>
+            <p><strong>Lead Teacher:</strong> Miss Anjali (Secondary CS Teacher)</p>
+            <p><strong>Website Development Team:</strong> Central Task Force</p>
+            
             <div class="badge-container">
-                <span class="badge">Shah Alam Campus</span>
-                <span class="badge">Petaling Jaya Campus</span>
+                <span class="badge" style="background: #2563eb; border-color: #60a5fa;">Central Task Force Developed</span>
+                <span class="badge student-led">100% Student Managed</span>
             </div>
         </div>
 
@@ -290,7 +294,7 @@
     <!-- SITE FOOTER -->
     <footer>
         <p>&copy; 2026 MAZ InnoVision Digital Expo. Formulated for excellence.</p>
-        <p style="font-size: 0.8rem; opacity: 0.6;">Proudly hosted via clean GitHub Pages framework without corporate tracking metrics.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Proudly engineered via clean GitHub Pages framework by the Central Task Force.</p>
     </footer>
 
 </body>
