@@ -1,301 +1,483 @@
+This is a complete HTML document for the MAZ Innovision digital expo website. It presents a clean, modern layout to share event details, highlights student leadership, and features the school and expo logos.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAZ InnoVision - PJ Campus Digital Expo</title>
-    <style>
-        /* OFFICIAL MAZ COLOR IDENTITY & EXPO COMBINATION */
-        :root {
-            --maz-green: #1e5631;       /* MAZ Official Forest Green */
-            --maz-yellow: #fcd116;      /* MAZ Official Golden Yellow */
-            --expo-darkblue: #0b132b;   /* InnoVision Cosmic Background */
-            --expo-cyan: #00f0ff;       /* InnoVision Neon Glow Accent */
-            --text-dark: #1f2937;
-            --bg-light: #f4f6f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAZ Innovision · Digital Expo</title>
+  <!-- Font Awesome for clean icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: #f8faff;
+      color: #1e2b3c;
+      line-height: 1.5;
+    }
 
-        /* PREMIUM NAVIGATION BAR */
-        nav {
-            background-color: var(--maz-green);
-            border-bottom: 4px solid var(--maz-yellow);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 18px 0 12px;
+      border-bottom: 2px solid rgba(0, 40, 80, 0.08);
+    }
 
-        .nav-logo {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-        .nav-title {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
+    .logo-group img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
 
-        .nav-title span {
-            color: var(--maz-yellow);
-        }
+    .logo-divider {
+      width: 1px;
+      height: 42px;
+      background: #c0cfde;
+    }
 
-        /* HIGH-TECH EXPO HERO HEADER */
-        header {
-            background: linear-gradient(135deg, var(--expo-darkblue) 0%, #1c2541 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 5px solid var(--expo-cyan);
-        }
+    .expo-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+      color: #0b2a41;
+    }
+    .expo-title span {
+      color: #0066b3;
+    }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-            pointer-events: none;
-        }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3b5c;
+      font-size: 1.05rem;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover {
+      color: #0066b3;
+      border-bottom-color: #0066b3;
+    }
 
-        .hero-logo {
-            max-width: 220px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6));
-            animation: float 4s ease-in-out infinite;
-        }
+    /* hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 0 30px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a2942;
+      margin-top: 8px;
+    }
+    .hero h1 i {
+      color: #f0b31b;
+      margin-right: 8px;
+    }
+    .hero .subhead {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #2c4a6a;
+      max-width: 700px;
+      margin: 12px auto 16px;
+    }
+    .hero .badge {
+      background: #dceafa;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #004080;
+      display: inline-block;
+      margin-top: 6px;
+      border: 1px solid #b6d2e8;
+    }
 
-        header h1 span {
-            color: var(--expo-cyan);
-        }
+    /* cards / info grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin: 40px 0 30px;
+    }
 
-        header p {
-            font-size: 1.3rem;
-            margin: 10px auto 0 auto;
-            max-width: 600px;
-            color: #cbd5e1;
-            font-style: italic;
-        }
+    .card {
+      background: white;
+      padding: 28px 20px 24px;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0, 30, 60, 0.06);
+      transition: 0.2s ease;
+      border: 1px solid rgba(0, 70, 130, 0.05);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 40, 80, 0.08);
+      border-color: #caddf0;
+    }
 
-        /* MAIN CONTENT LAYOUT */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .card i {
+      font-size: 2.2rem;
+      color: #006bb3;
+      background: #e6f0fa;
+      padding: 12px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #0a2a44;
+    }
+    .card p {
+      color: #2b4a66;
+      font-size: 1rem;
+    }
 
-        .card {
-            background: white;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 35px;
-            border-top: 5px solid var(--maz-green);
-        }
+    /* teacher & lead section */
+    .highlight-box {
+      background: linear-gradient(145deg, #ffffff, #f5faff);
+      border-radius: 40px;
+      padding: 30px 36px;
+      margin: 30px 0 40px;
+      border: 1px solid #d6e5f5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .card.expo-theme {
-            border-top: 5px solid var(--expo-cyan);
-        }
+    .teacher-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .teacher-info .avatar {
+      background: #004a8f;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .teacher-info .details {
+      display: flex;
+      flex-direction: column;
+    }
+    .teacher-info .details .name {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #003366;
+    }
+    .teacher-info .details .role {
+      color: #2a5277;
+      font-weight: 500;
+    }
+    .student-led {
+      background: #e6f0fa;
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #004b8f;
+      border: 1px solid #b8d0e8;
+    }
+    .student-led i {
+      margin-right: 10px;
+      color: #f0b31b;
+    }
 
-        h2 {
-            color: var(--maz-green);
-            font-size: 1.8rem;
-            margin-top: 0;
-        }
+    /* developments / timeline */
+    .dev-section {
+      margin: 40px 0 20px;
+    }
+    .dev-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0a2942;
+      border-left: 8px solid #006bb3;
+      padding-left: 18px;
+      margin-bottom: 24px;
+    }
+    .dev-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .dev-item {
+      background: white;
+      border-radius: 60px;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid #e2edf7;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+      transition: 0.15s;
+    }
+    .dev-item:hover {
+      background: #f8fcff;
+      border-color: #9ebddb;
+    }
+    .dev-item .icon {
+      background: #d7e6f5;
+      border-radius: 40px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #004b8f;
+      font-size: 1.3rem;
+    }
+    .dev-item .content {
+      flex: 1;
+    }
+    .dev-item .content strong {
+      font-size: 1.1rem;
+      color: #003366;
+    }
+    .dev-item .content span {
+      color: #2f5275;
+      margin-left: 12px;
+      font-weight: 400;
+    }
+    .dev-item .tag {
+      background: #dceafa;
+      padding: 4px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #004480;
+      white-space: nowrap;
+    }
 
-        .expo-theme h2 {
-            color: var(--expo-darkblue);
-        }
+    /* footer */
+    .footer {
+      margin-top: 50px;
+      border-top: 1px solid #d0dfee;
+      padding: 30px 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #2b4a6a;
+    }
+    .footer .copy {
+      font-size: 0.95rem;
+    }
+    .footer .copy i {
+      color: #f0b31b;
+      margin: 0 4px;
+    }
+    .footer .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer .footer-logos img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0.95);
+    }
 
-        p {
-            font-size: 1.1rem;
-            color: #4b5563;
-        }
-
-        /* FEATURE MATRIX GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .grid-item {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            border-left: 5px solid var(--expo-cyan);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .grid-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,240,255,0.1);
-        }
-
-        .grid-item h3 {
-            margin-top: 0;
-            color: var(--expo-darkblue);
-            font-size: 1.3rem;
-        }
-
-        /* BADGES */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .badge {
-            background-color: var(--maz-green);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid var(--maz-yellow);
-        }
-
-        .badge.student-led {
-            background-color: #7c3aed;
-            border-color: #a78bfa;
-        }
-
-        /* FOOTER DESIGN */
-        footer {
-            background-color: var(--expo-darkblue);
-            color: #94a3b8;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-top: 4px solid var(--maz-yellow);
-        }
-
-        footer p {
-            color: #94a3b8;
-            margin: 5px 0;
-            font-size: 0.95rem;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .nav-title { font-size: 1.1rem; }
-        }
-    </style>
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .highlight-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .dev-item {
+        flex-wrap: wrap;
+        border-radius: 30px;
+        padding: 16px 20px;
+      }
+      .dev-item .tag {
+        margin-left: auto;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo-group img {
+        height: 40px;
+      }
+      .expo-title {
+        font-size: 1.3rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
 
-    <!-- BRANDED SITE NAVIGATION -->
-    <nav>
-        <div class="nav-brand">
-            <img class="nav-logo" src="school-logo.png" alt="MAZ Logo" onerror="this.style.display='none'">
-            <div class="nav-title">MAZ <span>International School</span></div>
-        </div>
-        <div class="badge-container" style="margin: 0;">
-            <span class="badge">PJ Campus</span>
-        </div>
-    </nav>
-
-    <!-- EXPO HERO BANNER -->
-    <header>
-        <img class="hero-logo" src="innovision-logo.png" alt="MAZ InnoVision Logo" onerror="this.style.display='none'">
-        <h1>MAZ <span>InnoVision</span></h1>
-        <p>"Where Young Minds Spark Innovation"</p>
-        <div style="margin-top: 15px;">
-            <span class="badge student-led">✨ 100% Student-Led Initiative</span>
-        </div>
+    <!-- header -->
+    <header class="navbar">
+      <div class="logo-group">
+        <!-- MAZ school logo -->
+        <img src="school-logo.png" alt="MAZ school logo">
+        <span class="logo-divider"></span>
+        <!-- Innovision logo -->
+        <img src="innovision-logo.png" alt="Innovision logo">
+        <span class="logo-divider"></span>
+        <span class="expo-title">MAZ <span>Innovision</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#info">Info</a>
+        <a href="#developments">Developments</a>
+        <a href="#lead">Lead</a>
+        <a href="#"><i class="fas fa-calendar-alt" style="margin-right: 6px;"></i>Expo</a>
+      </div>
     </header>
 
-    <div class="container">
-        
-        <!-- SECTION 1: ABOUT & STUDENT LEADERSHIP -->
-        <div class="card">
-            <h2>About Our Exhibition</h2>
-            <p>Welcome to the official information hub for the MAZ International School Digital Expo project, proudly presented exclusively by the <strong>Petaling Jaya (PJ) Campus</strong>. Driven entirely by our student cohort, this project stands as a testament to student autonomy, technical ingenuity, and peer-led project management.</p>
-        </div>
-
-        <!-- SECTION 2: DIGITAL SHOWCASE EXTRACTIONS -->
-        <div class="card expo-theme">
-            <h2>Project Highlights & Details</h2>
-            <p>Discover the core innovations fueling our digital showcase this year:</p>
-            
-            <div class="grid">
-                <div class="grid-item">
-                    <h3>Digital Creativity</h3>
-                    <p>Details and mechanics of software applications, game design structures, or interactive multimedia environments created by our digital design team.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Technological Vision</h3>
-                    <p>Exploring complex computing architectures, data processing frameworks, or smart engineering structures developed to address modern criteria.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Sustainable Innovation</h3>
-                    <p>Our long-term digital strategy aligning modern learning modules with environmental and societal problem-solving frameworks.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 3: OFFICIAL CREDITS & DETAILS -->
-        <div class="card">
-            <h2>Exhibition Administration & Team Credits</h2>
-            <p><strong>Exhibition Entity:</strong> MAZ International School (Petaling Jaya Campus)</p>
-            <p><strong>Lead Teacher:</strong> Miss Anjali (Secondary CS Teacher)</p>
-            <p><strong>Website Development Team:</strong> Central Task Force</p>
-            
-            <div class="badge-container">
-                <span class="badge" style="background: #2563eb; border-color: #60a5fa;">Central Task Force Developed</span>
-                <span class="badge student-led">100% Student Managed</span>
-            </div>
-        </div>
-
+    <!-- hero -->
+    <div class="hero">
+      <div class="badge"><i class="fas fa-microchip" style="margin-right: 10px;"></i>Digital expo · student-led</div>
+      <h1><i class="fas fa-bolt"></i> MAZ Innovision 2026</h1>
+      <p class="subhead">Where creativity meets code — the annual digital expo by MAZ students, for the community.</p>
     </div>
 
-    <!-- SITE FOOTER -->
-    <footer>
-        <p>&copy; 2026 MAZ InnoVision Digital Expo. Formulated for excellence.</p>
-        <p style="font-size: 0.8rem; opacity: 0.6;">Proudly engineered via clean GitHub Pages framework by the Central Task Force.</p>
+    <!-- info cards -->
+    <div id="info" class="info-grid">
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Event dates</h3>
+        <p><strong>10 – 12 June 2026</strong><br>Opening ceremony: 10 June, 10:00 AM<br>Expo hall open daily 9:00–17:00</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>What to expect</h3>
+        <p>Interactive showcases, AR/VR demos, student-built apps, robotics, AI art, and live coding battles.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Participation</h3>
+        <p>Open to all MAZ secondary students. Submit your project by 30 May. Teams of up to 4 members.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-pin"></i>
+        <h3>Venue</h3>
+        <p>MAZ Main Hall & Digital Lab • <br>Secondary campus, building B. Free entry.</p>
+      </div>
+    </div>
+
+    <!-- teacher & student-led highlight -->
+    <div id="lead" class="highlight-box">
+      <div class="teacher-info">
+        <div class="avatar">A</div>
+        <div class="details">
+          <span class="name">Miss Anjali</span>
+          <span class="role"><i class="fas fa-chalkboard-teacher" style="margin-right: 6px;"></i>CS teacher · secondary · MAZ</span>
+        </div>
+      </div>
+      <div class="student-led">
+        <i class="fas fa-graduation-cap"></i> Entirely student-led · guided by Miss Anjali
+      </div>
+    </div>
+
+    <!-- developments / timeline -->
+    <div id="developments" class="dev-section">
+      <h2><i class="fas fa-code-branch" style="margin-right: 14px; color: #006bb3;"></i> Developments & updates</h2>
+      <div class="dev-list">
+        <div class="dev-item">
+          <div class="icon"><i class="fas fa-rocket"></i></div>
+          <div class="content"><strong>Project submissions open</strong> <span>— 1 May 2026</span></div>
+          <div class="tag">active</div>
+        </div>
+        <div class="dev-item">
+          <div class="icon"><i class="fas fa-vr-cardboard"></i></div>
+          <div class="content"><strong>AR/VR workshop</strong> <span>— 15 May, 14:00 (Digital Lab)</span></div>
+          <div class="tag">upcoming</div>
+        </div>
+        <div class="dev-item">
+          <div class="icon"><i class="fas fa-microchip"></i></div>
+          <div class="content"><strong>Hardware demo: AI + IoT</strong> <span>— student team showcase (20 May)</span></div>
+          <div class="tag">preview</div>
+        </div>
+        <div class="dev-item">
+          <div class="icon"><i class="fas fa-trophy"></i></div>
+          <div class="content"><strong>Innovision hackathon</strong> <span>— 5–6 June (prizes & recognition)</span></div>
+          <div class="tag">register</div>
+        </div>
+        <div class="dev-item">
+          <div class="icon"><i class="fas fa-pen-fancy"></i></div>
+          <div class="content"><strong>Keynote speaker announced</strong> <span>— MAZ alumna, tech lead at Finlytics</span></div>
+          <div class="tag">new</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- extra info: teacher quote / motto -->
+    <div style="background: #e9f2fa; border-radius: 60px; padding: 18px 28px; margin: 30px 0 10px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <i class="fas fa-quote-left" style="font-size: 2rem; color: #004a8f; opacity: 0.5;"></i>
+      <span style="font-weight: 400; font-size: 1.1rem; color: #003055;"><strong>Miss Anjali</strong> — “Our students are building the future, one line of code at a time. MAZ Innovision is their stage.”</span>
+    </div>
+
+    <!-- footer with logos -->
+    <footer class="footer">
+      <div class="copy">
+        <i class="fas fa-copyright"></i> 2026 MAZ Innovision · digital expo
+      </div>
+      <div class="footer-logos">
+        <img src="school-logo.png" alt="MAZ school logo" style="height: 34px;">
+        <span style="color: #b0c8dd;">|</span>
+        <img src="innovision-logo.png" alt="Innovision logo" style="height: 34px;">
+        <span style="color: #b0c8dd;">|</span>
+        <span style="font-size: 0.9rem; color: #1e4b70;"><i class="fas fa-code"></i> student built</span>
+      </div>
     </footer>
 
+  </div> <!-- container -->
 </body>
 </html>
+```
