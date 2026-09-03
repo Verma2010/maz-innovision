@@ -3,322 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAZ InnoVision - PJ Campus | Digital Expo Showcase</title>
+    <title>MAZ InnoVision - PJ Campus Digital Expo</title>
     <style>
-        /* OFFICIAL MAZ PROFESSIONAL ACADEMIC IDENTITY */
         :root {
-            --maz-green: #144324;       /* Deep Official Forest Green */
-            --maz-green-light: #1e5631; /* Secondary Green Accent */
-            --maz-yellow: #fcd116;      /* Official School Golden Yellow */
-            --bg-offwhite: #f8f9fa;     /* Clean Institutional Light Grey */
-            --text-main: #2b2b2b;       /* Crisp Dark Charcoal Text */
-            --text-muted: #595959;      /* Subdued Text */
-            --card-border: #e2e8f0;     /* Subtle Academic Divider Border */
-            --accent-blue: #0284c7;     /* Professional Tech Accent */
+            --maz-green: #144324;
+            --maz-green-bright: #1e5631;
+            --maz-yellow: #fcd116;
+            --expo-dark: #070d1e;
+            --expo-card: #0e172a;
+            --expo-cyan: #00f0ff;
+            --expo-purple: #a855f7;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-main);
-            background-color: var(--bg-offwhite);
-            line-height: 1.7;
+            color: var(--text-light);
+            background-color: var(--expo-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(30, 86, 49, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 40%);
+            line-height: 1.6;
         }
 
-        /* ACADEMIC TOP NOTIFICATION BAR */
-        .top-notice {
-            background-color: #0f301a;
-            color: #e2e8f0;
-            text-align: center;
-            font-size: 0.85rem;
-            padding: 8px 15px;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--maz-yellow);
-        }
-
-        /* PROFESSIONAL INSTITUTIONAL NAVIGATION */
+        /* NAVIGATION BAR */
         nav {
-            background-color: white;
-            border-bottom: 3px solid var(--maz-green);
-            padding: 15px 30px;
+            background-color: rgba(7, 13, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+            padding: 12px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .nav-logo {
-            height: 55px;
+            height: 42px;
             width: auto;
             object-fit: contain;
         }
 
-        .nav-text-group h2 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: var(--maz-green);
+        .nav-title {
             font-weight: 700;
-            letter-spacing: -0.3px;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 0.5px;
         }
 
-        .nav-text-group p {
-            margin: 0;
+        .nav-title span {
+            color: var(--maz-yellow);
+        }
+
+        .nav-tag {
+            background: linear-gradient(135deg, var(--maz-green-bright), var(--maz-green));
+            color: var(--maz-yellow);
+            padding: 5px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
+            font-weight: 700;
+            border: 1px solid var(--maz-yellow);
         }
 
-        .campus-badge {
-            background-color: var(--maz-green);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border-left: 4px solid var(--maz-yellow);
-        }
-
-        /* HERO SHOWCASE SECTION */
+        /* HERO HEADER */
         header {
-            background: linear-gradient(135deg, var(--maz-green) 0%, #0d2e18 100%);
-            color: white;
             text-align: center;
-            padding: 65px 20px;
-            border-bottom: 5px solid var(--maz-yellow);
+            padding: 60px 20px 40px 20px;
             position: relative;
         }
 
         .hero-logo {
-            max-width: 190px;
+            max-width: 200px;
             height: auto;
             margin-bottom: 15px;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));
+            animation: float 4s ease-in-out infinite;
         }
 
         header h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.6rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #ffffff, var(--expo-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header h1 span {
+        header p.subtitle {
+            font-size: 1.2rem;
             color: var(--maz-yellow);
-        }
-
-        header p.tagline {
-            font-size: 1.15rem;
             font-style: italic;
-            opacity: 0.9;
-            margin: 0 auto 25px auto;
-            max-width: 600px;
+            margin: 10px 0 25px 0;
         }
 
-        /* STATUS BADGES */
-        .meta-pills {
+        /* HIGHLIGHT BADGES BANNER */
+        .highlight-banner {
             display: flex;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
 
-        .pill {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 6px 16px;
+        .h-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
             border-radius: 30px;
             font-size: 0.9rem;
-            font-weight: 500;
-            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .pill.highlight {
-            background-color: var(--maz-yellow);
-            color: var(--maz-green);
+        .h-badge.gold {
             border-color: var(--maz-yellow);
-            font-weight: 700;
+            color: var(--maz-yellow);
+            background: rgba(252, 209, 22, 0.08);
+            font-weight: 600;
         }
 
-        /* MAIN CONTENT CONTAINERS */
-        .container {
-            max-width: 960px;
+        .h-badge.cyan {
+            border-color: var(--expo-cyan);
+            color: var(--expo-cyan);
+            background: rgba(0, 240, 255, 0.08);
+            font-weight: 600;
+        }
+
+        .h-badge.purple {
+            border-color: var(--expo-purple);
+            color: #d8b4fe;
+            background: rgba(168, 85, 247, 0.08);
+            font-weight: 600;
+        }
+
+        /* INTERACTIVE TABS INTERFACE */
+        .tab-container {
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        .section-card {
-            background: white;
-            padding: 35px;
-            border-radius: 8px;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
-        .section-card h3 {
-            color: var(--maz-green);
-            font-size: 1.4rem;
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 10px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background: var(--expo-cyan);
+            color: #070d1e;
+            border-color: var(--expo-cyan);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        /* TAB PANELS */
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .glass-card {
+            background: rgba(14, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+        }
+
+        .glass-card h2 {
             margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f1f5f9;
+            color: var(--expo-cyan);
+            font-size: 1.6rem;
             display: flex;
             align-items: center;
             gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 12px;
         }
 
-        /* GRID METRICS */
-        .info-grid {
+        /* GRIDS & TIMELINES */
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .info-box {
-            background: #fdfdfd;
-            border: 1px solid #e2e8f0;
-            border-top: 4px solid var(--accent-blue);
-            padding: 20px;
-            border-radius: 6px;
+        .item-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--expo-purple);
+            padding: 22px;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
         }
 
-        .info-box.green-border {
-            border-top-color: var(--maz-green-light);
+        .item-box:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .info-box h4 {
+        .item-box.cyan { border-left-color: var(--expo-cyan); }
+        .item-box.gold { border-left-color: var(--maz-yellow); }
+        .item-box.green { border-left-color: #22c55e; }
+
+        .item-box h3 {
             margin: 0 0 8px 0;
-            color: #1e293b;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
+            color: #fff;
         }
 
-        .info-box p {
+        .item-box p {
             margin: 0;
-            font-size: 0.95rem;
             color: var(--text-muted);
-        }
-
-        /* ADMINISTRATION LIST TABLE */
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .admin-table th, .admin-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #edf2f7;
             font-size: 0.95rem;
         }
 
-        .admin-table th {
-            color: var(--maz-green);
+        /* TIMELINE FOR KEY EVENTS */
+        .timeline {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .timeline-event {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--maz-yellow);
+            box-shadow: 0 0 8px var(--maz-yellow);
+        }
+
+        .timeline-event h4 {
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .timeline-event span {
+            font-size: 0.85rem;
+            color: var(--expo-cyan);
             font-weight: 600;
-            width: 35%;
-            background-color: #fafafa;
         }
 
-        .admin-table td {
-            color: #334155;
+        .timeline-event p {
+            margin: 5px 0 0 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        /* CLEAN FOOTER */
+        /* SPECIAL MENTIONS CARD */
+        .faculty-spotlight {
+            background: linear-gradient(135deg, rgba(30, 86, 49, 0.2), rgba(14, 23, 42, 0.9));
+            border: 1px solid var(--maz-yellow);
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .faculty-icon {
+            font-size: 2.5rem;
+            background: rgba(252, 209, 22, 0.15);
+            padding: 15px;
+            border-radius: 50%;
+            border: 1px solid var(--maz-yellow);
+        }
+
+        /* RESTORED PREMIUM FOOTER */
         footer {
-            background-color: #111827;
-            color: #9ca3af;
+            background-color: #040814;
+            color: #94a3b8;
             text-align: center;
-            padding: 35px 20px;
-            margin-top: 50px;
+            padding: 40px 20px;
+            margin-top: 60px;
             border-top: 4px solid var(--maz-yellow);
         }
 
         footer p {
-            margin: 4px 0;
-            font-size: 0.9rem;
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            nav { padding: 12px 15px; }
-            .nav-text-group h2 { font-size: 1.05rem; }
+            header h1 { font-size: 2.2rem; }
+            .glass-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP ANNOUNCEMENT -->
-    <div class="top-notice">
-        Official Academic Project Portal &bull; Petaling Jaya Campus
-    </div>
-
     <!-- NAVIGATION BAR -->
     <nav>
         <div class="nav-brand">
-            <img class="nav-logo" src="school-logo.png" alt="MAZ Logo" onerror="this.style.display='none'">
-            <div class="nav-text-group">
-                <h2>MAZ International School</h2>
-                <p>Petaling Jaya Campus</p>
-            </div>
-        </div>
-        <div class="campus-badge">
-            PJ Campus
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header>
-        <img class="hero-logo" src="innovision-logo.png" alt="MAZ InnoVision Logo" onerror="this.style.display='none'">
-        <h1>MAZ <span>InnoVision</span></h1>
-        <p class="tagline">"Where Young Minds Spark Innovation"</p>
-        
-        <div class="meta-pills">
-            <div class="pill highlight">100% Student-Led Initiative</div>
-            <div class="pill">Venue: Strand Mall</div>
-            <div class="pill">Timing: TBA (To Be Announced)</div>
-        </div>
-    </header>
-
-    <!-- CONTENT BODY -->
-    <div class="container">
-        
-        <!-- SECTION 1: ABOUT & LEADERSHIP -->
-        <div class="section-card">
-            <h3>About the Exhibition</h3>
-            <p>The <strong>MAZ InnoVision Digital Expo</strong> is an exclusive showcase presented by the secondary students of <strong>MAZ International School, Petaling Jaya Campus</strong>. This exhibition operates entirely as a <strong>student-led initiative</strong>, highlighting student autonomy, technical capabilities, and collaborative project design, under the advisory guidance of our faculty.</p>
-        </div>
-
-        <!-- SECTION 2: EVENT DETAILS & LOCATION -->
-        <div class="section-card">
-            <h3>Event Logistics & Venue</h3>
-            <p>Our student innovators will display their technological works and interactive digital models at our external venue partner:</p>
-            
-            <div class="info-grid">
-                <div class="info-box">
-                    <h4>📍 Exhibition Venue</h4>
-                    <p><strong>Strand Mall</strong><br>Kota Damansara, Petaling Jaya, Selangor</p>
-                </div>
-                <div class="info-box green-border">
-                    <h4>🕒 Schedule & Timings</h4>
-                    <p><strong>Status:</strong> Not Confirmed Yet (TBA)<br><em>Official presentation schedules and visitor slots will be updated here once confirmed.</em></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 3: ACADEMIC CREDITS & ADMINISTRATION -->
-        <div class="section-card">
-            <h3>Administration & Academic Guidance</h3>
-            <table class="admin-table">
-                <tr>
