@@ -5,172 +5,663 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAZ InnoVision - PJ Campus Digital Expo</title>
     <style>
-:root {--maz-green: #11381f;--maz-green-bright: #1b5e30;--maz-green-light: #2e7d32;--maz-yellow: #fcd116;--maz-yellow-dark: #e6be0d;--bg-body: #f3f5f4;--card-bg: #ffffff;--text-main: #1f2937;--text-muted: #525b67;--border-subtle: #e2e8f0;--accent-blue: #0284c7;}body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin: 0;padding: 0;background-color: var(--bg-body);background-image:linear-gradient(rgba(17, 56, 31, 0.03) 1px, transparent 1px),linear-gradient(90deg, rgba(17, 56, 31, 0.03) 1px, transparent 1px);background-size: 30px 30px;color: var(--text-main);line-height: 1.7;}.top-bar {background-color: #0b2615;color: #e2e8f0;font-size: 0.85rem;padding: 8px 25px;display: flex;justify-content: space-between;align-items: center;border-bottom: 2px solid var(--maz-yellow);}nav {background-color: #ffffff;padding: 12px 30px;display: flex;justify-content: space-between;align-items: center;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);position: sticky;top: 0;z-index: 1000;flex-wrap: wrap;gap: 12px;}.nav-brand {display: flex;align-items: center;gap: 12px;}.nav-logo {height: 46px;width: auto;object-fit: contain;}.nav-title-group h2 {margin: 0;font-size: 1.15rem;color: var(--maz-green);font-weight: 700;}.nav-menu {display: flex;gap: 4px;list-style: none;margin: 0;padding: 0;}.nav-link {background: transparent;border: none;padding: 7px 12px;font-weight: 600;font-size: 0.88rem;color: var(--text-muted);cursor: pointer;}footer {background-color: #081a0e;color: #94a3b8;padding: 45px 20px 25px 20px;border-top: 4px solid var(--maz-yellow);margin-top: 60px;}
-</style>
+        :root {
+            --maz-green: #11381f;
+            --maz-green-bright: #1b5e30;
+            --maz-green-light: #2e7d32;
+            --maz-yellow: #fcd116;
+            --maz-yellow-dark: #e6be0d;
+            --bg-body: #f3f5f4;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #525b67;
+            --border-subtle: #e2e8f0;
+            --accent-blue: #0284c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            background-image: 
+                linear-gradient(rgba(17, 56, 31, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(17, 56, 31, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .top-bar {
+            background-color: #0b2615;
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            padding: 8px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--maz-yellow);
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-title-group h2 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--maz-green);
+            font-weight: 700;
+        }
+
+        .nav-title-group p {
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: transparent;
+            border: none;
+            padding: 7px 12px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #f0fdf4;
+            color: var(--maz-green-bright);
+        }
+
+        .nav-link.active {
+            background-color: var(--maz-green);
+            color: var(--maz-yellow);
+        }
+
+        .campus-badge {
+            background-color: var(--maz-green);
+            color: var(--maz-yellow);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border: 1px solid var(--maz-yellow);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--maz-green) 0%, #081d0f 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px 65px 20px;
+            position: relative;
+            border-bottom: 5px solid var(--maz-yellow);
+        }
+
+        .hero-logo-img {
+            max-width: 165px;
+            height: auto;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 0.5px;
+            font-weight: 800;
+        }
+
+        header h1 span {
+            color: var(--maz-yellow);
+        }
+
+        header p.tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 6px 0 0 0;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: -35px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            border-top: 4px solid var(--maz-green-light);
+            border-left: 1px solid var(--border-subtle);
+            border-right: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--maz-green);
+            font-size: 1.45rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(to right, #ffffff, #f4fbf7);
+            border: 1px solid #d1fae5;
+            border-left: 5px solid #10b981;
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .highlight-icon {
+            font-size: 2.2rem;
+            background: #d1fae5;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        .highlight-box h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.15rem;
+            color: #065f46;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: #047857;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 18px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            header h1 { font-size: 2rem; }
+            nav { padding: 10px 15px; }
+        }
+
+        .info-pill-box {
+            background: #fafafa;
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-pill-box h4 {
+            margin: 0 0 6px 0;
+            color: #1e293b;
+            font-size: 1.05rem;
+        }
+
+        .info-pill-box p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-top: 3px solid var(--maz-yellow-dark);
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .project-card h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.1rem;
+            color: var(--maz-green);
+        }
+
+        .project-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .timeline {
+            border-left: 3px solid var(--maz-yellow-dark);
+            padding-left: 22px;
+            margin-top: 18px;
+        }
+
+        .timeline-item {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 4px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--maz-green);
+            border: 2px solid var(--maz-yellow);
+        }
+
+        .timeline-item h4 {
+            margin: 0 0 4px 0;
+            font-size: 1.1rem;
+            color: var(--maz-green);
+        }
+
+        .timeline-item span {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #d97706;
+            text-transform: uppercase;
+        }
+
+        .timeline-item p {
+            margin: 4px 0 0 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background-color: #081a0e;
+            color: #94a3b8;
+            padding: 50px 20px 25px 20px;
+            border-top: 4px solid var(--maz-yellow);
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #143820;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin: 0 0 12px 0;
+            border-left: 3px solid var(--maz-yellow);
+            padding-left: 8px;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            margin: 6px 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--maz-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            font-size: 0.82rem;
+            color: #94a3b8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-<div class="top-bar">
-    <span>MAZ International School • Official Digital Project Hub</span>
-    <span>Petaling Jaya Campus</span>
-</div>
-
-<nav>
-    <div class="nav-brand">
-        <div class="nav-title-group">
-            <h2>MAZ International</h2>
-            <p style="margin:0;font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600;">InnoVision Hub</p>
-        </div>
-    </div>
-    <ul class="nav-menu">
-        <li><button class="nav-link active" onclick="switchPage('home')">Home</button></li>
-        <li><button class="nav-link" onclick="switchPage('campus')">PJ Campus</button></li>
-        <li><button class="nav-link" onclick="switchPage('projects')">Innovation Projects</button></li>
-        <li><button class="nav-link" onclick="switchPage('venue')">Venue (Strand Mall)</button></li>
-        <li><button class="nav-link" onclick="switchPage('events')">Key Events</button></li>
-        <li><button class="nav-link" onclick="switchPage('visitor')">Visitor Guide</button></li>
-        <li><button class="nav-link" onclick="switchPage('admin')">Administration</button></li>
-    </ul>
-    <span style="background-color:var(--maz-green);color:var(--maz-yellow);padding:5px 12px;border-radius:6px;font-weight:700;font-size:0.8rem;border:1px solid var(--maz-yellow);">PJ Campus</span>
-</nav>
-
-<header style="background:linear-gradient(135deg,var(--maz-green) 0%,#081d0f 100%);color:#ffffff;text-align:center;padding:50px 20px 65px 20px;border-bottom:5px solid var(--maz-yellow);">
-    <img style="max-width:165px;height:auto;margin-bottom:12px;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.3));" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Crect width='200' height='80' fill='%2311381f'/%3E%3Ctext x='20' y='50' font-family='Segoe UI, sans-serif' font-size='28' font-weight='bold' fill='%23fcd116'%3EMAZ%3C/text%3E%3Ctext x='90' y='50' font-family='Segoe UI, sans-serif' font-size='18' fill='%23ffffff'%3EInnoVision%3C/text%3E%3C/svg%3E" alt="MAZ InnoVision logo">
-    <h1 style="margin:0;font-size:2.5rem;letter-spacing:0.5px;font-weight:800;">PJ Campus <span style="color:var(--maz-yellow);">Digital Expo</span></h1>
-    <p style="font-size:1.1rem;font-style:italic;opacity:0.9;margin:6px 0 0 0;">Student-led • Tech-forward • Community-driven</p>
-</header>
-
-<div style="max-width:980px;margin:-35px auto 40px auto;padding:0 20px;position:relative;z-index:10;">
-
-    <!-- HOME -->
-    <div id="page-home" style="display:block;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">👩‍🏫 Faculty Leadership Spotlight</h2>
-            <div style="background:linear-gradient(to right,#ffffff,#f4fbf7);border:1px solid #d1fae5;border-left:5px solid #10b981;padding:20px 24px;border-radius:10px;margin-bottom:25px;display:flex;align-items:center;gap:18px;box-shadow:0 4px 12px rgba(0,0,0,0.02);">
-                <span style="font-size:2.2rem;background:#d1fae5;padding:12px;border-radius:50%;">🧑‍🏫</span>
-                <div><h3 style="margin:0 0 4px 0;font-size:1.15rem;color:#065f46;">Guided and mentored by Miss Anjali</h3><p style="margin:0;font-size:0.94rem;color:#047857;">Secondary Computer Science Teacher. Operating completely as a 100% student-led initiative by the Petaling Jaya campus cohort.</p></div>
-            </div>
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">Welcome to the Digital Expo Showcase</h2>
-            <p>The MAZ InnoVision Digital Expo represents the pinnacle of secondary student autonomy, technical capability, and collaborative project execution at MAZ International School (Petaling Jaya Campus). Our student innovators have engineered next-generation software models, interactive digital platforms, and environmental tech systems.</p>
-            <p>Use the navigation tabs above to browse our detailed exhibition pages, venue specs, project categories, and administrative credits.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;">
-            <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"><h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">📍 Featured Exhibition Venue</h2><p><strong>Strand Mall, Kota Damansara</strong><br>Petaling Jaya, Selangor</p></div>
-            <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"><h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">🕒 Exhibition Timeline Status</h2><p><strong>Schedules Pending (TBA)</strong><br>Official presentation hours incoming.</p></div>
-        </div>
+    <div class="top-bar">
+        <span>MAZ International School • Official Digital Project Hub</span>
+        <span>Petaling Jaya Campus</span>
     </div>
 
-    <!-- CAMPUS -->
-    <div id="page-campus" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">🏫 About MAZ International School (PJ Campus)</h2>
-            <p>The Petaling Jaya (PJ) Campus of MAZ International School is renowned for fostering academic rigor, creative expression, and technological competence. Our secondary curriculum heavily emphasizes practical computer science, problem-solving, and independent student research.</p>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:18px;">
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">📘 Academic Excellence</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">Providing robust British curriculum standards integrated with modern technology modules.</p></div>
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">🧑‍🎓 Student Autonomy</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">Empowering student-led committees to plan, design, and manage large-scale external events.</p></div>
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">💻 Tech-Forward Learning</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">Advanced secondary computing laboratories fostering real-world application building.</p></div>
+    <nav>
+        <div class="nav-brand">
+            <div class="nav-title-group">
+                <h2>MAZ International</h2>
+                <p>InnoVision Hub</p>
             </div>
         </div>
-    </div>
+        <ul class="nav-menu">
+            <li><button class="nav-link active" onclick="switchPage('home')">Home</button></li>
+            <li><button class="nav-link" onclick="switchPage('campus')">PJ Campus</button></li>
+            <li><button class="nav-link" onclick="switchPage('projects')">Innovation Projects</button></li>
+            <li><button class="nav-link" onclick="switchPage('venue')">Venue (Strand Mall)</button></li>
+            <li><button class="nav-link" onclick="switchPage('events')">Key Events</button></li>
+            <li><button class="nav-link" onclick="switchPage('visitor')">Visitor Guide</button></li>
+            <li><button class="nav-link" onclick="switchPage('contacts')">Contacts</button></li>
+            <li><button class="nav-link" onclick="switchPage('admin')">Administration</button></li>
+        </ul>
+        <span class="campus-badge">PJ Campus</span>
+    </nav>
 
-    <!-- PROJECTS -->
-    <div id="page-projects" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">🚀 Student Innovation Projects</h2>
-            <p>Explore the diverse technological frameworks and creative digital assets built by our student developers:</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;">
-                <div style="background:#ffffff;border:1px solid var(--border-subtle);border-top:3px solid var(--maz-yellow-dark);padding:22px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.02);"><h3 style="margin:0 0 6px 0;font-size:1.1rem;color:var(--maz-green);">🌐 Interactive Web Systems</h3><p style="margin:0;font-size:0.9rem;color:var(--text-muted);">High-performance student portals, responsive web applications, and dynamic UI/UX builds engineered natively by the task force.</p></div>
-                <div style="background:#ffffff;border:1px solid var(--border-subtle);border-top:3px solid var(--maz-yellow-dark);padding:22px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.02);"><h3 style="margin:0 0 6px 0;font-size:1.1rem;color:var(--maz-green);">🤖 AI & Computational Prototypes</h3><p style="margin:0;font-size:0.9rem;color:var(--text-muted);">Experimental algorithms, data automation pipelines, and machine learning models built under secondary computer science modules.</p></div>
-                <div style="background:#ffffff;border:1px solid var(--border-subtle);border-top:3px solid var(--maz-yellow-dark);padding:22px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.02);"><h3 style="margin:0 0 6px 0;font-size:1.1rem;color:var(--maz-green);">🎨 Digital Creative Media</h3><p style="margin:0;font-size:0.9rem;color:var(--text-muted);">Immersive 3D school asset mockups, graphic layouts, and digital storytelling media designed for interactive presentation loops.</p></div>
-                <div style="background:#ffffff;border:1px solid var(--border-subtle);border-top:3px solid var(--maz-yellow-dark);padding:22px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.02);"><h3 style="margin:0 0 6px 0;font-size:1.1rem;color:var(--maz-green);">🌱 Eco-Tech Solutions</h3><p style="margin:0;font-size:0.9rem;color:var(--text-muted);">Sustainable technology applications aimed at power optimization, smart waste reduction, and green campus operations.</p></div>
+    <header>
+        <img class="hero-logo-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Crect width='200' height='80' fill='%2311381f'/%3E%3Ctext x='20' y='50' font-family='Segoe UI, sans-serif' font-size='28' font-weight='bold' fill='%23fcd116'%3EMAZ%3C/text%3E%3Ctext x='90' y='50' font-family='Segoe UI, sans-serif' font-size='18' fill='%23ffffff'%3EInnoVision%3C/text%3E%3C/svg%3E" alt="MAZ InnoVision logo">
+        <h1>PJ Campus <span>Digital Expo</span></h1>
+        <p class="tagline">Student-led • Tech-forward • Community-driven</p>
+    </header>
+
+    <div class="container">
+
+        <!-- HOME -->
+        <div id="page-home" class="page-section active">
+            <div class="card">
+                <h2>👩‍🏫 Faculty Leadership Spotlight</h2>
+                <div class="highlight-box">
+                    <span class="highlight-icon">🧑‍🏫</span>
+                    <div>
+                        <h3>Guided and mentored by Miss Anjali</h3>
+                        <p>Secondary Computer Science Teacher. Operating completely as a 100% student-led initiative by the Petaling Jaya campus cohort.</p>
+                    </div>
+                </div>
+                <h2>Welcome to the Digital Expo Showcase</h2>
+                <p>The MAZ InnoVision Digital Expo represents the pinnacle of secondary student autonomy, technical capability, and collaborative project execution at MAZ International School (Petaling Jaya Campus). Our student innovators have engineered next-generation software models, interactive digital platforms, and environmental tech systems.</p>
+                <p>Use the navigation tabs above to browse our detailed exhibition pages, venue specs, project categories, and administrative credits.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h2>📍 Featured Exhibition Venue</h2>
+                    <p><strong>Strand Mall, Kota Damansara</strong><br>Petaling Jaya, Selangor</p>
+                </div>
+                <div class="card">
+                    <h2>🕒 Exhibition Timeline Status</h2>
+                    <p><strong>Schedules Pending (TBA)</strong><br>Official presentation hours incoming.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- VENUE -->
-    <div id="page-venue" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">📍 Venue & Exhibition Logistics (Strand Mall)</h2>
-            <p>Our student cohort is hosting this year's external public and school exhibition at an accessible, modern commercial hub in Petaling Jaya.</p>
-            <div style="background:linear-gradient(to right,#ffffff,#f4fbf7);border:1px solid #d1fae5;border-left:5px solid #10b981;padding:20px 24px;border-radius:10px;margin-bottom:25px;display:flex;align-items:center;gap:18px;box-shadow:0 4px 12px rgba(0,0,0,0.02);"><span style="font-size:2.2rem;background:#d1fae5;padding:12px;border-radius:50%;">🏬</span><div><h3 style="margin:0 0 4px 0;font-size:1.15rem;color:#065f46;">Primary Venue: Strand Mall</h3><p style="margin:0;font-size:0.94rem;color:#047857;">Address: 46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</p><p style="margin:0;font-size:0.94rem;color:#047857;">Known for its convenient accessibility, secure parking infrastructure, and open retail display spaces suited for interactive tech booths.</p></div></div>
-            <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">🕒 Visitor & Event Timing Status</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);"><strong>Status: Not Confirmed Yet (TBA)</strong><br>Detailed daily schedules, keynote windows, and public access hours are currently being finalized by the student administration committee.</p></div>
-        </div>
-    </div>
-
-    <!-- EVENTS -->
-    <div id="page-events" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">📅 Key Events & Showcase Timeline</h2>
-            <p>The structured agenda planned for the InnoVision exhibition layout:</p>
-            <div style="border-left:3px solid var(--maz-yellow-dark);padding-left:22px;margin-top:18px;">
-                <div style="margin-bottom:24px;position:relative;"><div style="position:absolute;left:-29px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--maz-green);border:2px solid var(--maz-yellow);"></div><h4 style="margin:0 0 4px 0;font-size:1.1rem;color:var(--maz-green);">Inauguration & Opening Keynote</h4><span style="font-size:0.82rem;font-weight:700;color:#d97706;text-transform:uppercase;">Status: Schedule Pending (TBA)</span><p style="margin:4px 0 0 0;font-size:0.92rem;color:var(--text-muted);">Official welcoming remarks, introduction of the PJ campus student cohort, and overview of the exhibition vision.</p></div>
-                <div style="margin-bottom:24px;position:relative;"><div style="position:absolute;left:-29px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--maz-green);border:2px solid var(--maz-yellow);"></div><h4 style="margin:0 0 4px 0;font-size:1.1rem;color:var(--maz-green);">Live Code & Software Demos</h4><span style="font-size:0.82rem;font-weight:700;color:#d97706;text-transform:uppercase;">Status: Schedule Pending (TBA)</span><p style="margin:4px 0 0 0;font-size:0.92rem;color:var(--text-muted);">Interactive walk-throughs where student developers showcase live application testing and hardware loops.</p></div>
-                <div style="margin-bottom:24px;position:relative;"><div style="position:absolute;left:-29px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--maz-green);border:2px solid var(--maz-yellow);"></div><h4 style="margin:0 0 4px 0;font-size:1.1rem;color:var(--maz-green);">Student Tech Panel & Q&A</h4><span style="font-size:0.82rem;font-weight:700;color:#d97706;text-transform:uppercase;">Status: Schedule Pending (TBA)</span><p style="margin:4px 0 0 0;font-size:0.92rem;color:var(--text-muted);">An open forum discussion hosted by the Central Task Force on building and deploying scalable student apps.</p></div>
-                <div style="margin-bottom:24px;position:relative;"><div style="position:absolute;left:-29px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--maz-green);border:2px solid var(--maz-yellow);"></div><h4 style="margin:0 0 4px 0;font-size:1.1rem;color:var(--maz-green);">Closing Showcase & Recognitions</h4><span style="font-size:0.82rem;font-weight:700;color:#d97706;text-transform:uppercase;">Status: Schedule Pending (TBA)</span><p style="margin:4px 0 0 0;font-size:0.92rem;color:var(--text-muted);">Celebrating student ingenuity and acknowledging advisory guidance from the computer science faculty.</p></div>
+        <!-- CAMPUS -->
+        <div id="page-campus" class="page-section">
+            <div class="card">
+                <h2>🏫 About MAZ International School (PJ Campus)</h2>
+                <p>The Petaling Jaya (PJ) Campus of MAZ International School is renowned for fostering academic rigor, creative expression, and technological competence. Our secondary curriculum heavily emphasizes practical computer science, problem-solving, and independent student research.</p>
+                <div class="grid-3">
+                    <div class="info-pill-box">
+                        <h4>📘 Academic Excellence</h4>
+                        <p>Providing robust British curriculum standards integrated with modern technology modules.</p>
+                    </div>
+                    <div class="info-pill-box">
+                        <h4>🧑‍🎓 Student Autonomy</h4>
+                        <p>Empowering student-led committees to plan, design, and manage large-scale external events.</p>
+                    </div>
+                    <div class="info-pill-box">
+                        <h4>💻 Tech-Forward Learning</h4>
+                        <p>Advanced secondary computing laboratories fostering real-world application building.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- VISITOR -->
-    <div id="page-visitor" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">ℹ️ Visitor Information & Guidelines</h2>
-            <p>Planning to attend our student-led exhibition at Strand Mall? Here is what you need to know:</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;">
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">👥 Admission & Access</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">The event is designed to welcome school peers, parents, faculty members, and technology enthusiasts. Admission details will be announced alongside the final schedule.</p></div>
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">💻 Interactive Booths</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">Visitors are encouraged to interact directly with student-built software portals, touch-screen prototypes, and digital project displays.</p></div>
+        <!-- PROJECTS -->
+        <div id="page-projects" class="page-section">
+            <div class="card">
+                <h2>🚀 Student Innovation Projects</h2>
+                <p>Explore the diverse technological frameworks and creative digital assets built by our student developers:</p>
+                <div class="grid-2">
+                    <div class="project-card">
+                        <h3>🌐 Interactive Web Systems</h3>
+                        <p>High-performance student portals, responsive web applications, and dynamic UI/UX builds engineered natively by the task force.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>🤖 AI & Computational Prototypes</h3>
+                        <p>Experimental algorithms, data automation pipelines, and machine learning models built under secondary computer science modules.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>🎨 Digital Creative Media</h3>
+                        <p>Immersive 3D school asset mockups, graphic layouts, and digital storytelling media designed for interactive presentation loops.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>🌱 Eco-Tech Solutions</h3>
+                        <p>Sustainable technology applications aimed at power optimization, smart waste reduction, and green campus operations.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ADMIN -->
-    <div id="page-admin" style="display:none;animation:fadeIn 0.3s ease-in-out;">
-        <div style="background-color:var(--card-bg);border-radius:12px;padding:32px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,0.04);border-top:4px solid var(--maz-green-light);border-left:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-            <h2 style="margin-top:0;color:var(--maz-green);font-size:1.45rem;border-bottom:2px solid #f1f5f9;padding-bottom:10px;display:flex;align-items:center;gap:10px;">🏛️ Administration & Organizing Team</h2>
-            <p>The academic backing and technical cell governing this student-driven project:</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;">
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">👩‍🏫 Faculty Leadership</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);"><strong>Miss Anjali</strong><br>Secondary Computer Science Teacher & Project Faculty Mentor.</p></div>
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">💻 Web Portal Development</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);"><strong>Central Task Force</strong><br>Student-Led Web Engineering and Content Assembly Cell.</p></div>
-                <div style="background:#fafafa;border:1px solid var(--border-subtle);border-left:4px solid var(--accent-blue);padding:20px;border-radius:8px;grid-column:1/-1;"><h4 style="margin:0 0 6px 0;color:#1e293b;font-size:1.05rem;">🌐 Institutional Entity & Hosting Architecture</h4><p style="margin:0;font-size:0.92rem;color:var(--text-muted);">MAZ International School (PJ Campus) • Cleanly coded and deployed via GitHub Pages framework without third-party OS tracking or commercial templates.</p></div>
+        <!-- VENUE -->
+        <div id="page-venue" class="page-section">
+            <div class="card">
+                <h2>📍 Venue & Exhibition Logistics (Strand Mall)</h2>
+                <p>Our student cohort is hosting this year's external public and school exhibition at an accessible, modern commercial hub in Petaling Jaya.</p>
+                <div class="highlight-box">
+                    <span class="highlight-icon">🏬</span>
+                    <div>
+                        <h3>Primary Venue: Strand Mall</h3>
+                        <p>Address: 46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</p>
+                        <p>Known for its convenient accessibility, secure parking infrastructure, and open retail display spaces suited for interactive tech booths.</p>
+                    </div>
+                </div>
+                <div class="info-pill-box">
+                    <h4>🕒 Visitor & Event Timing Status</h4>
+                    <p><strong>Status: Not Confirmed Yet (TBA)</strong><br>Detailed daily schedules, keynote windows, and public access hours are currently being finalized by the student administration committee.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
-
-<footer>
-    <div style="max-width:980px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid #143820;">
-            <div><h4 style="color:#ffffff;font-size:1rem;margin:0 0 12px 0;border-left:3px solid var(--maz-yellow);padding-left:8px;">MAZ InnoVision Digital Expo</h4><p style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">An exclusive technology and creative project showcase organized by the secondary student cohort of MAZ International School, Petaling Jaya Campus.</p></div>
-            <div><h4 style="color:#ffffff;font-size:1rem;margin:0 0 12px 0;border-left:3px solid var(--maz-yellow);padding-left:8px;">Portal Pages</h4><ul style="list-style:none;padding:0;margin:0;"><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Home Portal</li><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">PJ Campus Info</li><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Innovation Projects</li><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Strand Mall Venue</li><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Visitor Guide</li><li style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Administration</li></ul></div>
-            <div><h4 style="color:#ffffff;font-size:1rem;margin:0 0 12px 0;border-left:3px solid var(--maz-yellow);padding-left:8px;">Credits</h4><p style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Lead Mentor: Miss Anjali</p><p style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Dev Cell: Central Task Force</p><p style="font-size:0.88rem;color:#cbd5e1;margin:6px 0;">Framework: GitHub Pages (Student Coded)</p></div>
+        <!-- EVENTS -->
+        <div id="page-events" class="page-section">
+            <div class="card">
+                <h2>📅 Key Events & Showcase Timeline</h2>
+                <p>The structured agenda planned for the InnoVision exhibition layout:</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Inauguration & Opening Keynote</h4>
+                        <span>Status: Schedule Pending (TBA)</span>
+                        <p>Official welcoming remarks, introduction of the PJ campus student cohort, and overview of the exhibition vision.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Live Code & Software Demos</h4>
+                        <span>Status: Schedule Pending (TBA)</span>
+                        <p>Interactive walk-throughs where student developers showcase live application testing and hardware loops.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Student Tech Panel & Q&A</h4>
+                        <span>Status: Schedule Pending (TBA)</span>
+                        <p>An open forum discussion hosted by the Central Task Force on building and deploying scalable student apps.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Closing Showcase & Recognitions</h4>
+                        <span>Status: Schedule Pending (TBA)</span>
+                        <p>Celebrating student ingenuity and acknowledging advisory guidance from the computer science faculty.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="text-align:center;padding-top:25px;font-size:0.82rem;color:#94a3b8;">© 2026 MAZ International School (PJ Campus). All rights reserved. Cleanly engineered by students on GitHub.</div>
+
+        <!-- VISITOR -->
+        <div id="page-visitor" class="page-section">
+            <div class="card">
+                <h2>ℹ️ Visitor Information & Guidelines</h2>
+                <p>Planning to attend our student-led exhibition at Strand Mall? Here is what you need to know:</p>
+                <div class="grid-2">
+                    <div class="info-pill-box">
+                        <h4>👥 Entry & Registration Management</h4>
+                        <p>Managed by EntryEnablers Team: All visitor registration, credential processing, and venue entry logistics will be handled directly by the EntryEnablers team using their dedicated registration portal at the venue entrance.</p>
+                    </div>
+                    <div class="info-pill-box">
+                        <h4>💻 Interactive Booths</h4>
+                        <p>Visitors are encouraged to interact directly with student-built software portals, touch-screen prototypes, and digital project displays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACTS -->
+        <div id="page-contacts" class="page-section">
+            <div class="card">
+                <h2>📞 Contact Information & Enquiries</h2>
+                <p>Get in touch with the administration and organizing teams for more details regarding the expo.</p>
+                <div class="grid-2">
+                    <div class="info-pill-box">
+                        <h4>🏫 School Administration</h4>
+                        <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor</p>
+                    </div>
+                    <div class="info-pill-box">
+                        <h4>🎫 Venue Entry Support</h4>
+                        <p>EntryEnablers Team<br>On-site registration portal assistance and access control desk located at Strand Mall.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN -->
+        <div id="page-admin" class="page-section">
+            <div class="card">
+                <h2>🏛️ Administration & Organizing Team</h2>
+                <p>The academic backing and technical cell governing this student-driven project:</p>
+                <div class="grid-2">
+                    <div class="info-pill-box">
+                        <h4>👩‍🏫 Faculty Leadership</h4>
+                        <p><strong>Miss Anjali</strong><br>Secondary Computer Science Teacher & Project Faculty Mentor.</p>
+                    </div>
+                    <div class="info-pill-box">
+                        <h4>💻 Web Portal Development</h4>
+                        <p><strong>Central Task Force</strong><br>Student-Led Web Engineering and Content Assembly Cell.</p>
+                    </div>
+                    <div class="info-pill-box" style="grid-column: 1 / -1;">
+                        <h4>🌐 Institutional Entity & Hosting Architecture</h4>
+                        <p>MAZ International School (PJ Campus) • Cleanly coded and deployed via GitHub Pages framework without third-party OS tracking or commercial templates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</footer>
 
-<style>
-    @keyframes fadeIn {from { opacity: 0; transform: translateY(4px); }to { opacity: 1; transform: translateY(0); }}
-    .nav-link:hover {background-color:#f0fdf4;color:var(--maz-green-bright);border-radius:6px;}
-    .nav-link.active {background-color:var(--maz-green);color:var(--maz-yellow);border-radius:6px;}
-    @media (max-width:768px){.nav-menu{flex-wrap:wrap;}.nav-menu li{flex:1 0 auto;}}
-</style>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>MAZ InnoVision Digital Expo</h4>
+                    <p>An exclusive technology and creative project showcase organized by the secondary student cohort of MAZ International School, Petaling Jaya Campus.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Portal Pages</h4>
+                    <ul>
+                        <li>Home, PJ Campus Info, Innovation Projects, Strand Mall Venue, Visitor Guide, Contacts, Administration.</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Administration</h4>
+                    <p>Lead Mentor: Miss Anjali</p>
+                    <p>Dev Cell: Central Task Force</p>
+                    <p>Entry Portal: EntryEnablers Team</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 MAZ International School (PJ Campus). All rights reserved. Cleanly engineered by students on GitHub.</div>
+        </div>
+    </footer>
 
-<script>
-function switchPage(pageId) {
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(sec => sec.style.display = 'none');
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => link.classList.remove('active'));
-    const targetPage = document.getElementById('page-' + pageId);
-    if (targetPage) { targetPage.style.display = 'block'; }
-    if (window.event && window.event.currentTarget) { window.event.currentTarget.classList.add('active'); }
-    window.scrollTo({ top: 350, behavior: 'smooth' });
-}
-// ensure home visible if no hash
-document.addEventListener('DOMContentLoaded', function() {
-    // if no page hash, home is already visible by inline style
-});
-</script>
+    <script>
+        function switchPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('active');
+            }
+            window.scrollTo({ top: 350, behavior: 'smooth' });
+        }
+    </script>
 
-</body
+</body>
+</html>
