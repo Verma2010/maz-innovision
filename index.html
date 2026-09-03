@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maz International Digital Expo</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #3b82f6;
+            --text: #1f2937;
+            --bg: #f9fafb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .grid-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Maz International Digital Expo</h1>
+        <p>Official School Showcase & Project Details</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECTION 1: ABOUT -->
+        <div class="card">
+            <h2>About Our Exhibition</h2>
+            <p>Welcome to our official showcase for the Maz International Digital Expo. This platform details our digital innovations, school milestones, and student-led initiatives designed to address future technological challenges.</p>
+        </div>
+
+        <!-- SECTION 2: KEY DETAILS / PROJECTS -->
+        <div class="card">
+            <h2>Project Highlights & Details</h2>
+            <p>Explore the core pillars of our expo presentation below:</p>
+            
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Digital Innovation</h3>
+                    <p>Details about the software, coding projects, or technology stacks developed by our students.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Academic Excellence</h3>
+                    <p>How our school integrates cutting-edge digital tools into the daily curriculum.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Future Goals</h3>
+                    <p>Our roadmap for driving sustainable technology education over the next year.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: CONTACT & INFORMATION -->
+        <div class="card">
+            <h2>Contact & School Information</h2>
+            <p><strong>School Name:</strong> Your School Name Here</p>
+            <p><strong>Team Members:</strong> Name 1, Name 2, Name 3</p>
+            <p><strong>Email Contact:</strong> school-email@example.com</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Maz International Digital Expo Showcase. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
