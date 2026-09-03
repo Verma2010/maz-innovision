@@ -3,127 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maz International Digital Expo</title>
+    <title>MAZ InnoVision - Digital Expo Showcase</title>
     <style>
+        /* OFFICIAL MAZ COLOR IDENTITY & EXPO COMBINATION */
         :root {
-            --primary: #1e3a8a;
-            --accent: #3b82f6;
-            --text: #1f2937;
-            --bg: #f9fafb;
+            --maz-green: #1e5631;       /* MAZ Official Forest Green */
+            --maz-yellow: #fcd116;      /* MAZ Official Golden Yellow */
+            --expo-darkblue: #0b132b;   /* InnoVision Cosmic Background */
+            --expo-cyan: #00f0ff;       /* InnoVision Neon Glow Accent */
+            --text-dark: #1f2937;
+            --bg-light: #f4f6f4;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text);
-            background-color: var(--bg);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
             line-height: 1.6;
         }
+
+        /* PREMIUM NAVIGATION BAR */
+        nav {
+            background-color: var(--maz-green);
+            border-bottom: 4px solid var(--maz-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-title {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-title span {
+            color: var(--maz-yellow);
+        }
+
+        /* HIGH-TECH EXPO HERO HEADER */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--expo-darkblue) 0%, #1c2541 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--expo-cyan);
         }
+
+        /* Subtle cyber grid pattern background effect */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .hero-logo {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6));
+            animation: float 4s ease-in-out infinite;
+        }
+
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
+        header h1 span {
+            color: var(--expo-cyan);
+        }
+
         header p {
-            font-size: 1.2rem;
-            margin: 10px 0 0 0;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin: 10px auto 0 auto;
+            max-width: 600px;
+            color: #cbd5e1;
+            font-style: italic;
         }
+
+        /* MAIN CONTENT LAYOUT */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
+
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 35px;
+            border-top: 5px solid var(--maz-green);
         }
+
+        .card.expo-theme {
+            border-top: 5px solid var(--expo-cyan);
+            background: linear-gradient(to bottom, #ffffff, #fdfeff);
+        }
+
         h2 {
-            color: var(--primary);
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 10px;
+            color: var(--maz-green);
+            font-size: 1.8rem;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+
+        .expo-theme h2 {
+            color: var(--expo-darkblue);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
+
+        /* FEATURE MATRIX GRID */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
         }
+
         .grid-item {
-            background: #f3f4f6;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--expo-cyan);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,240,255,0.1);
+        }
+
         .grid-item h3 {
             margin-top: 0;
-            color: var(--primary);
+            color: var(--expo-darkblue);
+            font-size: 1.3rem;
         }
+
+        /* CAMPUS / CREDITS BADGES */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--maz-green);
+        }
+
+        /* CLEAN FOOTER DESIGN */
         footer {
+            background-color: var(--expo-darkblue);
+            color: #94a3b8;
             text-align: center;
             padding: 40px 20px;
-            color: #6b7280;
-            font-size: 0.9rem;
+            margin-top: 60px;
+            border-top: 4px solid var(--maz-yellow);
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        /* ANIMATION EFFECETS */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .nav-title { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- BRANDED SITE NAVIGATION -->
+    <nav>
+        <div class="nav-brand">
+            <!-- Automatically loads school-logo.png if uploaded to your repository -->
+            <img class="nav-logo" src="school-logo.png" alt="MAZ Logo" onerror="this.style.display='none'">
+            <div class="nav-title">MAZ <span>International School</span></div>
+        </div>
+    </nav>
+
+    <!-- EXPO HERO BANNER -->
     <header>
-        <h1>Maz International Digital Expo</h1>
-        <p>Official School Showcase & Project Details</p>
+        <!-- Automatically loads innovision-logo.png if uploaded to your repository -->
+        <img class="hero-logo" src="innovision-logo.png" alt="MAZ InnoVision Logo" onerror="this.style.display='none'">
+        <h1>MAZ <span>InnoVision</span></h1>
+        <p>"Where Young Minds Spark Innovation"</p>
     </header>
 
     <div class="container">
         
-        <!-- SECTION 1: ABOUT -->
+        <!-- SECTION 1: MISSION/ABOUT -->
         <div class="card">
-            <h2>About Our Exhibition</h2>
-            <p>Welcome to our official showcase for the Maz International Digital Expo. This platform details our digital innovations, school milestones, and student-led initiatives designed to address future technological challenges.</p>
+            <h2>About Our Expo Exhibition</h2>
+            <p>Welcome to the official information hub for the MAZ International School Digital Expo project. Built entirely upon the principles of academic curiosity and technological exploration, our exhibition showcases how the next generation leverages digital systems to create impactful real-world solutions.</p>
         </div>
 
-        <!-- SECTION 2: KEY DETAILS / PROJECTS -->
-        <div class="card">
+        <!-- SECTION 2: DIGITAL SHOWCASE EXTRACTIONS -->
+        <div class="card expo-theme">
             <h2>Project Highlights & Details</h2>
-            <p>Explore the core pillars of our expo presentation below:</p>
+            <p>Discover the core innovations fueling our digital showcase this year:</p>
             
             <div class="grid">
                 <div class="grid-item">
-                    <h3>Digital Innovation</h3>
-                    <p>Details about the software, coding projects, or technology stacks developed by our students.</p>
+                    <h3>Digital Creativity</h3>
+                    <p>Details and mechanics of software applications, game design structures, or interactive multimedia environments created by our digital design team.</p>
                 </div>
                 <div class="grid-item">
-                    <h3>Academic Excellence</h3>
-                    <p>How our school integrates cutting-edge digital tools into the daily curriculum.</p>
+                    <h3>Technological Vision</h3>
+                    <p>Exploring complex computing architectures, data processing frameworks, or smart engineering structures developed to address modern criteria.</p>
                 </div>
                 <div class="grid-item">
-                    <h3>Future Goals</h3>
-                    <p>Our roadmap for driving sustainable technology education over the next year.</p>
+                    <h3>Sustainable Innovation</h3>
+                    <p>Our long-term digital strategy aligning modern learning modules with environmental and societal problem-solving frameworks.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 3: CONTACT & INFORMATION -->
+        <!-- SECTION 3: OFFICIAL CREDITS & DETAILS -->
         <div class="card">
-            <h2>Contact & School Information</h2>
-            <p><strong>School Name:</strong> Your School Name Here</p>
-            <p><strong>Team Members:</strong> Name 1, Name 2, Name 3</p>
-            <p><strong>Email Contact:</strong> school-email@example.com</p>
+            <h2>Exhibition Administration</h2>
+            <p><strong>Exhibition Entity:</strong> MAZ International School (Malaysia)</p>
+            <p><strong>Development Team:</strong> Digital Design Student Cohort</p>
+            <p><strong>Core Campuses represented:</strong></p>
+            <div class="badge-container">
+                <span class="badge">Shah Alam Campus</span>
+                <span class="badge">Petaling Jaya Campus</span>
+            </div>
         </div>
 
     </div>
 
+    <!-- SITE FOOTER -->
     <footer>
-        <p>&copy; 2026 Maz International Digital Expo Showcase. All rights reserved.</p>
+        <p>&copy; 2026 MAZ InnoVision Digital Expo. Formulated for excellence.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Proudly hosted via clean GitHub Pages framework without corporate tracking metrics.</p>
     </footer>
 
 </body>
