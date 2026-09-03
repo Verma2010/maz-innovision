@@ -7,7 +7,7 @@
   <!-- Font Awesome (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- MAZ INTERNATIONAL SCHOOL THEME ----- */
+    /* ----- MAZ + INNOVISION COLOUR PALETTE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -27,7 +27,7 @@
       padding: 0 28px;
     }
 
-    /* --- MAZ signature colours & accents --- */
+    /* --- MAZ signature colours + INNOVISION accents --- */
     :root {
       --maz-navy: #0b2a41;
       --maz-blue: #004a8f;
@@ -36,6 +36,13 @@
       --maz-gold-light: #f5e7b0;
       --maz-gray: #eef2f7;
       --maz-border: #d0dceb;
+
+      /* Innovision fresh accents */
+      --innovision-teal: #009b8c;
+      --innovision-coral: #ff6b4a;
+      --innovision-purple: #6c3b9e;
+      --innovision-lime: #b1d43b;
+      --innovision-bg-light: #f0f6fe;
     }
 
     /* header / navbar – clean, spacious */
@@ -81,7 +88,7 @@
       color: var(--maz-navy);
     }
     .expo-title span {
-      color: var(--maz-gold);
+      color: var(--innovision-teal);
       font-weight: 300;
       letter-spacing: 0.5px;
     }
@@ -101,7 +108,7 @@
       padding-bottom: 4px;
     }
     .nav-links a:hover {
-      color: var(--maz-blue);
+      color: var(--innovision-teal);
       border-bottom-color: var(--maz-gold);
     }
     .nav-links .highlight-link {
@@ -118,14 +125,14 @@
       border-bottom: none;
     }
 
-    /* hero – MAZ style */
+    /* hero – MAZ + Innovision blend */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       padding: 40px 0 20px;
-      background: linear-gradient(145deg, #ffffff, #f8faff);
+      background: linear-gradient(145deg, #ffffff, #f4f9fe);
       border-radius: 48px;
       margin: 20px 0 10px;
       box-shadow: 0 4px 14px rgba(0, 40, 80, 0.02);
@@ -133,7 +140,7 @@
     }
 
     .hero .badge {
-      background: var(--maz-light-blue);
+      background: linear-gradient(145deg, var(--maz-light-blue), #dcecfa);
       padding: 8px 28px;
       border-radius: 60px;
       font-weight: 600;
@@ -143,7 +150,7 @@
       font-size: 0.9rem;
     }
     .hero .badge i {
-      color: var(--maz-gold);
+      color: var(--innovision-coral);
     }
 
     .hero h1 {
@@ -154,8 +161,11 @@
       margin: 12px 0 8px;
     }
     .hero h1 i {
-      color: var(--maz-gold);
+      color: var(--innovision-teal);
       margin-right: 10px;
+    }
+    .hero h1 .highlight {
+      color: var(--innovision-coral);
     }
 
     .hero .subhead {
@@ -169,7 +179,7 @@
       border-radius: 60px;
     }
 
-    /* info cards – MAZ card style */
+    /* info cards – MAZ + Innovision */
     .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -188,12 +198,12 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 16px 40px rgba(0, 40, 80, 0.06);
-      border-color: var(--maz-gold);
+      border-color: var(--innovision-teal);
     }
 
     .card i {
       font-size: 2.4rem;
-      color: var(--maz-blue);
+      color: var(--innovision-purple);
       background: var(--maz-light-blue);
       padding: 14px;
       border-radius: 20px;
@@ -210,8 +220,32 @@
       color: #2f5375;
       font-size: 1rem;
     }
+    .card .map-link {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--innovision-teal);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+    }
+    .card .map-link i {
+      background: transparent;
+      padding: 0;
+      color: white;
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+    .card .map-link:hover {
+      background: var(--maz-navy);
+      transform: scale(1.02);
+    }
 
-    /* teacher & lead – MAZ signature */
+    /* teacher & lead – MAZ + Innovision */
     .highlight-box {
       background: white;
       border-radius: 48px;
@@ -223,6 +257,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      background: linear-gradient(145deg, #ffffff, #f6faff);
     }
 
     .teacher-info {
@@ -242,7 +277,7 @@
       justify-content: center;
       font-size: 2rem;
       font-weight: 600;
-      border: 2px solid var(--maz-gold);
+      border: 2px solid var(--innovision-coral);
     }
     .teacher-info .details .name {
       font-weight: 700;
@@ -259,7 +294,7 @@
       margin-top: 4px;
     }
     .student-led {
-      background: var(--maz-light-blue);
+      background: linear-gradient(145deg, var(--maz-light-blue), #eaf3fd);
       padding: 12px 28px;
       border-radius: 60px;
       font-weight: 600;
@@ -268,10 +303,10 @@
     }
     .student-led i {
       margin-right: 12px;
-      color: var(--maz-gold);
+      color: var(--innovision-coral);
     }
 
-    /* developments / timeline – clean MAZ style */
+    /* developments – Innovision accent */
     .dev-section {
       margin: 40px 0 20px;
     }
@@ -279,7 +314,7 @@
       font-size: 2.1rem;
       font-weight: 600;
       color: var(--maz-navy);
-      border-left: 10px solid var(--maz-gold);
+      border-left: 10px solid var(--innovision-teal);
       padding-left: 22px;
       margin-bottom: 28px;
       display: flex;
@@ -287,7 +322,7 @@
       gap: 12px;
     }
     .dev-section h2 i {
-      color: var(--maz-blue);
+      color: var(--innovision-purple);
     }
 
     .dev-list {
@@ -308,7 +343,7 @@
     }
     .dev-item:hover {
       background: #fafdff;
-      border-color: var(--maz-gold);
+      border-color: var(--innovision-teal);
     }
     .dev-item .icon {
       background: var(--maz-light-blue);
@@ -318,7 +353,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--maz-blue);
+      color: var(--innovision-purple);
       font-size: 1.4rem;
     }
     .dev-item .content {
@@ -344,7 +379,7 @@
       border: 1px solid #e6d29b;
     }
 
-    /* quote – MAZ gold accent */
+    /* quote – Innovision coral */
     .quote-block {
       background: #f2f7fe;
       border-radius: 60px;
@@ -354,11 +389,11 @@
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
-      border-left: 6px solid var(--maz-gold);
+      border-left: 6px solid var(--innovision-coral);
     }
     .quote-block i {
       font-size: 2.4rem;
-      color: var(--maz-gold);
+      color: var(--innovision-coral);
       opacity: 0.6;
     }
     .quote-block span {
@@ -370,7 +405,7 @@
       color: var(--maz-navy);
     }
 
-    /* footer – MAZ style */
+    /* footer – MAZ + Innovision */
     .footer {
       margin-top: 50px;
       border-top: 2px solid #d8e2f0;
@@ -388,7 +423,7 @@
       border-radius: 60px;
     }
     .footer .copy i {
-      color: var(--maz-gold);
+      color: var(--innovision-coral);
       margin: 0 4px;
     }
     .footer .footer-logos {
@@ -461,7 +496,7 @@
     <!-- header – MAZ style -->
     <header class="navbar">
       <div class="logo-group">
-        <!-- MAZ school logo (original theme) -->
+        <!-- MAZ school logo -->
         <img src="school-logo.png" alt="MAZ International School logo">
         <span class="logo-divider"></span>
         <!-- Innovision logo -->
@@ -477,19 +512,19 @@
       </div>
     </header>
 
-    <!-- hero – MAZ theme -->
+    <!-- hero – MAZ + Innovision blend -->
     <div class="hero">
       <div class="badge"><i class="fas fa-microchip" style="margin-right: 10px;"></i>Digital expo · student-led</div>
-      <h1><i class="fas fa-bolt"></i> MAZ Innovision 2026</h1>
-      <p class="subhead"><i class="fas fa-code" style="margin-right: 12px; color: var(--maz-gold);"></i>Where creativity meets code — annual digital expo</p>
+      <h1><i class="fas fa-bolt"></i> MAZ <span class="highlight">Innovision</span> 2026</h1>
+      <p class="subhead"><i class="fas fa-code" style="margin-right: 12px; color: var(--innovision-teal);"></i>Where creativity meets code — annual digital expo</p>
     </div>
 
     <!-- info cards -->
     <div id="info" class="info-grid">
       <div class="card">
         <i class="fas fa-calendar-check"></i>
-        <h3>Event dates</h3>
-        <p><strong>10 – 12 June 2026</strong><br>Opening ceremony: 10 June, 10:00 AM<br>Expo hall open daily 9:00–17:00</p>
+        <h3>Event date</h3>
+        <p><strong>Saturday, 3 October 2026</strong><br>10:00 AM – 6:00 PM<br>Opening ceremony at 10:30 AM</p>
       </div>
       <div class="card">
         <i class="fas fa-laptop-code"></i>
@@ -504,11 +539,15 @@
       <div class="card">
         <i class="fas fa-map-pin"></i>
         <h3>Venue</h3>
-        <p>MAZ Main Hall & Digital Lab • <br>Secondary campus, building B. Free entry.</p>
+        <p><strong>The Strands Mall</strong><br>Level 2, Event Hall<br>Kuala Lumpur</p>
+        <!-- Google Maps link for The Strands Mall -->
+        <a href="https://www.google.com/maps/search/?api=1&query=The+Strands+Mall+Kuala+Lumpur" target="_blank" class="map-link">
+          <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+        </a>
       </div>
     </div>
 
-    <!-- teacher & student-led – MAZ style -->
+    <!-- teacher & student-led – MAZ + Innovision -->
     <div id="lead" class="highlight-box">
       <div class="teacher-info">
         <div class="avatar">A</div>
@@ -522,7 +561,7 @@
       </div>
     </div>
 
-    <!-- developments / updates – MAZ theme -->
+    <!-- developments / updates – Innovision accent -->
     <div id="developments" class="dev-section">
       <h2><i class="fas fa-code-branch"></i> Developments & updates</h2>
       <div class="dev-list">
@@ -554,7 +593,7 @@
       </div>
     </div>
 
-    <!-- quote block – MAZ gold accent -->
+    <!-- quote block – Innovision coral -->
     <div class="quote-block">
       <i class="fas fa-quote-left"></i>
       <span><strong>Miss Anjali</strong> — “Our students are building the future, one line of code at a time. MAZ Innovision is their stage.”</span>
