@@ -32,7 +32,7 @@
 
             --shadow-sm: 0 2px 6px rgba(5, 33, 18, 0.05);
             --shadow-md: 0 8px 24px rgba(5, 33, 18, 0.08);
-            --shadow-lg: 0 16px 40px rgba(5, 33, 18, 0.12);
+            --shadow-lg: 0 16px 40px rgba(5, 33, 18, 0.15);
 
             --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -48,7 +48,6 @@
             margin: 0;
             padding: 0;
             background-color: #f4f7f5;
-            /* Subtle academic geometric background pattern */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.05) 0%, transparent 50%),
                 radial-gradient(var(--brand-green-mid) 0.6px, transparent 0.6px);
@@ -73,6 +72,17 @@
             letter-spacing: -0.02em;
         }
 
+        /* Interactive Logo Styling */
+        .interactive-logo {
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+        }
+
+        .interactive-logo:hover {
+            transform: scale(1.06);
+            filter: drop-shadow(0 0 12px rgba(245, 200, 66, 0.6)) !important;
+        }
+
         /* Top Bar Header */
         .top-bar {
             background: linear-gradient(90deg, var(--brand-green-dark) 0%, #09301a 100%);
@@ -83,6 +93,8 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 20;
         }
 
         .top-bar strong { color: var(--brand-gold-bright); font-weight: 600; }
@@ -177,36 +189,46 @@
             box-shadow: 0 2px 8px rgba(12, 61, 33, 0.2);
         }
 
-        /* Hero Showcase Section */
+        /* Hero Showcase Section with Looping Video Background */
         header {
             position: relative;
-            background: 
-                radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 60%),
-                radial-gradient(circle at 85% 15%, rgba(24, 99, 55, 0.5), transparent 45%),
-                linear-gradient(135deg, #03140a 0%, #0c3d21 50%, #052112 100%);
             color: var(--white);
             text-align: center;
-            padding: 70px 20px 120px 20px;
+            padding: 85px 20px 130px 20px;
             border-bottom: 4px solid var(--brand-gold-main);
             overflow: hidden;
+            background: #03140a;
         }
 
-        /* Decorative Background Elements for Hero */
-        header::before {
-            content: '';
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 0.38;
+            filter: brightness(0.7) contrast(1.1);
+            z-index: 1;
+        }
+
+        .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
+            background: 
+                radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.25), transparent 65%),
+                linear-gradient(135deg, rgba(3, 20, 10, 0.82) 0%, rgba(12, 61, 33, 0.75) 50%, rgba(5, 33, 18, 0.88) 100%);
+            z-index: 2;
         }
 
         .hero-inner {
             max-width: 920px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .hero-brand-present {
@@ -214,16 +236,17 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 24px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 33, 18, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 8px 22px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-school-logo {
-            height: 38px;
+            height: 40px;
             width: auto;
             filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
         }
@@ -238,15 +261,23 @@
 
         /* Prominent InnoVision Emblem */
         .hero-main-logo {
-            height: clamp(120px, 18vw, 175px);
+            height: clamp(140px, 22vw, 210px);
             width: auto;
-            margin: 10px auto 26px auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-            transition: transform 0.3s ease;
+            margin: 12px auto 26px auto;
+            filter: drop-shadow(0 12px 28px rgba(0,0,0,0.6));
         }
 
-        .hero-main-logo:hover {
-            transform: scale(1.02);
+        .logo-hint-badge {
+            display: inline-block;
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: var(--brand-gold-bright);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(245, 200, 66, 0.3);
+            letter-spacing: 0.5px;
         }
 
         header h1 {
@@ -256,16 +287,16 @@
             letter-spacing: -0.03em;
             line-height: 1.15;
             margin-bottom: 12px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         header p.tagline {
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             font-weight: 600;
             color: var(--brand-gold-bright);
             margin: 0 0 34px 0;
             letter-spacing: 0.6px;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.6);
         }
 
         .hero-cta-row {
@@ -297,7 +328,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
+            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.5);
         }
 
         .btn-secondary {
@@ -310,6 +341,67 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.22);
             transform: translateY(-3px);
+        }
+
+        /* Showcase Video Section */
+        .video-showcase-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--brand-gold-main);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 32px;
+        }
+
+        .video-showcase-header {
+            background: linear-gradient(90deg, var(--brand-green-dark), var(--brand-green-main));
+            color: var(--white);
+            padding: 18px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .video-showcase-header h3 {
+            color: var(--white);
+            font-size: 1.18rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-badge {
+            background: var(--brand-gold-bright);
+            color: var(--brand-green-dark);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            padding: 16px 24px;
+            background: var(--brand-green-subtle);
+            font-size: 0.92rem;
+            color: var(--slate-700);
+            border-top: 1px solid var(--slate-200);
         }
 
         /* Key Facts Floating Bar */
@@ -404,17 +496,6 @@
             border-left: 6px solid var(--brand-gold-main);
             position: relative;
             overflow: hidden;
-        }
-
-        .page-banner::after {
-            content: '';
-            position: absolute;
-            right: -20px;
-            bottom: -30px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .badge-icon {
@@ -564,7 +645,6 @@
             color: var(--slate-600);
         }
 
-        /* Status Tags */
         .status-tag {
             display: inline-block;
             background: var(--brand-gold-light);
@@ -704,12 +784,98 @@
             color: var(--slate-600);
         }
 
+        /* LOGO MODAL / LIGHTBOX POPUP */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(3, 20, 10, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--brand-green-dark);
+            border: 2px solid var(--brand-gold-main);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transform: scale(0.85);
+            transition: transform 0.35 cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--brand-gold-bright);
+            color: var(--brand-green-dark);
+            transform: rotate(90deg);
+        }
+
+        .modal-logo-img {
+            max-height: 280px;
+            width: auto;
+            margin: 0 auto 20px auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            object-fit: contain;
+        }
+
+        .modal-title {
+            color: var(--brand-gold-bright);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .modal-subtext {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.92rem;
+        }
+
         /* Official Footer */
         footer {
             background: linear-gradient(180deg, var(--brand-green-dark) 0%, #03140a 100%);
             color: rgba(255, 255, 255, 0.78);
             padding: 65px 20px 32px 20px;
             border-top: 4px solid var(--brand-gold-main);
+            position: relative;
+            z-index: 10;
         }
 
         .footer-container { max-width: 980px; margin: 0 auto; }
@@ -785,8 +951,12 @@
     <!-- Main Navigation Header -->
     <nav>
         <div class="nav-brand">
-            <!-- MAZ School Logo without white box wrapper -->
-            <img class="nav-logo" src="school-logo.png" alt="MAZ International School Logo">
+            <!-- Interactive MAZ School Logo -->
+            <img class="nav-logo interactive-logo" 
+                 src="school-logo.png" 
+                 alt="MAZ International School Logo"
+                 title="Click to expand logo"
+                 onclick="openLogoModal(this.src, 'MAZ International School Crest')">
             <div class="nav-title-group">
                 <h2>MAZ International</h2>
                 <p>InnoVision Hub</p>
@@ -805,18 +975,33 @@
         <span class="campus-badge">PJ Campus</span>
     </nav>
 
-    <!-- Hero Showcase Section -->
+    <!-- Hero Showcase Section with Ambient Looping Background Video (teaser1.mp4) -->
     <header>
+        <video class="hero-bg-video" autoplay loop muted playsinline poster="school-logo.png">
+            <source src="teaser1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-overlay"></div>
+
         <div class="hero-inner">
             <div class="hero-brand-present">
-                <!-- Direct School Emblem -->
-                <img class="hero-school-logo" src="school-logo.png" alt="MAZ International School Emblem">
+                <img class="hero-school-logo interactive-logo" 
+                     src="school-logo.png" 
+                     alt="MAZ International School Emblem"
+                     title="Click to view high-res emblem"
+                     onclick="openLogoModal(this.src, 'MAZ International School Emblem')">
                 <span class="label">Presents</span>
             </div>
             <br>
-            <!-- Prominently sized InnoVision Logo -->
-            <img class="hero-main-logo" src="innovision-logo.png" alt="MAZ InnoVision Emblem">
+            <!-- Prominently sized InnoVision Logo with Pop-up Interaction -->
+            <img class="hero-main-logo interactive-logo" 
+                 src="innovision-logo.png" 
+                 alt="MAZ InnoVision Emblem"
+                 title="Click to expand InnoVision logo"
+                 onclick="openLogoModal(this.src, 'MAZ InnoVision Official Logo')">
             
+            <div class="logo-hint-badge">✨ Click any logo to expand &amp; view details</div>
+
             <h1>PJ Campus Digital Expo</h1>
             <p class="tagline">Student-led · Tech-forward · Community-driven</p>
             
@@ -863,6 +1048,27 @@
 
         <!-- HOME -->
         <div id="page-home" class="page-section active">
+            
+            <!-- Dedicated Video Showcase for teaser2.mp4 -->
+            <div class="video-showcase-card">
+                <div class="video-showcase-header">
+                    <h3>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Exhibition Progress Reel
+                    </h3>
+                    <span class="video-badge">35s Work Showcase</span>
+                </div>
+                <div class="video-wrapper">
+                    <video controls playsinline poster="innovision-logo.png">
+                        <source src="teaser2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-caption">
+                    <strong>Work Done So Far:</strong> A quick 35-second walkthrough highlighting our student developers, project wireframes, and setup progress for the PJ Campus InnoVision Expo.
+                </div>
+            </div>
+
             <div class="quote-block">
                 <div class="icon-badge">
                     <svg viewBox="0 0 24 24"><path d="M4 5c2.5-1 5-1 8 0c3-1 5.5-1 8 0v14c-2.5-1-5-1-8 0c-3-1-5.5-1-8 0z"/><path d="M12 5v14"/></svg>
@@ -933,6 +1139,19 @@
                 <div>
                     <h1>Student innovation projects</h1>
                     <p>The technological frameworks and creative digital assets built by our student developers.</p>
+                </div>
+            </div>
+
+            <!-- Second copy of teaser video option on projects page -->
+            <div class="video-showcase-card">
+                <div class="video-showcase-header">
+                    <h3>Project Development Preview</h3>
+                    <span class="video-badge">35s Teaser</span>
+                </div>
+                <div class="video-wrapper">
+                    <video controls playsinline poster="innovision-logo.png">
+                        <source src="teaser2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -1114,6 +1333,16 @@
 
     </div>
 
+    <!-- LOGO POPUP MODAL (LIGHTBOX) -->
+    <div id="logoModal" class="modal-overlay" onclick="closeLogoModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeLogoModal(event)" title="Close">&times;</button>
+            <img id="modalImg" class="modal-logo-img" src="" alt="Enlarged Logo View">
+            <h3 id="modalTitle" class="modal-title">MAZ InnoVision</h3>
+            <p id="modalSubtext" class="modal-subtext">Official High-Resolution Emblem — MAZ International School (PJ Campus)</p>
+        </div>
+    </div>
+
     <!-- Official Footer -->
     <footer>
         <div class="footer-container">
@@ -1146,6 +1375,7 @@
     </footer>
 
     <script>
+        /* Page Switching Logic */
         function switchPage(pageId, evt) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
@@ -1169,6 +1399,31 @@
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        /* Logo Lightbox/Modal Pop-up Functionality */
+        function openLogoModal(imageSrc, titleText) {
+            const modal = document.getElementById('logoModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+
+            modalImg.src = imageSrc;
+            modalTitle.textContent = titleText || 'MAZ InnoVision Logo';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+        }
+
+        function closeLogoModal(event) {
+            const modal = document.getElementById('logoModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        /* Close modal on ESC key */
+        document.addEventListener('keydown', function(evt) {
+            if (evt.key === 'Escape') {
+                closeLogoModal();
+            }
+        });
     </script>
 
 </body>
