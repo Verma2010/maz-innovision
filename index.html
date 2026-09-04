@@ -10,30 +10,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-green-dark: #082817;
-            --brand-green-main: #0e4225;
-            --brand-green-mid: #1b683d;
-            --brand-green-light: #eaf5ef;
-            --brand-gold-main: #d4a017;
-            --brand-gold-light: #fef8e6;
-            --brand-gold-dark: #9e7506;
+            --brand-green-dark: #052112;
+            --brand-green-main: #0c3d21;
+            --brand-green-mid: #186337;
+            --brand-green-light: #e8f5ed;
+            --brand-green-subtle: #f0f7f2;
+            
+            --brand-gold-main: #d4af37;
+            --brand-gold-bright: #f5c842;
+            --brand-gold-light: #fef9e7;
+            --brand-gold-dark: #917319;
             
             --slate-900: #0f172a;
+            --slate-800: #1e293b;
             --slate-700: #334155;
             --slate-600: #475569;
             --slate-500: #64748b;
             --slate-200: #e2e8f0;
             --slate-100: #f1f5f9;
-            --slate-50:  #f8fafc;
             --white: #ffffff;
 
-            --shadow-sm: 0 2px 4px rgba(14, 66, 37, 0.04);
-            --shadow-md: 0 8px 20px rgba(14, 66, 37, 0.08);
-            --shadow-lg: 0 16px 36px rgba(14, 66, 37, 0.12);
+            --shadow-sm: 0 2px 6px rgba(5, 33, 18, 0.05);
+            --shadow-md: 0 8px 24px rgba(5, 33, 18, 0.08);
+            --shadow-lg: 0 16px 40px rgba(5, 33, 18, 0.12);
 
             --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-lg: 16px;
+            --radius-lg: 18px;
             --radius-md: 12px;
             --radius-sm: 8px;
         }
@@ -44,7 +47,12 @@
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
-            background-color: var(--slate-50);
+            background-color: #f4f7f5;
+            /* Subtle academic geometric background pattern */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(var(--brand-green-mid) 0.6px, transparent 0.6px);
+            background-size: 100% 100%, 28px 28px;
             color: var(--slate-900);
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
@@ -65,24 +73,24 @@
             letter-spacing: -0.02em;
         }
 
-        /* Top Utility Bar */
+        /* Top Bar Header */
         .top-bar {
-            background-color: var(--brand-green-dark);
-            color: rgba(255, 255, 255, 0.85);
+            background: linear-gradient(90deg, var(--brand-green-dark) 0%, #09301a 100%);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.82rem;
-            padding: 9px 32px;
+            padding: 10px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .top-bar strong { color: var(--brand-gold-main); font-weight: 600; }
+        .top-bar strong { color: var(--brand-gold-bright); font-weight: 600; }
 
         /* Navigation Header */
         nav {
             background-color: var(--white);
-            padding: 16px 32px;
+            padding: 14px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -100,18 +108,17 @@
             gap: 14px;
         }
 
-        /* Direct emblem without square container */
         .nav-logo {
-            height: 48px;
+            height: 52px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         .nav-title-group h2 {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
             color: var(--brand-green-dark);
         }
 
@@ -154,35 +161,49 @@
         .nav-link.active {
             color: var(--brand-green-dark);
             background-color: var(--brand-green-light);
-            box-shadow: inset 0 -2px 0 var(--brand-gold-main);
+            box-shadow: inset 0 -3px 0 var(--brand-gold-main);
         }
 
         .campus-badge {
             background: linear-gradient(135deg, var(--brand-green-main), var(--brand-green-dark));
-            color: var(--brand-gold-main);
-            border: 1px solid rgba(212, 160, 23, 0.3);
-            padding: 6px 14px;
+            color: var(--brand-gold-bright);
+            border: 1px solid var(--brand-gold-main);
+            padding: 7px 16px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.78rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(12, 61, 33, 0.2);
         }
 
         /* Hero Showcase Section */
         header {
             position: relative;
-            background: radial-gradient(circle at 80% 20%, rgba(27, 104, 61, 0.45) 0%, transparent 50%),
-                        radial-gradient(circle at 20% 80%, rgba(212, 160, 23, 0.15) 0%, transparent 40%),
-                        linear-gradient(135deg, #051a0f 0%, #0e4225 100%);
+            background: 
+                radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 60%),
+                radial-gradient(circle at 85% 15%, rgba(24, 99, 55, 0.5), transparent 45%),
+                linear-gradient(135deg, #03140a 0%, #0c3d21 50%, #052112 100%);
             color: var(--white);
             text-align: center;
-            padding: 70px 20px 110px 20px;
+            padding: 70px 20px 120px 20px;
             border-bottom: 4px solid var(--brand-gold-main);
+            overflow: hidden;
+        }
+
+        /* Decorative Background Elements for Hero */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
         }
 
         .hero-inner {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
@@ -194,48 +215,57 @@
             gap: 12px;
             margin-bottom: 24px;
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            padding: 8px 18px;
+            backdrop-filter: blur(10px);
+            padding: 8px 22px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .hero-school-logo {
-            height: 32px;
+            height: 38px;
             width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
         }
 
         .hero-brand-present .label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.95);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         }
 
+        /* Prominent InnoVision Emblem */
         .hero-main-logo {
-            height: 85px;
+            height: clamp(120px, 18vw, 175px);
             width: auto;
-            margin: 0 auto 20px auto;
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+            margin: 10px auto 26px auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .hero-main-logo:hover {
+            transform: scale(1.02);
         }
 
         header h1 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-size: clamp(2.3rem, 5.2vw, 3.4rem);
             font-weight: 800;
             color: var(--white);
             letter-spacing: -0.03em;
             line-height: 1.15;
             margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         header p.tagline {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            color: var(--brand-gold-main);
-            margin: 0 0 32px 0;
-            letter-spacing: 0.5px;
+            color: var(--brand-gold-bright);
+            margin: 0 0 34px 0;
+            letter-spacing: 0.6px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
         }
 
         .hero-cta-row {
@@ -248,45 +278,44 @@
         .btn {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 0.92rem;
-            padding: 14px 28px;
+            font-size: 0.95rem;
+            padding: 14px 30px;
             border-radius: var(--radius-sm);
             border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
 
         .btn-primary {
-            background: var(--brand-gold-main);
+            background: linear-gradient(135deg, var(--brand-gold-bright), var(--brand-gold-main));
             color: var(--brand-green-dark);
-            box-shadow: 0 8px 20px rgba(212, 160, 23, 0.3);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
         }
 
         .btn-primary:hover {
-            background: #e6b01f;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(212, 160, 23, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-3px);
         }
 
-        /* Floating Facts Strip */
+        /* Key Facts Floating Bar */
         .facts-strip {
             max-width: 980px;
-            margin: -45px auto 0 auto;
+            margin: -48px auto 0 auto;
             position: relative;
             z-index: 10;
             background: var(--white);
@@ -295,16 +324,16 @@
             border: 1px solid var(--slate-200);
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            divide-x: 1px solid var(--slate-200);
             overflow: hidden;
         }
 
         .facts-strip .fact {
-            padding: 20px 24px;
+            padding: 22px 26px;
             display: flex;
             align-items: center;
             gap: 16px;
             border-right: 1px solid var(--slate-200);
+            background: linear-gradient(180deg, var(--white) 0%, var(--brand-green-subtle) 100%);
         }
 
         .facts-strip .fact:last-child {
@@ -316,6 +345,7 @@
             height: 48px;
             border-radius: 12px;
             background: var(--brand-green-light);
+            border: 1px solid rgba(24, 99, 55, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -335,7 +365,7 @@
         .facts-strip .fact-label {
             font-size: 0.75rem;
             color: var(--slate-500);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin: 0 0 2px 0;
@@ -348,10 +378,10 @@
             margin: 0;
         }
 
-        /* Container & Page Architecture */
+        /* Container & Page Layout */
         .container {
             max-width: 980px;
-            margin: 50px auto 70px auto;
+            margin: 54px auto 80px auto;
             padding: 0 20px;
         }
 
@@ -365,19 +395,32 @@
         .page-banner {
             background: linear-gradient(135deg, var(--brand-green-dark), var(--brand-green-main));
             border-radius: var(--radius-md);
-            padding: 32px;
+            padding: 32px 36px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
             margin-bottom: 28px;
             box-shadow: var(--shadow-md);
             border-left: 6px solid var(--brand-gold-main);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .badge-icon {
             flex-shrink: 0;
-            width: 56px;
-            height: 56px;
+            width: 58px;
+            height: 58px;
             border-radius: 14px;
             background: rgba(255, 255, 255, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.25);
@@ -389,7 +432,7 @@
         .badge-icon svg {
             width: 28px;
             height: 28px;
-            stroke: var(--brand-gold-main);
+            stroke: var(--brand-gold-bright);
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
@@ -397,7 +440,7 @@
         }
 
         .page-banner h1 {
-            font-size: 1.6rem;
+            font-size: 1.65rem;
             font-weight: 800;
             color: var(--white);
             margin-bottom: 4px;
@@ -405,8 +448,8 @@
 
         .page-banner p {
             margin: 0;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.96rem;
         }
 
         .panel {
@@ -416,38 +459,41 @@
             padding: 32px;
             margin-bottom: 24px;
             box-shadow: var(--shadow-sm);
+            position: relative;
         }
 
         .panel h3 {
             margin: 0 0 12px 0;
-            font-size: 1.25rem;
+            font-size: 1.28rem;
             font-weight: 700;
         }
 
         .panel p { color: var(--slate-600); line-height: 1.7; }
         .panel > p:last-child { margin-bottom: 0; }
 
-        /* Mentorship / Spotlight Block */
+        /* Mentorship / Quote Banner */
         .quote-block {
-            background: var(--brand-green-light);
-            border: 1px solid rgba(14, 66, 37, 0.12);
+            background: linear-gradient(135deg, var(--brand-green-light) 0%, #e1f0e6 100%);
+            border: 1px solid rgba(24, 99, 55, 0.18);
             border-left: 5px solid var(--brand-green-main);
-            padding: 24px 28px;
+            padding: 26px 30px;
             border-radius: var(--radius-md);
             margin-bottom: 28px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
+            box-shadow: var(--shadow-sm);
         }
 
         .quote-block .icon-badge {
             background: var(--white);
             box-shadow: var(--shadow-sm);
+            border: 1px solid var(--slate-200);
         }
 
         .quote-block h4 {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.12rem;
             color: var(--brand-green-dark);
             margin-bottom: 4px;
         }
@@ -460,8 +506,8 @@
 
         .icon-badge {
             flex-shrink: 0;
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -481,33 +527,33 @@
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 22px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            gap: 22px;
         }
 
         .info-panel {
             background: var(--white);
             border: 1px solid var(--slate-200);
             border-top: 4px solid var(--brand-green-main);
-            padding: 24px;
+            padding: 26px;
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .info-panel:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-md);
         }
 
         .info-panel h4 {
             margin: 0 0 8px 0;
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             font-weight: 700;
             color: var(--brand-green-dark);
         }
@@ -523,17 +569,17 @@
             display: inline-block;
             background: var(--brand-gold-light);
             color: var(--brand-gold-dark);
-            border: 1px solid rgba(212, 160, 23, 0.25);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 12px;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Project Cards */
+        /* Project Display Cards */
         .project-card {
             background: var(--white);
             border: 1px solid var(--slate-200);
@@ -552,7 +598,7 @@
 
         .project-card .icon-badge {
             background: var(--brand-green-light);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .project-card:nth-child(2n) .icon-badge {
@@ -565,7 +611,7 @@
 
         .project-card h3 {
             margin: 0 0 8px 0;
-            font-size: 1.1rem;
+            font-size: 1.12rem;
             font-weight: 700;
         }
 
@@ -575,7 +621,7 @@
             color: var(--slate-600);
         }
 
-        /* Venue Block */
+        /* Venue Card Layout */
         .venue-block {
             display: flex;
             gap: 24px;
@@ -604,12 +650,12 @@
             color: var(--brand-green-dark);
             font-weight: 600;
             font-size: 0.95rem;
-            background: var(--slate-50);
-            padding: 10px 14px;
+            background: var(--brand-green-subtle);
+            padding: 10px 16px;
             border-radius: var(--radius-sm);
             border: 1px solid var(--slate-200);
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .venue-block p {
@@ -618,7 +664,7 @@
             color: var(--slate-600);
         }
 
-        /* Timeline Section */
+        /* Structured Timeline */
         .timeline {
             border-left: 3px solid var(--brand-green-light);
             padding-left: 30px;
@@ -641,7 +687,7 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: var(--brand-gold-main);
+            background: var(--brand-gold-bright);
             border: 3px solid var(--white);
             box-shadow: 0 0 0 2px var(--brand-green-main);
         }
@@ -658,11 +704,11 @@
             color: var(--slate-600);
         }
 
-        /* Footer */
+        /* Official Footer */
         footer {
-            background-color: var(--brand-green-dark);
-            color: rgba(255, 255, 255, 0.75);
-            padding: 60px 20px 30px 20px;
+            background: linear-gradient(180deg, var(--brand-green-dark) 0%, #03140a 100%);
+            color: rgba(255, 255, 255, 0.78);
+            padding: 65px 20px 32px 20px;
             border-top: 4px solid var(--brand-gold-main);
         }
 
@@ -673,20 +719,20 @@
             grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
             padding-bottom: 36px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-col h4 {
-            color: var(--brand-gold-main);
+            color: var(--brand-gold-bright);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.02rem;
             margin: 0 0 16px 0;
             letter-spacing: 0.3px;
         }
 
         .footer-col p, .footer-col li {
             font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.82);
             margin: 8px 0;
         }
 
@@ -696,7 +742,7 @@
             text-align: center;
             padding-top: 28px;
             font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.55);
         }
 
         @keyframes fadeIn {
@@ -708,7 +754,6 @@
         @media (max-width: 840px) {
             .facts-strip {
                 grid-template-columns: 1fr;
-                divide-x: none;
                 margin-top: 20px;
             }
             .facts-strip .fact {
@@ -731,7 +776,7 @@
 </head>
 <body>
 
-    <!-- Utility Header -->
+    <!-- Top Announcement Bar -->
     <div class="top-bar">
         <span><strong>MAZ International School</strong> · Official Digital Expo Programme</span>
         <span>Petaling Jaya Campus</span>
@@ -740,7 +785,7 @@
     <!-- Main Navigation Header -->
     <nav>
         <div class="nav-brand">
-            <!-- Raw School Logo -->
+            <!-- MAZ School Logo without white box wrapper -->
             <img class="nav-logo" src="school-logo.png" alt="MAZ International School Logo">
             <div class="nav-title-group">
                 <h2>MAZ International</h2>
@@ -760,16 +805,16 @@
         <span class="campus-badge">PJ Campus</span>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Showcase Section -->
     <header>
         <div class="hero-inner">
             <div class="hero-brand-present">
-                <!-- Direct School Logo -->
+                <!-- Direct School Emblem -->
                 <img class="hero-school-logo" src="school-logo.png" alt="MAZ International School Emblem">
                 <span class="label">Presents</span>
             </div>
             <br>
-            <!-- Direct InnoVision Emblem -->
+            <!-- Prominently sized InnoVision Logo -->
             <img class="hero-main-logo" src="innovision-logo.png" alt="MAZ InnoVision Emblem">
             
             <h1>PJ Campus Digital Expo</h1>
@@ -782,7 +827,7 @@
         </div>
     </header>
 
-    <!-- Key Facts Banner -->
+    <!-- Key Information Facts Banner -->
     <div class="facts-strip">
         <div class="fact">
             <span class="fact-icon">
@@ -813,10 +858,10 @@
         </div>
     </div>
 
-    <!-- Page Content Container -->
+    <!-- Main Container -->
     <div class="container">
 
-        <!-- HOME PAGE -->
+        <!-- HOME -->
         <div id="page-home" class="page-section active">
             <div class="quote-block">
                 <div class="icon-badge">
@@ -847,7 +892,7 @@
             </div>
         </div>
 
-        <!-- CAMPUS PAGE -->
+        <!-- CAMPUS -->
         <div id="page-campus" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -879,7 +924,7 @@
             </div>
         </div>
 
-        <!-- PROJECTS PAGE -->
+        <!-- PROJECTS -->
         <div id="page-projects" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -923,7 +968,7 @@
             </div>
         </div>
 
-        <!-- VENUE PAGE -->
+        <!-- VENUE -->
         <div id="page-venue" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -953,7 +998,7 @@
             </div>
         </div>
 
-        <!-- EVENTS PAGE -->
+        <!-- EVENTS -->
         <div id="page-events" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -991,7 +1036,7 @@
             </div>
         </div>
 
-        <!-- VISITOR PAGE -->
+        <!-- VISITOR -->
         <div id="page-visitor" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -1015,7 +1060,7 @@
             </div>
         </div>
 
-        <!-- CONTACTS PAGE -->
+        <!-- CONTACTS -->
         <div id="page-contacts" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
@@ -1039,7 +1084,7 @@
             </div>
         </div>
 
-        <!-- ADMIN PAGE -->
+        <!-- ADMIN -->
         <div id="page-admin" class="page-section">
             <div class="page-banner">
                 <div class="badge-icon">
