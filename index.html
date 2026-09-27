@@ -50,16 +50,17 @@
             --radius-sm: 10px;
         }
 
-        /* Light Mode Custom Theme variables */
+        /* Fixed Professional Light Mode Colors */
         body.light-mode {
-            --bg-body-wrapper: #f1f5f9;
+            --bg-body-wrapper: #f8fafc;
             --bg-panel: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --border-panel: rgba(16, 31, 66, 0.15);
-            --slate-200: #cbd5e1;
-            --shadow-sm: 0 4px 12px rgba(16, 31, 66, 0.06);
-            --shadow-md: 0 10px 30px rgba(16, 31, 66, 0.1);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-panel: rgba(15, 26, 54, 0.12);
+            --slate-200: #e2e8f0;
+            --shadow-sm: 0 4px 12px rgba(15, 26, 54, 0.05);
+            --shadow-md: 0 10px 30px rgba(15, 26, 54, 0.08);
+            --shadow-lg: 0 20px 48px rgba(15, 26, 54, 0.12);
         }
 
         * { box-sizing: border-box; }
@@ -73,6 +74,10 @@
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f8fafc;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -91,10 +96,10 @@
         }
 
         body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4 {
-            color: var(--brand-navy-main);
+            color: #0f172a;
         }
 
-        /* Dark Mode Toggle Button */
+        /* Dark / Light Mode Toggle Button */
         .theme-toggle-btn {
             background: rgba(37, 143, 80, 0.18);
             border: 1px solid var(--brand-green-light);
@@ -109,6 +114,12 @@
             align-items: center;
             gap: 8px;
             transition: all 0.2s ease;
+        }
+
+        body.light-mode .theme-toggle-btn {
+            background: rgba(24, 99, 55, 0.1);
+            border-color: var(--brand-green-mid);
+            color: var(--brand-green-mid);
         }
 
         .theme-toggle-btn:hover {
@@ -138,6 +149,11 @@
             border-bottom: 1px solid rgba(37, 143, 80, 0.3);
             position: relative;
             z-index: 20;
+        }
+
+        body.light-mode .top-bar {
+            background: #0f1a36;
+            color: rgba(255, 255, 255, 0.92);
         }
 
         .top-bar-left {
@@ -172,8 +188,9 @@
         }
 
         body.light-mode nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            background-color: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid rgba(15, 26, 54, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
 
         .nav-brand {
@@ -209,7 +226,7 @@
         }
 
         body.light-mode .nav-title-group h2 {
-            color: var(--brand-navy-main);
+            color: #0f1a36;
         }
 
         .nav-title-group p {
@@ -219,6 +236,10 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        body.light-mode .nav-title-group p {
+            color: var(--brand-green-mid);
         }
 
         .nav-menu {
@@ -248,10 +269,24 @@
             background-color: rgba(37, 143, 80, 0.15);
         }
 
+        body.light-mode .nav-link {
+            color: #334155;
+        }
+
+        body.light-mode .nav-link:hover {
+            color: var(--brand-green-mid);
+            background-color: rgba(24, 99, 55, 0.08);
+        }
+
         .nav-link.active {
             color: var(--white);
             background-color: var(--brand-green-mid);
             box-shadow: 0 2px 8px rgba(24, 99, 55, 0.4);
+        }
+
+        body.light-mode .nav-link.active {
+            color: var(--white);
+            background-color: var(--brand-green-mid);
         }
 
         .campus-badge {
@@ -268,6 +303,11 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        body.light-mode .campus-badge {
+            background: #0f1a36;
+            color: #38d39f;
         }
 
         .campus-badge-logo {
@@ -356,7 +396,7 @@
         header h1 {
             font-size: clamp(2.2rem, 4.5vw, 3.4rem);
             font-weight: 800;
-            color: var(--white);
+            color: var(--white) !important;
             letter-spacing: -0.03em;
             line-height: 1.15;
             margin-bottom: 12px;
@@ -418,13 +458,18 @@
             transform: translateY(-3px);
         }
 
-        /* NEW CONTENT SUB-HERO / METRICS DASHBOARD SECTION BELOW BANNER */
+        /* Sub-Hero / Metrics Dashboard Section */
         .subhero-metrics-section {
             background: linear-gradient(180deg, rgba(15, 26, 54, 0.95) 0%, var(--brand-navy-dark) 100%);
             border-bottom: 1px solid var(--border-panel);
             padding: 45px 20px 50px 20px;
             position: relative;
             z-index: 5;
+        }
+
+        body.light-mode .subhero-metrics-section {
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            border-bottom: 1px solid rgba(15, 26, 54, 0.08);
         }
 
         .subhero-container {
@@ -496,6 +541,12 @@
             -webkit-text-fill-color: transparent;
         }
 
+        body.light-mode .metric-number {
+            background: linear-gradient(135deg, #0f1a36 30%, #186337 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .metric-label {
             font-size: 0.82rem;
             font-weight: 700;
@@ -521,6 +572,12 @@
             gap: 14px;
         }
 
+        body.light-mode .pillar-box {
+            background: #ffffff;
+            border-color: rgba(15, 26, 54, 0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
         .pillar-icon {
             width: 42px;
             height: 42px;
@@ -533,6 +590,11 @@
             flex-shrink: 0;
         }
 
+        body.light-mode .pillar-icon {
+            background: rgba(24, 99, 55, 0.1);
+            border-color: rgba(24, 99, 55, 0.25);
+        }
+
         .pillar-icon svg {
             width: 20px;
             height: 20px;
@@ -541,6 +603,10 @@
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
+        }
+
+        body.light-mode .pillar-icon svg {
+            stroke: var(--brand-green-mid);
         }
 
         .pillar-content h4 {
@@ -557,7 +623,7 @@
             line-height: 1.45;
         }
 
-        /* CLEAN BODY WRAPPER */
+        /* Content Body Wrapper */
         .content-body-wrapper {
             background-color: var(--bg-body-wrapper);
             background-image: 
@@ -569,9 +635,10 @@
         }
 
         body.light-mode .content-body-wrapper {
+            background-color: #f8fafc;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(37, 143, 80, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 85% 30%, rgba(16, 31, 66, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 85% 30%, rgba(15, 26, 54, 0.03) 0%, transparent 50%);
         }
 
         /* Key Facts Floating Bar */
@@ -614,6 +681,11 @@
             flex-shrink: 0;
         }
 
+        body.light-mode .facts-strip .fact-icon {
+            background: rgba(24, 99, 55, 0.08);
+            border-color: rgba(24, 99, 55, 0.2);
+        }
+
         .facts-strip .fact-icon svg {
             width: 22px;
             height: 22px;
@@ -622,6 +694,10 @@
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
+        }
+
+        body.light-mode .facts-strip .fact-icon svg {
+            stroke: var(--brand-green-mid);
         }
 
         .facts-strip .fact-label {
@@ -709,9 +785,17 @@
             transition: all 0.25s ease;
         }
 
+        body.light-mode .value-card {
+            background: #f8fafc;
+        }
+
         .value-card:hover {
             border-color: var(--brand-green-glow);
             transform: translateY(-3px);
+        }
+
+        body.light-mode .value-card:hover {
+            border-color: var(--brand-green-mid);
         }
 
         .value-card h4 {
@@ -722,6 +806,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        body.light-mode .value-card h4 {
+            color: var(--brand-green-mid);
         }
 
         .value-card p {
@@ -752,9 +840,15 @@
             transition: all 0.2s ease;
         }
 
+        body.light-mode .filter-btn {
+            background: rgba(24, 99, 55, 0.08);
+            color: #334155;
+            border-color: rgba(15, 26, 54, 0.15);
+        }
+
         .filter-btn:hover, .filter-btn.active {
             background: var(--brand-green-mid);
-            color: var(--white);
+            color: var(--white) !important;
             border-color: var(--brand-green-light);
             box-shadow: 0 2px 10px rgba(24, 99, 55, 0.4);
         }
@@ -790,8 +884,12 @@
             box-shadow: var(--shadow-md);
         }
 
+        body.light-mode .brand-watermark-card {
+            background: linear-gradient(135deg, #0f1a36 0%, #1b2d5a 100%);
+        }
+
         .brand-watermark-content h4 {
-            color: var(--white);
+            color: var(--white) !important;
             font-size: 1.15rem;
             font-weight: 800;
             margin-bottom: 6px;
@@ -839,7 +937,7 @@
         }
 
         .video-showcase-header h3 {
-            color: var(--white);
+            color: var(--white) !important;
             font-size: 1.18rem;
             display: flex;
             align-items: center;
@@ -877,6 +975,10 @@
             color: var(--text-main);
             border-top: 1px solid var(--border-panel);
             line-height: 1.6;
+        }
+
+        body.light-mode .video-caption {
+            background: #ffffff;
         }
 
         /* Mentorship / Quote Banner */
@@ -921,6 +1023,10 @@
             justify-content: center;
         }
 
+        body.light-mode .icon-badge {
+            background: rgba(24, 99, 55, 0.1);
+        }
+
         .icon-badge svg {
             width: 24px;
             height: 24px;
@@ -929,6 +1035,10 @@
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
+        }
+
+        body.light-mode .icon-badge svg {
+            stroke: var(--brand-green-mid);
         }
 
         .grid-2 {
@@ -991,6 +1101,12 @@
             letter-spacing: 0.5px;
         }
 
+        body.light-mode .status-tag {
+            background: rgba(24, 99, 55, 0.1);
+            color: var(--brand-green-mid);
+            border-color: rgba(24, 99, 55, 0.3);
+        }
+
         /* Project Display Cards */
         .project-card {
             background: var(--bg-panel);
@@ -1049,6 +1165,12 @@
             border-radius: 6px;
         }
 
+        body.light-mode .project-tag {
+            background: rgba(24, 99, 55, 0.08);
+            border-color: rgba(24, 99, 55, 0.2);
+            color: var(--brand-green-mid);
+        }
+
         /* Venue Card Layout */
         .venue-block {
             display: flex;
@@ -1091,6 +1213,11 @@
             margin-bottom: 14px;
         }
 
+        body.light-mode .venue-block address {
+            color: var(--brand-green-mid);
+            background: rgba(24, 99, 55, 0.08);
+        }
+
         .venue-block p {
             margin: 4px 0 0 0;
             font-size: 0.94rem;
@@ -1131,6 +1258,11 @@
             box-shadow: 0 0 0 2px var(--brand-green-mid);
         }
 
+        body.light-mode .timeline-item::before {
+            background: var(--brand-green-mid);
+            border-color: #ffffff;
+        }
+
         .timeline-item h4 {
             margin: 0 0 6px 0;
             font-size: 1.12rem;
@@ -1149,7 +1281,7 @@
             line-height: 1.6;
         }
 
-        /* LOGO MODAL / LIGHTBOX POPUP */
+        /* Logo Lightbox Modal */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -1222,7 +1354,7 @@
         }
 
         .modal-title {
-            color: var(--white);
+            color: var(--white) !important;
             font-size: 1.4rem;
             font-weight: 800;
             margin-bottom: 6px;
@@ -1241,6 +1373,11 @@
             border-top: 4px solid var(--brand-green-mid);
             position: relative;
             z-index: 10;
+        }
+
+        body.light-mode footer {
+            background: #0f1a36;
+            color: rgba(255, 255, 255, 0.82);
         }
 
         .footer-container { max-width: 1040px; margin: 0 auto; }
@@ -1268,7 +1405,7 @@
         }
 
         .footer-col h4 {
-            color: var(--white);
+            color: var(--white) !important;
             font-weight: 700;
             font-size: 1.02rem;
             margin: 0 0 16px 0;
@@ -1347,14 +1484,12 @@
     <nav>
         <div class="nav-brand">
             <div class="nav-logo-group">
-                <!-- MAZ School Logo -->
                 <img class="nav-logo interactive-logo" 
                      src="school-logo.png" 
                      alt="MAZ International School Logo"
                      title="Click to expand school logo"
                      onclick="openLogoModal(this.src, 'MAZ International School Crest')">
                 <div class="nav-logo-divider"></div>
-                <!-- InnoVision Logo -->
                 <img class="nav-logo interactive-logo" 
                      src="innovision-logo.png" 
                      alt="InnoVision Logo"
@@ -1382,7 +1517,7 @@
         </span>
     </nav>
 
-    <!-- Dynamic Hero Showcase Section -->
+    <!-- Hero Showcase Section -->
     <header>
         <video class="hero-bg-video" autoplay loop muted playsinline poster="school-logo.png">
             <source src="teaser1.mp4" type="video/mp4">
@@ -1400,7 +1535,6 @@
                 <span class="label">MAZ InnoVision 2026</span>
             </div>
             <br>
-            <!-- Prominently sized InnoVision Logo with Pop-up Interaction -->
             <img class="hero-main-logo interactive-logo" 
                  src="innovision-logo.png" 
                  alt="Inspired by primary students of Maz International PJ"
@@ -1417,7 +1551,7 @@
         </div>
     </header>
 
-    <!-- HIGH-IMPACT SUB-HERO / METRICS DASHBOARD SECTION BELOW BANNER -->
+    <!-- Sub-Hero / Metrics Dashboard Section -->
     <section class="subhero-metrics-section">
         <div class="subhero-container">
             <div class="subhero-header">
@@ -1478,7 +1612,7 @@
         </div>
     </section>
 
-    <!-- CLEAN, MODERN CONTENT BODY WITH RADIAL BRAND GRADIENTS -->
+    <!-- Main Content Body Wrapper -->
     <div class="content-body-wrapper">
 
         <!-- Key Information Facts Banner -->
@@ -1515,10 +1649,9 @@
         <!-- Main Container -->
         <div class="container">
 
-            <!-- HOME -->
+            <!-- HOME PAGE -->
             <div id="page-home" class="page-section active">
                 
-                <!-- Dedicated Video Showcase for teaser2.mp4 -->
                 <div class="video-showcase-card">
                     <div class="video-showcase-header">
                         <h3>
@@ -1548,7 +1681,6 @@
                     </div>
                 </div>
 
-                <!-- Brand Card Showcase -->
                 <div class="brand-watermark-card">
                     <div class="brand-watermark-content">
                         <h4>MAZ International School x InnoVision 2026</h4>
@@ -1597,7 +1729,7 @@
                 </div>
             </div>
 
-            <!-- CAMPUS -->
+            <!-- PJ CAMPUS PAGE -->
             <div id="page-campus" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
@@ -1624,7 +1756,7 @@
                 </div>
             </div>
 
-            <!-- PROJECTS -->
+            <!-- INNOVATION PROJECTS PAGE -->
             <div id="page-projects" class="page-section">
                 <div class="video-showcase-card">
                     <div class="video-showcase-header">
@@ -1698,7 +1830,7 @@
                 </div>
             </div>
 
-            <!-- VENUE (WITH EMBEDDED MAP) -->
+            <!-- VENUE PAGE -->
             <div id="page-venue" class="page-section">
                 <div class="venue-block">
                     <div class="icon-badge">
@@ -1711,7 +1843,6 @@
                     </div>
                 </div>
 
-                <!-- EMBEDDED GOOGLE MAP -->
                 <div class="panel">
                     <h3>Venue Map &amp; Navigation Details</h3>
                     <p>Locate SpaceHub at Encorp Strand Mall, Kota Damansara using the interactive map below:</p>
@@ -1732,7 +1863,7 @@
                 </div>
             </div>
 
-            <!-- EVENTS (WITH INTERACTIVE FILTER) -->
+            <!-- KEY EVENTS PAGE -->
             <div id="page-events" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
@@ -1740,7 +1871,6 @@
                         <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
                     </div>
                     
-                    <!-- Interactive Schedule Filters -->
                     <div class="schedule-filters">
                         <button class="filter-btn active" onclick="filterSchedule('all', this)">All Sessions</button>
                         <button class="filter-btn" onclick="filterSchedule('morning', this)">Morning (8:30 AM - 12:00 PM)</button>
@@ -1787,8 +1917,16 @@
                 </div>
             </div>
 
-            <!-- VISITOR -->
+            <!-- VISITOR GUIDE PAGE -->
             <div id="page-visitor" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Visitor Information &amp; Admission Protocol</h3>
+                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
+                    </div>
+                    <p>We welcome parents, educators, students, and industry guests to join us at SpaceHub, Strand Mall for the MAZ InnoVision 2026 Expo. Admission is complimentary for registered guests.</p>
+                </div>
+
                 <div class="grid-2">
                     <div class="info-panel">
                         <h4>Seamless Registration &amp; Venue Entry</h4>
@@ -1798,25 +1936,49 @@
                         <h4>Interactive Booth Experience</h4>
                         <p>Guests are encouraged to test student applications firsthand, interact with touch-screen prototypes, and engage directly with student project teams.</p>
                     </div>
+                    <div class="info-panel">
+                        <h4>Parking &amp; Transit Guidance</h4>
+                        <p>Ample basement parking is available at Encorp Strand Mall. The venue is also accessible via the Surian MRT Station (SBK07) with short feeder bus routes.</p>
+                    </div>
+                    <div class="info-panel">
+                        <h4>Safety &amp; Accessibility</h4>
+                        <p>The SpaceHub hall is fully wheelchair accessible and equipped with dedicated safety personnel and clear directional signage across all exhibition zones.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- CONTACTS -->
+            <!-- CONTACTS PAGE -->
             <div id="page-contacts" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Contact &amp; Help Desk Support</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>Have questions regarding exhibition schedules, group visits, or media inquiries? Reach out to our organizing team members below.</p>
+                </div>
+
                 <div class="grid-2">
                     <div class="info-panel">
                         <h4>School Department Enquiries</h4>
-                        <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor, Malaysia.</p>
+                        <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor, Malaysia.<br><strong>Email:</strong> info@mazinternational.edu.my</p>
                     </div>
                     <div class="info-panel">
                         <h4>Venue &amp; Entry Support</h4>
-                        <p>EntryEnablers Team<br>On-site guest check-in, registration helpdesk, and accessibility support located at Strand Mall SpaceHub.</p>
+                        <p>EntryEnablers Team<br>On-site guest check-in, registration helpdesk, and accessibility support located at Strand Mall SpaceHub.<br><strong>Helpdesk Hours:</strong> 8:00 AM – 4:30 PM</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ADMIN -->
+            <!-- ADMINISTRATION PAGE -->
             <div id="page-admin" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Executive &amp; Organising Leadership</h3>
+                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
+                    </div>
+                    <p>MAZ InnoVision 2026 is driven by dedicated academic leadership and student committee cells working together to push the boundaries of digital innovation.</p>
+                </div>
+
                 <div class="grid-2">
                     <div class="info-panel">
                         <h4>Faculty Leadership</h4>
@@ -1827,6 +1989,7 @@
                         <p>Central Task Force — Student-led web engineering, content design, and system architecture unit.</p>
                     </div>
                 </div>
+
                 <div class="info-panel" style="margin-top: 24px;">
                     <h4>Hosting &amp; Technical Architecture</h4>
                     <p>MAZ International School (PJ Campus). Designed, engineered, and deployed using native web technologies and hosted via the GitHub Pages infrastructure for optimal performance and reliability.</p>
@@ -1884,7 +2047,7 @@
     </footer>
 
     <script>
-        /* Dark Mode Toggle Logic */
+        /* Dark Mode / Light Mode Toggle Logic */
         function toggleTheme() {
             const body = document.body;
             const toggleBtn = document.getElementById('themeToggleBtn');
@@ -2005,7 +2168,7 @@
             modalImg.src = imageSrc;
             modalTitle.textContent = titleText || 'MAZ InnoVision Logo';
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLogoModal(event) {
