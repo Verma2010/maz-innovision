@@ -817,7 +817,7 @@
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             transform: scale(0.85);
-            transition: transform 0.35 cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .modal-overlay.active .modal-card {
@@ -903,6 +903,7 @@
         }
 
         .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col a:hover { color: var(--brand-gold-bright); text-decoration: underline; }
 
         .footer-bottom {
             text-align: center;
@@ -1006,8 +1007,8 @@
             <p class="tagline">"Where young minds spark innovation"</p>
             
             <div class="hero-cta-row">
-                <button class="btn btn-primary" onclick="switchPage('projects', event)">Explore projects</button>
-                <button class="btn btn-secondary" onclick="switchPage('visitor', event)">Visitor guide</button>
+                <button class="btn btn-primary" onclick="switchPage('events', event)">View Schedule</button>
+                <button class="btn btn-secondary" onclick="switchPage('visitor', event)">Visitor Guide</button>
             </div>
         </div>
     </header>
@@ -1019,8 +1020,8 @@
                 <svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
             </span>
             <div>
-                <p class="fact-label">Exhibition venue</p>
-                <p class="fact-value">Strand Mall, Kota Damansara</p>
+                <p class="fact-label">Exhibition Venue</p>
+                <p class="fact-value">SpaceHub, Strand Mall</p>
             </div>
         </div>
         <div class="fact">
@@ -1028,8 +1029,8 @@
                 <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></svg>
             </span>
             <div>
-                <p class="fact-label">Schedule status</p>
-                <p class="fact-value">To be announced</p>
+                <p class="fact-label">Event Date</p>
+                <p class="fact-value">3 October 2026</p>
             </div>
         </div>
         <div class="fact">
@@ -1037,7 +1038,7 @@
                 <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8" r="2.6"/><path d="M15.5 14.2c2.6.4 4.5 2.7 4.5 5.8"/></svg>
             </span>
             <div>
-                <p class="fact-label">Organised by</p>
+                <p class="fact-label">Organised By</p>
                 <p class="fact-value">PJ Campus Student Cohort</p>
             </div>
         </div>
@@ -1087,13 +1088,13 @@
 
             <div class="grid-2">
                 <div class="info-panel">
-                    <h4>Featured exhibition venue</h4>
-                    <p>Strand Mall, Kota Damansara — Petaling Jaya, Selangor.</p>
+                    <h4>Featured Exhibition Venue</h4>
+                    <p>SpaceHub, Strand Mall, Kota Damansara — Petaling Jaya, Selangor.</p>
                 </div>
                 <div class="info-panel">
-                    <span class="status-tag">To be announced</span>
-                    <h4>Exhibition timeline</h4>
-                    <p>Official presentation hours are being finalised and will be published here.</p>
+                    <span class="status-tag">3 October 2026</span>
+                    <h4>Exhibition Timeline</h4>
+                    <p>Doors open at 8:30 AM for registration, followed by live student showcases, arcades, and panel discussions.</p>
                 </div>
             </div>
         </div>
@@ -1194,8 +1195,8 @@
                     <svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
                 </div>
                 <div>
-                    <h1>Venue &amp; exhibition logistics</h1>
-                    <p>Strand Mall, Kota Damansara — the setting for this year's showcase.</p>
+                    <h1>Venue &amp; Exhibition Logistics</h1>
+                    <p>SpaceHub, Strand Mall, Kota Damansara — the setting for this year's showcase.</p>
                 </div>
             </div>
 
@@ -1204,16 +1205,16 @@
                     <svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
                 </div>
                 <div>
-                    <h3>Primary venue: Strand Mall</h3>
+                    <h3>Primary Venue: SpaceHub, The Strand Mall</h3>
                     <address>46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</address>
-                    <p>The student cohort is hosting this year's external public and school exhibition at an accessible, modern commercial hub known for its secure parking infrastructure and open retail display spaces suited to interactive tech booths.</p>
+                    <p>The student cohort is hosting this year's external public and school exhibition at SpaceHub in The Strand Mall, an accessible, modern commercial hub known for its secure parking infrastructure and open display spaces suited to interactive tech booths.</p>
                 </div>
             </div>
 
             <div class="info-panel">
-                <span class="status-tag">Not yet confirmed</span>
-                <h4>Visitor &amp; event timing</h4>
-                <p>Detailed daily schedules, keynote windows, and public access hours are currently being finalised by the student administration committee.</p>
+                <span class="status-tag">3 October 2026</span>
+                <h4>Visitor &amp; Event Timing</h4>
+                <p>Doors open for registration at 8:30 AM. Event sessions run continuously through 4:30 PM.</p>
             </div>
         </div>
 
@@ -1224,32 +1225,47 @@
                     <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></svg>
                 </div>
                 <div>
-                    <h1>Key events &amp; showcase timeline</h1>
-                    <p>The structured agenda planned for the InnoVision exhibition.</p>
+                    <h1>Schedule of Events</h1>
+                    <p>The structured agenda for MAZ InnoVision 2026 on 3 October 2026.</p>
                 </div>
             </div>
 
             <div class="panel">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="status-tag">Schedule pending</span>
-                        <h4>Inauguration &amp; opening keynote</h4>
-                        <p>Official welcoming remarks, introduction of the PJ campus student cohort, and an overview of the exhibition vision.</p>
+                        <span class="status-tag">8:30 AM – 9:00 AM</span>
+                        <h4>Arrival &amp; Registration</h4>
+                        <p>Get ready for a day of innovation, interaction, and inspiration.</p>
                     </div>
                     <div class="timeline-item">
-                        <span class="status-tag">Schedule pending</span>
-                        <h4>Live code &amp; software demos</h4>
-                        <p>Interactive walk-throughs where student developers showcase live application testing and hardware loops.</p>
+                        <span class="status-tag">9:00 AM – 9:30 AM</span>
+                        <h4>Opening Ceremony</h4>
+                        <p>Official launch of MAZ InnoVision 2026.</p>
                     </div>
                     <div class="timeline-item">
-                        <span class="status-tag">Schedule pending</span>
-                        <h4>Student tech panel &amp; Q&amp;A</h4>
-                        <p>An open forum discussion hosted by the Central Task Force on building and deploying scalable student apps.</p>
+                        <span class="status-tag">9:30 AM – 11:30 AM</span>
+                        <h4>Innovation League</h4>
+                        <p>Student presentations showcasing real-world solutions and creative ideas.</p>
                     </div>
                     <div class="timeline-item">
-                        <span class="status-tag">Schedule pending</span>
-                        <h4>Closing showcase &amp; recognitions</h4>
-                        <p>Celebrating student ingenuity and acknowledging the advisory guidance of the computer science faculty.</p>
+                        <span class="status-tag">11:45 AM – 12:45 PM</span>
+                        <h4>Innovation Arcade</h4>
+                        <p>Hands-on experiences, games, and interactive tech challenges.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="status-tag">1:30 PM – 3:00 PM</span>
+                        <h4>Panel Discussion</h4>
+                        <p>Insights, conversations, and fresh perspectives on technology, AI, and the future.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="status-tag">3:00 PM – 4:00 PM</span>
+                        <h4>Closing Ceremony</h4>
+                        <p>Celebrating innovation, creativity, and our amazing young minds.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="status-tag">4:30 PM</span>
+                        <h4>Event Ends</h4>
+                        <p>Thank you for being part of MAZ InnoVision 2026!</p>
                     </div>
                 </div>
             </div>
@@ -1262,18 +1278,18 @@
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="7.5" x2="12" y2="7.51"/></svg>
                 </div>
                 <div>
-                    <h1>Visitor information &amp; guidelines</h1>
-                    <p>Planning to attend the student-led exhibition at Strand Mall? Here is what to know.</p>
+                    <h1>Visitor Information &amp; Guidelines</h1>
+                    <p>Planning to attend the student-led exhibition at SpaceHub, Strand Mall? Here is what to know.</p>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="info-panel">
-                    <h4>Entry &amp; registration management</h4>
-                    <p>Managed by the EntryEnablers Team: all visitor registration, credential processing, and venue entry logistics are handled directly by EntryEnablers using their dedicated registration portal at the venue entrance.</p>
+                    <h4>Entry &amp; Registration Management</h4>
+                    <p>Managed by the EntryEnablers Team: all visitor registration, credential processing, and venue entry logistics are handled directly by EntryEnablers starting from 8:30 AM at SpaceHub.</p>
                 </div>
                 <div class="info-panel">
-                    <h4>Interactive booths</h4>
+                    <h4>Interactive Booths</h4>
                     <p>Visitors are encouraged to interact directly with student-built software portals, touch-screen prototypes, and digital project displays.</p>
                 </div>
             </div>
@@ -1286,18 +1302,18 @@
                     <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg>
                 </div>
                 <div>
-                    <h1>Contact information &amp; enquiries</h1>
+                    <h1>Contact Information &amp; Enquiries</h1>
                     <p>Get in touch with the administration and organising teams behind the expo.</p>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="info-panel">
-                    <h4>School administration</h4>
+                    <h4>School Administration</h4>
                     <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor.</p>
                 </div>
                 <div class="info-panel">
-                    <h4>Venue entry support</h4>
+                    <h4>Venue Entry Support</h4>
                     <p>EntryEnablers Team<br>On-site registration portal assistance and access control desk located at Strand Mall.</p>
                 </div>
             </div>
@@ -1310,23 +1326,23 @@
                     <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3 8-7 9c-4-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
                 </div>
                 <div>
-                    <h1>Administration &amp; organising team</h1>
+                    <h1>Administration &amp; Organising Team</h1>
                     <p>The academic backing and technical cell governing this student-driven project.</p>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="info-panel">
-                    <h4>Faculty leadership</h4>
+                    <h4>Faculty Leadership</h4>
                     <p>Miss Anjali — Secondary Computer Science Teacher &amp; Project Faculty Mentor.</p>
                 </div>
                 <div class="info-panel">
-                    <h4>Web portal development</h4>
+                    <h4>Web Portal Development</h4>
                     <p>Central Task Force — Student-Led Web Engineering and Content Assembly Cell.</p>
                 </div>
             </div>
             <div class="info-panel" style="margin-top: 20px;">
-                <h4>Institutional entity &amp; hosting architecture</h4>
+                <h4>Institutional Entity &amp; Hosting Architecture</h4>
                 <p>MAZ International School (PJ Campus). Cleanly coded and deployed via the GitHub Pages framework, without third-party tracking or commercial templates.</p>
             </div>
         </div>
@@ -1354,13 +1370,14 @@
                 <div class="footer-col">
                     <h4>Portal Pages</h4>
                     <ul>
-                        <li>Home</li>
-                        <li>PJ Campus Info</li>
-                        <li>Innovation Projects</li>
-                        <li>Strand Mall Venue</li>
-                        <li>Visitor Guide</li>
-                        <li>Contacts</li>
-                        <li>Administration</li>
+                        <li><a href="#" onclick="switchPage('home', event)">Home</a></li>
+                        <li><a href="#" onclick="switchPage('campus', event)">PJ Campus Info</a></li>
+                        <li><a href="#" onclick="switchPage('projects', event)">Innovation Projects</a></li>
+                        <li><a href="#" onclick="switchPage('venue', event)">Strand Mall Venue</a></li>
+                        <li><a href="#" onclick="switchPage('events', event)">Schedule of Events</a></li>
+                        <li><a href="#" onclick="switchPage('visitor', event)">Visitor Guide</a></li>
+                        <li><a href="#" onclick="switchPage('contacts', event)">Contacts</a></li>
+                        <li><a href="#" onclick="switchPage('admin', event)">Administration</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1377,6 +1394,7 @@
     <script>
         /* Page Switching Logic */
         function switchPage(pageId, evt) {
+            if (evt) evt.preventDefault();
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
             
