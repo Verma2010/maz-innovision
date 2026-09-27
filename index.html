@@ -30,15 +30,15 @@
             --slate-100: #f1f5f9;
             --white: #ffffff;
 
-            --shadow-sm: 0 2px 6px rgba(5, 33, 18, 0.05);
-            --shadow-md: 0 8px 24px rgba(5, 33, 18, 0.08);
-            --shadow-lg: 0 16px 40px rgba(5, 33, 18, 0.15);
+            --shadow-sm: 0 4px 12px rgba(5, 33, 18, 0.04);
+            --shadow-md: 0 10px 30px rgba(5, 33, 18, 0.08);
+            --shadow-lg: 0 20px 48px rgba(5, 33, 18, 0.14);
 
             --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-lg: 18px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
         }
 
         * { box-sizing: border-box; }
@@ -47,11 +47,7 @@
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
-            background-color: #f4f7f5;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.05) 0%, transparent 50%),
-                radial-gradient(var(--brand-green-mid) 0.6px, transparent 0.6px);
-            background-size: 100% 100%, 28px 28px;
+            background-color: #f7faf8;
             color: var(--slate-900);
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
@@ -97,11 +93,25 @@
             z-index: 20;
         }
 
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .top-bar-mini-logo {
+            height: 20px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .top-bar strong { color: var(--brand-gold-bright); font-weight: 600; }
 
         /* Navigation Header */
         nav {
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 14px 32px;
             display: flex;
             justify-content: space-between;
@@ -110,7 +120,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--slate-200);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
             gap: 20px;
         }
 
@@ -120,11 +130,23 @@
             gap: 14px;
         }
 
+        .nav-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .nav-logo {
-            height: 52px;
+            height: 48px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .nav-logo-divider {
+            height: 30px;
+            width: 1px;
+            background: var(--slate-200);
         }
 
         .nav-title-group h2 {
@@ -187,6 +209,14 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             box-shadow: 0 2px 8px rgba(12, 61, 33, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .campus-badge-logo {
+            height: 16px;
+            width: auto;
         }
 
         /* Dynamic Hero Showcase Section */
@@ -194,7 +224,7 @@
             position: relative;
             color: var(--white);
             text-align: center;
-            padding: 60px 20px 80px 20px;
+            padding: 65px 20px 85px 20px;
             border-bottom: 4px solid var(--brand-gold-main);
             overflow: hidden;
             background: #03140a;
@@ -237,10 +267,10 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 18px;
-            background: rgba(5, 33, 18, 0.65);
+            background: rgba(5, 33, 18, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 30px;
             border: 1px solid rgba(212, 175, 55, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -261,10 +291,10 @@
         }
 
         .hero-main-logo {
-            height: clamp(80px, 12vw, 130px);
+            height: clamp(85px, 13vw, 140px);
             width: auto;
-            margin: 10px auto 16px auto;
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+            margin: 12px auto 18px auto;
+            filter: drop-shadow(0 10px 24px rgba(0,0,0,0.6));
         }
 
         header h1 {
@@ -330,6 +360,170 @@
             transform: translateY(-3px);
         }
 
+        /* Checkmark Pattern Body Section below Hero Banner */
+        .content-body-wrapper {
+            background-color: #ffffff;
+            /* Green checkmark pattern integrated as SVG background below the header */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.04) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 24l7 7 13-13' fill='none' stroke='%23186337' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.085'/%3E%3C/svg%3E");
+            background-size: 100% 100%, 48px 48px;
+            padding-bottom: 80px;
+        }
+
+        /* Key Facts Floating Bar */
+        .facts-strip {
+            max-width: 980px;
+            margin: -35px auto 0 auto;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(24, 99, 55, 0.15);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            overflow: hidden;
+        }
+
+        .facts-strip .fact {
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-right: 1px solid var(--slate-200);
+            background: linear-gradient(180deg, var(--white) 0%, var(--brand-green-subtle) 100%);
+        }
+
+        .facts-strip .fact:last-child {
+            border-right: none;
+        }
+
+        .facts-strip .fact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--brand-green-light);
+            border: 1px solid rgba(24, 99, 55, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .facts-strip .fact-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--brand-green-main);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .facts-strip .fact-label {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 2px 0;
+        }
+
+        .facts-strip .fact-value {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--brand-green-dark);
+            margin: 0;
+        }
+
+        /* Container & Page Layout */
+        .container {
+            max-width: 980px;
+            margin: 48px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-section { display: none; }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.35s ease-in-out;
+        }
+
+        .panel {
+            background-color: var(--white);
+            border: 1px solid rgba(24, 99, 55, 0.12);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .panel-header-with-logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--slate-100);
+            padding-bottom: 12px;
+        }
+
+        .panel-watermark-logo {
+            height: 38px;
+            width: auto;
+            opacity: 0.85;
+        }
+
+        .panel h3 {
+            margin: 0;
+            font-size: 1.28rem;
+            font-weight: 700;
+        }
+
+        .panel p { color: var(--slate-600); line-height: 1.7; }
+        .panel > p:last-child { margin-bottom: 0; }
+
+        /* Brand Dual Watermark Showcase Banner */
+        .brand-watermark-card {
+            background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green-main) 100%);
+            border-radius: var(--radius-md);
+            padding: 24px 30px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            border: 1px solid var(--brand-gold-main);
+            box-shadow: var(--shadow-md);
+        }
+
+        .brand-watermark-content h4 {
+            color: var(--brand-gold-bright);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .brand-watermark-content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+
+        .brand-watermark-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-watermark-logos img {
+            height: 42px;
+            width: auto;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+        }
+
         /* Showcase Video Section */
         .video-showcase-card {
             background: var(--white);
@@ -390,105 +584,6 @@
             color: var(--slate-700);
             border-top: 1px solid var(--slate-200);
         }
-
-        /* Key Facts Floating Bar */
-        .facts-strip {
-            max-width: 980px;
-            margin: -35px auto 0 auto;
-            position: relative;
-            z-index: 10;
-            background: var(--white);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--slate-200);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            overflow: hidden;
-        }
-
-        .facts-strip .fact {
-            padding: 22px 26px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border-right: 1px solid var(--slate-200);
-            background: linear-gradient(180deg, var(--white) 0%, var(--brand-green-subtle) 100%);
-        }
-
-        .facts-strip .fact:last-child {
-            border-right: none;
-        }
-
-        .facts-strip .fact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: var(--brand-green-light);
-            border: 1px solid rgba(24, 99, 55, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .facts-strip .fact-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--brand-green-main);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .facts-strip .fact-label {
-            font-size: 0.75rem;
-            color: var(--slate-500);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 0 2px 0;
-        }
-
-        .facts-strip .fact-value {
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: var(--brand-green-dark);
-            margin: 0;
-        }
-
-        /* Container & Page Layout */
-        .container {
-            max-width: 980px;
-            margin: 54px auto 80px auto;
-            padding: 0 20px;
-        }
-
-        .page-section { display: none; }
-
-        .page-section.active {
-            display: block;
-            animation: fadeIn 0.35s ease-in-out;
-        }
-
-        .panel {
-            background-color: var(--white);
-            border: 1px solid var(--slate-200);
-            border-radius: var(--radius-md);
-            padding: 32px;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-        }
-
-        .panel h3 {
-            margin: 0 0 12px 0;
-            font-size: 1.28rem;
-            font-weight: 700;
-        }
-
-        .panel p { color: var(--slate-600); line-height: 1.7; }
-        .panel > p:last-child { margin-bottom: 0; }
 
         /* Mentorship / Quote Banner */
         .quote-block {
@@ -563,11 +658,26 @@
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
         }
 
         .info-panel:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-md);
+        }
+
+        .info-panel-badge-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 28px;
+            width: auto;
+            opacity: 0.35;
+            transition: opacity 0.2s ease;
+        }
+
+        .info-panel:hover .info-panel-badge-logo {
+            opacity: 0.85;
         }
 
         .info-panel h4 {
@@ -614,9 +724,16 @@
             border-color: var(--brand-green-main);
         }
 
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
         .project-card .icon-badge {
             background: var(--brand-green-light);
-            margin-bottom: 18px;
+            margin-bottom: 0;
         }
 
         .project-card:nth-child(2n) .icon-badge {
@@ -625,6 +742,17 @@
         
         .project-card:nth-child(2n) .icon-badge svg {
             stroke: var(--brand-gold-dark);
+        }
+
+        .project-card-logo {
+            height: 32px;
+            width: auto;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-card:hover .project-card-logo {
+            opacity: 1;
         }
 
         .project-card h3 {
@@ -818,6 +946,20 @@
 
         .footer-container { max-width: 980px; margin: 0 auto; }
 
+        .footer-brand-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-logo {
+            height: 48px;
+            width: auto;
+        }
+
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
@@ -875,6 +1017,7 @@
             .venue-block { flex-direction: column; }
             .quote-block { flex-direction: column; text-align: center; }
             .top-bar { padding: 8px 16px; flex-direction: column; text-align: center; gap: 4px; }
+            .brand-watermark-card { flex-direction: column; text-align: center; gap: 16px; }
         }
     </style>
 </head>
@@ -882,19 +1025,31 @@
 
     <!-- Top Announcement Bar -->
     <div class="top-bar">
-        <span><strong>MAZ International School</strong> · Official Digital Expo Programme</span>
+        <div class="top-bar-left">
+            <img class="top-bar-mini-logo interactive-logo" src="school-logo.png" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ International School Crest')">
+            <span><strong>MAZ International School</strong> · Official Digital Expo Programme</span>
+        </div>
         <span>Petaling Jaya Campus</span>
     </div>
 
     <!-- Main Navigation Header -->
     <nav>
         <div class="nav-brand">
-            <!-- Interactive MAZ School Logo -->
-            <img class="nav-logo interactive-logo" 
-                 src="school-logo.png" 
-                 alt="MAZ International School Logo"
-                 title="Click to expand logo"
-                 onclick="openLogoModal(this.src, 'MAZ International School Crest')">
+            <div class="nav-logo-group">
+                <!-- MAZ School Logo -->
+                <img class="nav-logo interactive-logo" 
+                     src="school-logo.png" 
+                     alt="MAZ International School Logo"
+                     title="Click to expand school logo"
+                     onclick="openLogoModal(this.src, 'MAZ International School Crest')">
+                <div class="nav-logo-divider"></div>
+                <!-- InnoVision Logo -->
+                <img class="nav-logo interactive-logo" 
+                     src="innovision-logo.png" 
+                     alt="InnoVision Logo"
+                     title="Click to expand InnoVision logo"
+                     onclick="openLogoModal(this.src, 'MAZ InnoVision Official Emblem')">
+            </div>
             <div class="nav-title-group">
                 <h2>MAZ International</h2>
                 <p>InnoVision Hub</p>
@@ -910,7 +1065,10 @@
             <li><button class="nav-link" onclick="switchPage('contacts', event)">Contacts</button></li>
             <li><button class="nav-link" onclick="switchPage('admin', event)">Administration</button></li>
         </ul>
-        <span class="campus-badge">PJ Campus</span>
+        <span class="campus-badge">
+            <img src="school-logo.png" class="campus-badge-logo" alt="MAZ">
+            PJ Campus
+        </span>
     </nav>
 
     <!-- Dynamic Hero Showcase Section -->
@@ -948,268 +1106,321 @@
         </div>
     </header>
 
-    <!-- Key Information Facts Banner -->
-    <div class="facts-strip">
-        <div class="fact">
-            <span class="fact-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            </span>
-            <div>
-                <p class="fact-label">Exhibition Venue</p>
-                <p class="fact-value">SpaceHub, Strand Mall</p>
-            </div>
-        </div>
-        <div class="fact">
-            <span class="fact-icon">
-                <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></svg>
-            </span>
-            <div>
-                <p class="fact-label">Event Date</p>
-                <p class="fact-value">3 October 2026</p>
-            </div>
-        </div>
-        <div class="fact">
-            <span class="fact-icon">
-                <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8" r="2.6"/><path d="M15.5 14.2c2.6.4 4.5 2.7 4.5 5.8"/></svg>
-            </span>
-            <div>
-                <p class="fact-label">Organised By</p>
-                <p class="fact-value">PJ Campus Student Cohort</p>
-            </div>
-        </div>
-    </div>
+    <!-- CONTENT BODY WITH SVG CHECKMARK PATTERN BACKGROUND -->
+    <div class="content-body-wrapper">
 
-    <!-- Main Container -->
-    <div class="container">
-
-        <!-- HOME -->
-        <div id="page-home" class="page-section active">
-            
-            <!-- Dedicated Video Showcase for teaser2.mp4 -->
-            <div class="video-showcase-card">
-                <div class="video-showcase-header">
-                    <h3>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        Exhibition Progress Reel
-                    </h3>
-                    <span class="video-badge">35s Work Showcase</span>
-                </div>
-                <div class="video-wrapper">
-                    <video controls playsinline poster="innovision-logo.png">
-                        <source src="teaser2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-caption">
-                    <strong>Work Done So Far:</strong> A quick 35-second walkthrough highlighting our student developers, project wireframes, and setup progress for the PJ Campus InnoVision Expo.
-                </div>
-            </div>
-
-            <div class="quote-block">
-                <div class="icon-badge">
-                    <svg viewBox="0 0 24 24"><path d="M4 5c2.5-1 5-1 8 0c3-1 5.5-1 8 0v14c-2.5-1-5-1-8 0c-3-1-5.5-1-8 0z"/><path d="M12 5v14"/></svg>
-                </div>
+        <!-- Key Information Facts Banner -->
+        <div class="facts-strip">
+            <div class="fact">
+                <span class="fact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </span>
                 <div>
-                    <h4>Guided and mentored by Miss Anjali</h4>
-                    <p>Secondary Computer Science Teacher. The expo itself is run entirely as a student-led initiative by the Petaling Jaya campus cohort.</p>
+                    <p class="fact-label">Exhibition Venue</p>
+                    <p class="fact-value">SpaceHub, Strand Mall</p>
+                </div>
+            </div>
+            <div class="fact">
+                <span class="fact-icon">
+                    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></svg>
+                </span>
+                <div>
+                    <p class="fact-label">Event Date</p>
+                    <p class="fact-value">3 October 2026</p>
+                </div>
+            </div>
+            <div class="fact">
+                <span class="fact-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8" r="2.6"/><path d="M15.5 14.2c2.6.4 4.5 2.7 4.5 5.8"/></svg>
+                </span>
+                <div>
+                    <p class="fact-label">Organised By</p>
+                    <p class="fact-value">PJ Campus Student Cohort</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+
+            <!-- HOME -->
+            <div id="page-home" class="page-section active">
+                
+                <!-- Dedicated Video Showcase for teaser2.mp4 -->
+                <div class="video-showcase-card">
+                    <div class="video-showcase-header">
+                        <h3>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Exhibition Progress Reel
+                        </h3>
+                        <span class="video-badge">35s Work Showcase</span>
+                    </div>
+                    <div class="video-wrapper">
+                        <video controls playsinline poster="innovision-logo.png">
+                            <source src="teaser2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <strong>Work Done So Far:</strong> A quick 35-second walkthrough highlighting our student developers, project wireframes, and setup progress for the PJ Campus InnoVision Expo.
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24"><path d="M4 5c2.5-1 5-1 8 0c3-1 5.5-1 8 0v14c-2.5-1-5-1-8 0c-3-1-5.5-1-8 0z"/><path d="M12 5v14"/></svg>
+                    </div>
+                    <div>
+                        <h4>Guided and mentored by Miss Anjali</h4>
+                        <p>Secondary Computer Science Teacher. The expo itself is run entirely as a student-led initiative by the Petaling Jaya campus cohort.</p>
+                    </div>
+                </div>
+
+                <!-- Brand Card Showcase -->
+                <div class="brand-watermark-card">
+                    <div class="brand-watermark-content">
+                        <h4>MAZ International School x InnoVision 2026</h4>
+                        <p>Empowering student innovators through cutting-edge digital experiences and hands-on computer science learning.</p>
+                    </div>
+                    <div class="brand-watermark-logos">
+                        <img src="school-logo.png" alt="MAZ Logo" class="interactive-logo" onclick="openLogoModal(this.src, 'MAZ International Crest')">
+                        <img src="innovision-logo.png" alt="InnoVision Logo" class="interactive-logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Welcome to the Digital Expo showcase</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>The MAZ InnoVision Digital Expo represents the pinnacle of secondary student autonomy, technical capability, and collaborative project execution at MAZ International School, Petaling Jaya Campus. Our student innovators have engineered next-generation software models, interactive digital platforms, and environmental technology systems.</p>
+                    <p>Use the navigation tabs above to browse the exhibition pages, venue details, project categories, and organising credits.</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>Featured Exhibition Venue</h4>
+                        <p>SpaceHub, Strand Mall, Kota Damansara — Petaling Jaya, Selangor.</p>
+                    </div>
+                    <div class="info-panel">
+                        <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
+                        <span class="status-tag">3 October 2026</span>
+                        <h4>Exhibition Timeline</h4>
+                        <p>Doors open at 8:30 AM for registration, followed by live student showcases, arcades, and panel discussions.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="panel">
-                <h3>Welcome to the Digital Expo showcase</h3>
-                <p>The MAZ InnoVision Digital Expo represents the pinnacle of secondary student autonomy, technical capability, and collaborative project execution at MAZ International School, Petaling Jaya Campus. Our student innovators have engineered next-generation software models, interactive digital platforms, and environmental technology systems.</p>
-                <p>Use the navigation tabs above to browse the exhibition pages, venue details, project categories, and organising credits.</p>
+            <!-- CAMPUS -->
+            <div id="page-campus" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>MAZ Petaling Jaya Campus</h3>
+                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ School Logo" onclick="openLogoModal(this.src, 'MAZ School Logo')">
+                    </div>
+                    <p>The Petaling Jaya (PJ) Campus of MAZ International School is renowned for fostering academic rigor, creative expression, and technological competence. Our secondary curriculum places heavy emphasis on practical computer science, problem-solving, and independent student research.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>Academic excellence</h4>
+                        <p>Robust British curriculum standards integrated with modern technology modules.</p>
+                    </div>
+                    <div class="info-panel">
+                        <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
+                        <h4>Student autonomy</h4>
+                        <p>Student-led committees plan, design, and manage large-scale external events.</p>
+                    </div>
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>Tech-forward learning</h4>
+                        <p>Advanced secondary computing laboratories fostering real-world application building.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid-2">
-                <div class="info-panel">
-                    <h4>Featured Exhibition Venue</h4>
-                    <p>SpaceHub, Strand Mall, Kota Damansara — Petaling Jaya, Selangor.</p>
+            <!-- PROJECTS -->
+            <div id="page-projects" class="page-section">
+                <!-- Second copy of teaser video option on projects page -->
+                <div class="video-showcase-card">
+                    <div class="video-showcase-header">
+                        <h3>Project Development Preview</h3>
+                        <span class="video-badge">35s Teaser</span>
+                    </div>
+                    <div class="video-wrapper">
+                        <video controls playsinline poster="innovision-logo.png">
+                            <source src="teaser2.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
+
+                <div class="grid-2">
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="icon-badge">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+                            </div>
+                            <img src="innovision-logo.png" class="project-card-logo" alt="InnoVision Project">
+                        </div>
+                        <h3>Interactive web systems</h3>
+                        <p>High-performance student portals, responsive web applications, and dynamic UI/UX builds engineered natively by the task force.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="icon-badge">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                            </div>
+                            <img src="school-logo.png" class="project-card-logo" alt="MAZ Project">
+                        </div>
+                        <h3>AI &amp; computational prototypes</h3>
+                        <p>Experimental algorithms, data automation pipelines, and machine learning models built under secondary computer science modules.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="icon-badge">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>
+                            </div>
+                            <img src="innovision-logo.png" class="project-card-logo" alt="InnoVision Project">
+                        </div>
+                        <h3>Digital creative media</h3>
+                        <p>Immersive 3D school asset mockups, graphic layouts, and digital storytelling media designed for interactive presentation loops.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="icon-badge">
+                                <svg viewBox="0 0 24 24"><path d="M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10z"/></svg>
+                            </div>
+                            <img src="school-logo.png" class="project-card-logo" alt="MAZ Project">
+                        </div>
+                        <h3>Eco-tech solutions</h3>
+                        <p>Sustainable technology applications aimed at power optimisation, smart waste reduction, and green campus operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENUE -->
+            <div id="page-venue" class="page-section">
+                <div class="venue-block">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
+                    </div>
+                    <div>
+                        <h3>Primary Venue: SpaceHub, The Strand Mall</h3>
+                        <address>46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</address>
+                        <p>The student cohort is hosting this year's external public and school exhibition at SpaceHub in The Strand Mall, an accessible, modern commercial hub known for its secure parking infrastructure and open display spaces suited to interactive tech booths.</p>
+                    </div>
+                </div>
+
                 <div class="info-panel">
+                    <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
                     <span class="status-tag">3 October 2026</span>
-                    <h4>Exhibition Timeline</h4>
-                    <p>Doors open at 8:30 AM for registration, followed by live student showcases, arcades, and panel discussions.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CAMPUS -->
-        <div id="page-campus" class="page-section">
-            <div class="panel">
-                <p>The Petaling Jaya (PJ) Campus of MAZ International School is renowned for fostering academic rigor, creative expression, and technological competence. Our secondary curriculum places heavy emphasis on practical computer science, problem-solving, and independent student research.</p>
-            </div>
-
-            <div class="grid-3">
-                <div class="info-panel">
-                    <h4>Academic excellence</h4>
-                    <p>Robust British curriculum standards integrated with modern technology modules.</p>
-                </div>
-                <div class="info-panel">
-                    <h4>Student autonomy</h4>
-                    <p>Student-led committees plan, design, and manage large-scale external events.</p>
-                </div>
-                <div class="info-panel">
-                    <h4>Tech-forward learning</h4>
-                    <p>Advanced secondary computing laboratories fostering real-world application building.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECTS -->
-        <div id="page-projects" class="page-section">
-            <!-- Second copy of teaser video option on projects page -->
-            <div class="video-showcase-card">
-                <div class="video-showcase-header">
-                    <h3>Project Development Preview</h3>
-                    <span class="video-badge">35s Teaser</span>
-                </div>
-                <div class="video-wrapper">
-                    <video controls playsinline poster="innovision-logo.png">
-                        <source src="teaser2.mp4" type="video/mp4">
-                    </video>
+                    <h4>Visitor &amp; Event Timing</h4>
+                    <p>Doors open for registration at 8:30 AM. Event sessions run continuously through 4:30 PM.</p>
                 </div>
             </div>
 
-            <div class="grid-2">
-                <div class="project-card">
-                    <div class="icon-badge">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+            <!-- EVENTS -->
+            <div id="page-events" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Event Agenda &amp; Schedule</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
                     </div>
-                    <h3>Interactive web systems</h3>
-                    <p>High-performance student portals, responsive web applications, and dynamic UI/UX builds engineered natively by the task force.</p>
-                </div>
-                <div class="project-card">
-                    <div class="icon-badge">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="status-tag">8:30 AM – 9:00 AM</span>
+                            <h4>Arrival &amp; Registration</h4>
+                            <p>Get ready for a day of innovation, interaction, and inspiration.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">9:00 AM – 9:30 AM</span>
+                            <h4>Opening Ceremony</h4>
+                            <p>Official launch of MAZ InnoVision 2026.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">9:30 AM – 11:30 AM</span>
+                            <h4>Innovation League</h4>
+                            <p>Student presentations showcasing real-world solutions and creative ideas.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">11:45 AM – 12:45 PM</span>
+                            <h4>Innovation Arcade</h4>
+                            <p>Hands-on experiences, games, and interactive tech challenges.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">1:30 PM – 3:00 PM</span>
+                            <h4>Panel Discussion</h4>
+                            <p>Insights, conversations, and fresh perspectives on technology, AI, and the future.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">3:00 PM – 4:00 PM</span>
+                            <h4>Closing Ceremony</h4>
+                            <p>Celebrating innovation, creativity, and our amazing young minds.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="status-tag">4:30 PM</span>
+                            <h4>Event Ends</h4>
+                            <p>Thank you for being part of MAZ InnoVision 2026!</p>
+                        </div>
                     </div>
-                    <h3>AI &amp; computational prototypes</h3>
-                    <p>Experimental algorithms, data automation pipelines, and machine learning models built under secondary computer science modules.</p>
-                </div>
-                <div class="project-card">
-                    <div class="icon-badge">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>
-                    </div>
-                    <h3>Digital creative media</h3>
-                    <p>Immersive 3D school asset mockups, graphic layouts, and digital storytelling media designed for interactive presentation loops.</p>
-                </div>
-                <div class="project-card">
-                    <div class="icon-badge">
-                        <svg viewBox="0 0 24 24"><path d="M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10z"/></svg>
-                    </div>
-                    <h3>Eco-tech solutions</h3>
-                    <p>Sustainable technology applications aimed at power optimisation, smart waste reduction, and green campus operations.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- VENUE -->
-        <div id="page-venue" class="page-section">
-            <div class="venue-block">
-                <div class="icon-badge">
-                    <svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
-                </div>
-                <div>
-                    <h3>Primary Venue: SpaceHub, The Strand Mall</h3>
-                    <address>46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</address>
-                    <p>The student cohort is hosting this year's external public and school exhibition at SpaceHub in The Strand Mall, an accessible, modern commercial hub known for its secure parking infrastructure and open display spaces suited to interactive tech booths.</p>
+            <!-- VISITOR -->
+            <div id="page-visitor" class="page-section">
+                <div class="grid-2">
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>Entry &amp; Registration Management</h4>
+                        <p>Managed by the EntryEnablers Team: all visitor registration, credential processing, and venue entry logistics are handled directly by EntryEnablers starting from 8:30 AM at SpaceHub.</p>
+                    </div>
+                    <div class="info-panel">
+                        <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
+                        <h4>Interactive Booths</h4>
+                        <p>Visitors are encouraged to interact directly with student-built software portals, touch-screen prototypes, and digital project displays.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="info-panel">
-                <span class="status-tag">3 October 2026</span>
-                <h4>Visitor &amp; Event Timing</h4>
-                <p>Doors open for registration at 8:30 AM. Event sessions run continuously through 4:30 PM.</p>
+            <!-- CONTACTS -->
+            <div id="page-contacts" class="page-section">
+                <div class="grid-2">
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>School Administration</h4>
+                        <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor.</p>
+                    </div>
+                    <div class="info-panel">
+                        <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
+                        <h4>Venue Entry Support</h4>
+                        <p>EntryEnablers Team<br>On-site registration portal assistance and access control desk located at Strand Mall.</p>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- EVENTS -->
-        <div id="page-events" class="page-section">
-            <div class="panel">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="status-tag">8:30 AM – 9:00 AM</span>
-                        <h4>Arrival &amp; Registration</h4>
-                        <p>Get ready for a day of innovation, interaction, and inspiration.</p>
+            <!-- ADMIN -->
+            <div id="page-admin" class="page-section">
+                <div class="grid-2">
+                    <div class="info-panel">
+                        <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                        <h4>Faculty Leadership</h4>
+                        <p>Miss Anjali — Secondary Computer Science Teacher &amp; Project Faculty Mentor.</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">9:00 AM – 9:30 AM</span>
-                        <h4>Opening Ceremony</h4>
-                        <p>Official launch of MAZ InnoVision 2026.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">9:30 AM – 11:30 AM</span>
-                        <h4>Innovation League</h4>
-                        <p>Student presentations showcasing real-world solutions and creative ideas.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">11:45 AM – 12:45 PM</span>
-                        <h4>Innovation Arcade</h4>
-                        <p>Hands-on experiences, games, and interactive tech challenges.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">1:30 PM – 3:00 PM</span>
-                        <h4>Panel Discussion</h4>
-                        <p>Insights, conversations, and fresh perspectives on technology, AI, and the future.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">3:00 PM – 4:00 PM</span>
-                        <h4>Closing Ceremony</h4>
-                        <p>Celebrating innovation, creativity, and our amazing young minds.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="status-tag">4:30 PM</span>
-                        <h4>Event Ends</h4>
-                        <p>Thank you for being part of MAZ InnoVision 2026!</p>
+                    <div class="info-panel">
+                        <img src="innovision-logo.png" class="info-panel-badge-logo" alt="InnoVision Logo">
+                        <h4>Web Portal Development</h4>
+                        <p>Central Task Force — Student-Led Web Engineering and Content Assembly Cell.</p>
                     </div>
                 </div>
+                <div class="info-panel" style="margin-top: 20px;">
+                    <img src="school-logo.png" class="info-panel-badge-logo" alt="MAZ Logo">
+                    <h4>Institutional Entity &amp; Hosting Architecture</h4>
+                    <p>MAZ International School (PJ Campus). Cleanly coded and deployed via the GitHub Pages framework, without third-party tracking or commercial templates.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- VISITOR -->
-        <div id="page-visitor" class="page-section">
-            <div class="grid-2">
-                <div class="info-panel">
-                    <h4>Entry &amp; Registration Management</h4>
-                    <p>Managed by the EntryEnablers Team: all visitor registration, credential processing, and venue entry logistics are handled directly by EntryEnablers starting from 8:30 AM at SpaceHub.</p>
-                </div>
-                <div class="info-panel">
-                    <h4>Interactive Booths</h4>
-                    <p>Visitors are encouraged to interact directly with student-built software portals, touch-screen prototypes, and digital project displays.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTACTS -->
-        <div id="page-contacts" class="page-section">
-            <div class="grid-2">
-                <div class="info-panel">
-                    <h4>School Administration</h4>
-                    <p>MAZ International School (PJ Campus)<br>Secondary Computer Science Department<br>Petaling Jaya, Selangor.</p>
-                </div>
-                <div class="info-panel">
-                    <h4>Venue Entry Support</h4>
-                    <p>EntryEnablers Team<br>On-site registration portal assistance and access control desk located at Strand Mall.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ADMIN -->
-        <div id="page-admin" class="page-section">
-            <div class="grid-2">
-                <div class="info-panel">
-                    <h4>Faculty Leadership</h4>
-                    <p>Miss Anjali — Secondary Computer Science Teacher &amp; Project Faculty Mentor.</p>
-                </div>
-                <div class="info-panel">
-                    <h4>Web Portal Development</h4>
-                    <p>Central Task Force — Student-Led Web Engineering and Content Assembly Cell.</p>
-                </div>
-            </div>
-            <div class="info-panel" style="margin-top: 20px;">
-                <h4>Institutional Entity &amp; Hosting Architecture</h4>
-                <p>MAZ International School (PJ Campus). Cleanly coded and deployed via the GitHub Pages framework, without third-party tracking or commercial templates.</p>
-            </div>
         </div>
 
     </div>
@@ -1227,6 +1438,10 @@
     <!-- Official Footer -->
     <footer>
         <div class="footer-container">
+            <div class="footer-brand-header">
+                <img src="school-logo.png" alt="MAZ International School" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'MAZ International School Crest')">
+                <img src="innovision-logo.png" alt="InnoVision" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'MAZ InnoVision Official Logo')">
+            </div>
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>MAZ InnoVision Digital Expo</h4>
