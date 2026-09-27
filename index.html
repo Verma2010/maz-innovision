@@ -406,14 +406,16 @@
             transform: translateY(-3px);
         }
 
-        /* ENHANCED HIGH-CONTRAST CHECKMARK PATTERN BODY SECTION */
+        /* DUAL-LOGO CHECKERBOARD PATTERN BODY SECTION */
         .content-body-wrapper {
             background-color: var(--bg-body-wrapper);
-            /* Rich High-Contrast Gold/Green Checkmark Pattern SVG */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 32l9 9 19-19' fill='none' stroke='%23f5c842' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.28'/%3E%3C/svg%3E");
-            background-size: 100% 100%, 60px 60px;
+                url("innovision-logo.png"),
+                url("school-logo.png");
+            background-position: center top, 0 0, 75px 75px;
+            background-repeat: no-repeat, repeat, repeat;
+            background-size: 100% 100%, 45px 45px, 45px 45px;
             padding-bottom: 80px;
             transition: background-color 0.3s ease;
         }
@@ -421,7 +423,8 @@
         body.light-mode .content-body-wrapper {
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(24, 99, 55, 0.08) 0%, transparent 70%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 32l9 9 19-19' fill='none' stroke='%23186337' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.22'/%3E%3C/svg%3E");
+                url("innovision-logo.png"),
+                url("school-logo.png");
         }
 
         /* Key Facts Floating Bar */
@@ -1197,7 +1200,7 @@
         </div>
     </header>
 
-    <!-- CONTENT BODY WITH SVG CHECKMARK PATTERN BACKGROUND -->
+    <!-- CONTENT BODY WITH CHECKERBOARD LOGO BACKGROUND PATTERN -->
     <div class="content-body-wrapper">
 
         <!-- Key Information Facts Banner -->
