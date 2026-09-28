@@ -457,7 +457,7 @@
             transform: translateY(-3px);
         }
 
-        /* Metrics Dashboard (NOW EXCLUSIVELY INSIDE HOME PAGE) */
+        /* Metrics Dashboard */
         .subhero-metrics-section {
             background: linear-gradient(180deg, rgba(15, 26, 54, 0.95) 0%, var(--brand-navy-dark) 100%);
             border: 1px solid var(--border-panel);
@@ -1553,11 +1553,10 @@
             <li><button class="nav-link active" onclick="switchPage('home', event)" aria-current="page">Home Showcase</button></li>
             <li><button class="nav-link" onclick="switchPage('greentech', event)">Green Tech Drive</button></li>
             <li><button class="nav-link" onclick="switchPage('projects', event)">Innovation Projects</button></li>
+            <li><button class="nav-link" onclick="switchPage('outreach', event)">Student Outreach & Communication</button></li>
             <li><button class="nav-link" onclick="switchPage('venue', event)">Venue & Location</button></li>
             <li><button class="nav-link" onclick="switchPage('events', event)">Key Events & Agenda</button></li>
             <li><button class="nav-link" onclick="switchPage('visitor', event)">Visitor Guide</button></li>
-            <li><button class="nav-link" onclick="switchPage('contacts', event)">Contacts</button></li>
-            <li><button class="nav-link" onclick="switchPage('admin', event)">Administration</button></li>
         </ul>
         <span class="portfolio-badge">
             <img src="school-logo.png" class="portfolio-badge-logo" alt="MAZ">
@@ -1639,7 +1638,7 @@
             <!-- HOME PAGE -->
             <div id="page-home" class="page-section active">
 
-                <!-- SUBHERO METRICS (EVENT AT A GLANCE) NOW RESTRICTED STRICTLY TO HOME PAGE -->
+                <!-- SUBHERO METRICS -->
                 <section class="subhero-metrics-section">
                     <div class="subhero-header">
                         <h2>Excellence in Action — Event at a Glance</h2>
@@ -1761,7 +1760,7 @@
                 </div>
             </div>
 
-            <!-- GREEN TECH DRIVE PAGE (NEWLY ADDED) -->
+            <!-- GREEN TECH DRIVE PAGE -->
             <div id="page-greentech" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
@@ -1887,6 +1886,89 @@
                             <span class="project-tag">Digital Literacy</span>
                             <span class="project-tag">Community</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PAGE: STUDENT OUTREACH & COMMUNICATION SHOWCASE -->
+            <div id="page-outreach" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Student Outreach, External Communication &amp; Engineering Innovation</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>Behind the success of MAZ InnoVision 2026 was a student-led initiative in professional outreach, external collaboration, and rigorous software development. Our student teams stepped beyond the classroom to directly communicate with industry experts, coordinate with environmental non-profits, and build complex tech solutions from scratch.</p>
+                </div>
+
+                <!-- SECTION 1: PANELIST OUTREACH -->
+                <div class="panel">
+                    <span class="status-tag">Executive Collaboration</span>
+                    <h3>1. Panelist Outreach &amp; Guest Coordination</h3>
+                    <p>To organize the <strong>Digital Spark Discussions</strong> on artificial intelligence, student coordinators spearheaded end-to-end communication with leading academics and tech executives.</p>
+                    
+                    <div class="value-box-grid" style="margin-top: 18px;">
+                        <div class="value-card">
+                            <h4>📧 Formal Invitations &amp; Briefing</h4>
+                            <p>Drafted professional outreach emails and comprehensive event briefing decks sent directly to <strong>Ms. Natalie Loi</strong> (Founder & Head of Tech at UnBound / CEO of Mossy AI), <strong>Dr. Zati Hakim Azizul Hasan</strong> (UM AI Dept), and <strong>Assoc. Prof. Dr. Norhamizan Hamzah</strong> (UM Rehabilitation Medicine).</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>🗓️ Itinerary &amp; Tech Syncs</h4>
+                            <p>Managed calendar scheduling, audio-visual technical briefings, and pre-event sync calls to establish key discussion topics around AI ethics, robotics in healthcare, and youth digital leadership.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>🎙️ Live Student Moderation</h4>
+                            <p>Formulated discussion prompts and moderated the live stage panel, ensuring seamless dialogue between our guest experts, student delegates, and audience members.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: CHARITY & GREEN TECH OUTREACH -->
+                <div class="panel">
+                    <span class="status-tag">Community & Eco Impact</span>
+                    <h3>2. Community &amp; Charity Centre Communication for Green Tech</h3>
+                    <p>Executing the <strong>Green Tech Drive</strong> required students to build active partnerships with environmental recycling bodies and community charity centres to ensure responsible e-waste distribution and material recovery.</p>
+                    
+                    <div class="grid-2" style="margin-top: 18px;">
+                        <div class="info-panel">
+                            <h4>Department of Environment (DOE) Recyclers</h4>
+                            <p>Students communicated directly with DOE-registered e-waste recycling organizations to verify compliance, coordinate haulage logistics for collected hardware, and ensure safe processing of hazardous materials.</p>
+                        </div>
+                        <div class="info-panel">
+                            <h4>Charity &amp; Refurbishment Outreach</h4>
+                            <p>Student teams liaised with local charity centres and community groups to identify working or repairable devices (laptops, tablets) donated during the drive, redirecting usable hardware back to underserved families.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: INNOVATION BEHIND INNOVATION PROJECTS -->
+                <div class="panel">
+                    <span class="status-tag">Engineering Methodology</span>
+                    <h3>3. The Innovation Behind the Innovation Projects</h3>
+                    <p>The projects exhibited at InnoVision were not merely ideas on paper—they represented robust engineering, iterative development, and user-centered design practices executed entirely by secondary students.</p>
+                    
+                    <div class="value-box-grid" style="margin-top: 18px;">
+                        <div class="value-card">
+                            <h4>⚙️ Full-Stack Entry Registration System</h4>
+                            <p>Developed custom, high-speed registration modules used live at SpaceHub entrance by student <em>EntryEnablers</em> to eliminate registration bottlenecks and digitize attendance flow.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>💻 Clean Tech Stack &amp; GitHub Architecture</h4>
+                            <p>Built using modular HTML5, CSS custom properties, and native JavaScript ES6+, hosted securely via GitHub Pages infrastructure to deliver zero-dependency, lighting-fast performance.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>📱 Accessible UI &amp; Cross-Platform Design</h4>
+                            <p>Architected with responsive CSS Grid/Flexbox layouts, fluid typography (`clamp`), accessibility focus rings, and high-contrast color palettes for senior citizens at the Digital Experience Pod.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                    </div>
+                    <div>
+                        <h4>Real-World Communication Meets Engineering Craft</h4>
+                        <p>"By bridging corporate outreach, community liaison, and technical execution, our student cells gained hands-on experience in project governance, software delivery, and professional correspondence that directly translates to university and industry leadership."</p>
                     </div>
                 </div>
             </div>
@@ -2017,55 +2099,6 @@
                 </div>
             </div>
 
-            <!-- CONTACTS PAGE -->
-            <div id="page-contacts" class="page-section">
-                <div class="panel">
-                    <div class="panel-header-with-logo">
-                        <h3>Contact & School Department Details</h3>
-                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
-                    </div>
-                    <p>For inquiries regarding the student projects, CV verification, or secondary computer science initiatives, reach out to our team below.</p>
-                </div>
-
-                <div class="grid-2">
-                    <div class="info-panel">
-                        <h4>MAZ International School</h4>
-                        <p>Secondary Computer Science Department<br>Paramount Garden, Petaling Jaya, Selangor, Malaysia.<br><strong>Tel:</strong> +603-7874 2930 / +603-7874 8515<br><strong>Email:</strong> admin@mazinternational.edu.my</p>
-                    </div>
-                    <div class="info-panel">
-                        <h4>Faculty Leadership</h4>
-                        <p>Principal: Manjit Kaur<br>Computer Science Mentor: Miss Anjali<br>Student Development Cell: Central Task Force</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ADMINISTRATION PAGE -->
-            <div id="page-admin" class="page-section">
-                <div class="panel">
-                    <div class="panel-header-with-logo">
-                        <h3>Organizing Leadership & Student Portfolio Framework</h3>
-                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
-                    </div>
-                    <p>MAZ InnoVision 2026 was planned, engineered, and executed entirely through student leadership cells under the guidance of school faculty. This website serves as the official post-event digital portfolio for participating students.</p>
-                </div>
-
-                <div class="grid-2">
-                    <div class="info-panel">
-                        <h4>Faculty Guidance</h4>
-                        <p>Principal Manjit Kaur & Miss Anjali — Mentoring secondary student cells in project architecture, event management, and public presentation skills.</p>
-                    </div>
-                    <div class="info-panel">
-                        <h4>Student CV & Portfolio Purpose</h4>
-                        <p>Engineered to allow students who created projects, led sessions, or managed logistics to attach this portfolio to their CVs as proof of practical capability.</p>
-                    </div>
-                </div>
-
-                <div class="info-panel" style="margin-top: 24px;">
-                    <h4>Technical Infrastructure</h4>
-                    <p>Designed and built using native web technologies and hosted via GitHub Pages infrastructure for high performance, reliability, and continuous accessibility.</p>
-                </div>
-            </div>
-
         </div>
 
     </div>
@@ -2098,11 +2131,10 @@
                         <li><a href="#" onclick="switchPage('home', event)">Home Showcase</a></li>
                         <li><a href="#" onclick="switchPage('greentech', event)">Green Tech Drive</a></li>
                         <li><a href="#" onclick="switchPage('projects', event)">Student Projects</a></li>
+                        <li><a href="#" onclick="switchPage('outreach', event)">Outreach & Innovation</a></li>
                         <li><a href="#" onclick="switchPage('venue', event)">Venue & Location</a></li>
                         <li><a href="#" onclick="switchPage('events', event)">Event Agenda & Panel</a></li>
                         <li><a href="#" onclick="switchPage('visitor', event)">Visitor Guide</a></li>
-                        <li><a href="#" onclick="switchPage('contacts', event)">Contact Details</a></li>
-                        <li><a href="#" onclick="switchPage('admin', event)">Administration</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -2169,6 +2201,10 @@
                 title: 'Student Innovation Projects',
                 tagline: 'Explore modern web systems, AI models, Green Tech solutions, and community literacy tools built by students.'
             },
+            'outreach': {
+                title: 'Student Outreach & Innovation Methodology',
+                tagline: 'Showcasing student-led panelist correspondence, charity communications, and engineering innovation.'
+            },
             'venue': {
                 title: 'Exhibition Venue & Location',
                 tagline: 'SpaceHub at Strand Mall, Kota Damansara — host venue for the MAZ InnoVision 2026 Expo.'
@@ -2180,14 +2216,6 @@
             'visitor': {
                 title: 'Visitor Guide & Overview',
                 tagline: 'Overview of guest attendance, registration, and student-managed entry logistics.'
-            },
-            'contacts': {
-                title: 'Contact Information & Department Support',
-                tagline: 'Connect with our faculty mentors and student organizing committee.'
-            },
-            'admin': {
-                title: 'Administration & CV Portfolio',
-                tagline: 'Faculty leadership and student engineering cells behind the MAZ InnoVision showcase.'
             }
         };
 
