@@ -1411,6 +1411,37 @@
             line-height: 1.45;
         }
 
+        /* EntryEnablers Feature Highlight Card */
+        .entry-enablers-highlight-card {
+            background: linear-gradient(135deg, rgba(12, 61, 33, 0.35) 0%, rgba(15, 26, 54, 0.8) 100%);
+            border: 1px solid var(--brand-green-glow);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-glow) !important;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        body.light-mode .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-mid) !important;
+        }
+
+        .entry-enablers-highlight-card p {
+            margin: 0;
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--text-main);
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(180deg, var(--brand-navy-main) 0%, var(--brand-navy-dark) 100%);
@@ -1927,21 +1958,26 @@
                 <div class="panel" style="margin-top: 32px;">
                     <span class="status-tag">Event Logistics & Entry System</span>
                     <h3>EntryEnablers — Student-Powered Registration & Access Control</h3>
-                    <p>To highlight how attendees registered and entered the event, the student-led <strong>EntryEnablers</strong> team designed and operated a custom digital check-in platform live at SpaceHub. Rather than using third-party ticketing tools, students built a tailored system that streamlined arrival and digitized attendee verification.</p>
+                    <p>To highlight how attendees registered and entered the event, the student-led <strong>EntryEnablers</strong> team designed and operated a custom digital check-in platform live at SpaceHub. Rather than using third-party ticketing tools, students built a tailored system that streamlined arrival, verified credentials instantly, and actively facilitated smooth crowd management.</p>
                     
                     <div class="value-box-grid" style="margin-top: 20px;">
                         <div class="value-card">
                             <h4>🎟️ Rapid Digital Registration</h4>
-                            <p>Pre-event digital registration enabled attendees to generate instant entry passes, minimizing wait times at the venue door.</p>
+                            <p>Pre-event digital registration enabled attendees to generate instant entry passes, eliminating venue bottlenecks and reducing check-in times to seconds.</p>
                         </div>
                         <div class="value-card">
                             <h4>📲 On-Site Verification</h4>
-                            <p>Student EntryEnablers managed dedicated check-in kiosks at SpaceHub, greeting visitors and scanning check-ins seamlessly.</p>
+                            <p>Student EntryEnablers managed dedicated check-in kiosks at SpaceHub, greeting visitors, scanning entry passes, and assisting attendees seamlessly into the venue.</p>
                         </div>
                         <div class="value-card">
                             <h4>📊 Live Attendance Insights</h4>
-                            <p>The system fed real-time attendance metrics to event coordinators, allowing optimal crowd flow management across exhibition zones.</p>
+                            <p>The system fed real-time attendance metrics to event coordinators, enabling active crowd monitoring and optimal visitor flow across exhibition zones.</p>
                         </div>
+                    </div>
+
+                    <div class="entry-enablers-highlight-card">
+                        <h4>⚡ Facilitating Smooth Access at SpaceHub</h4>
+                        <p>Stationed directly at the SpaceHub main concourse entrance, the EntryEnablers acted as key venue guides. Equipped with their custom digital platform, they welcomed delegates, guided first-time visitors through instant registration, scanned entry passes, and maintained a seamless registration pipeline that minimized wait times and allowed hundreds of attendees to transition directly into the exhibition hall.</p>
                     </div>
                 </div>
             </div>
@@ -1965,7 +2001,7 @@
                     <div class="value-box-grid" style="margin-top: 18px;">
                         <div class="value-card">
                             <h4>📧 Formal Invitations &amp; Briefing</h4>
-                            <p>Drafted professional outreach emails and comprehensive event briefing decks sent directly to <strong>Ms. Natalie Loi</strong> (Founder & Head of Tech at UnBound / CEO of Mossy AI), <strong>Dr. Zati Hakim Azizul Hasan</strong> (UM AI Dept), and <strong>Assoc. Prof. Dr. Norhamizan Hamzah</strong> (UM Rehabilitation Medicine).</p>
+                            <p>Drafted professional outreach emails and comprehensive event briefing decks sent directly to <strong>Ms. Natalie Loi</strong> (Founder & Head of Tech at UnBound / CEO of Mossy AI) and <strong>Assoc. Prof. Dr. Norhamizan Hamzah</strong> (UM Rehabilitation Medicine).</p>
                         </div>
                         <div class="value-card">
                             <h4>🗓️ Itinerary &amp; Tech Syncs</h4>
@@ -2074,7 +2110,7 @@
                         <div class="timeline-item" data-session="morning">
                             <span class="status-tag">9:00 AM – 9:30 AM</span>
                             <h4>Arrival & EntryEnablers Registration</h4>
-                            <p>Guest check-in managed using the student-engineered digital registration system, operated live by student EntryEnablers at the SpaceHub entrance.</p>
+                            <p>Guest check-in managed using the student-engineered digital registration system, operated live by student EntryEnablers at the SpaceHub entrance to greet and register attendees seamlessly.</p>
                         </div>
                         <div class="timeline-item" data-session="morning">
                             <span class="status-tag">9:30 AM – 11:30 AM</span>
@@ -2110,15 +2146,6 @@
                             <h4>Ms. Natalie Loi</h4>
                             <p class="role">Founder & Head of Technology at UnBound (Malaysia & Australia) · CEO of Mossy AI</p>
                             <p class="desc">Award-winning technologist, AI policy contributor, and international keynote speaker specializing in AI innovation and digital transformation.</p>
-                        </div>
-                    </div>
-
-                    <div class="speaker-card">
-                        <div class="speaker-avatar">ZH</div>
-                        <div class="speaker-info">
-                            <h4>Dr. Zati Hakim Azizul Hasan</h4>
-                            <p class="role">Senior Lecturer, Dept. of Artificial Intelligence, Universiti Malaya (UM)</p>
-                            <p class="desc">Specialist in AI robotics, intelligent systems, and swarm robotics driving academic innovation in computational technologies.</p>
                         </div>
                     </div>
 
