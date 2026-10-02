@@ -822,15 +822,23 @@
             line-height: 1.55;
         }
 
-        /* Green Tech Showcase Image Card */
+        /* Green Tech Showcase Image Gallery Grid */
+        .showcase-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 26px;
+        }
+
         .showcase-img-card {
             background: var(--bg-panel);
             border: 1px solid var(--border-panel);
             border-radius: var(--radius-md);
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            margin-bottom: 26px;
             transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .showcase-img-card:hover {
@@ -841,7 +849,7 @@
         .showcase-img-wrapper {
             position: relative;
             width: 100%;
-            max-height: 480px;
+            height: 230px;
             overflow: hidden;
             background: rgba(7, 13, 26, 0.8);
             cursor: pointer;
@@ -855,23 +863,25 @@
         }
 
         .showcase-img-wrapper:hover img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .showcase-img-caption {
-            padding: 16px 24px;
-            font-size: 0.9rem;
+            padding: 14px 18px;
+            font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-panel);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: 8px;
+            flex-grow: 1;
         }
 
         .showcase-img-caption strong {
             color: var(--white);
+            display: block;
+            margin-bottom: 2px;
         }
 
         body.light-mode .showcase-img-caption strong {
@@ -1295,7 +1305,7 @@
             border: 2px solid var(--brand-green-mid);
             border-radius: var(--radius-lg);
             padding: 40px;
-            max-width: 650px;
+            max-width: 750px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -1333,7 +1343,7 @@
         }
 
         .modal-logo-img {
-            max-height: 380px;
+            max-height: 480px;
             width: auto;
             max-width: 100%;
             margin: 0 auto 20px auto;
@@ -1524,6 +1534,7 @@
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
             .pillars-row { grid-template-columns: repeat(2, 1fr); }
             .value-box-grid { grid-template-columns: 1fr; }
+            .showcase-gallery-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 840px) {
@@ -1800,28 +1811,50 @@
                     <p>As the global move towards a digital world accelerates, electronic consumption increases rapidly. MAZ International is actively moving towards a greener future by leveraging technology to mitigate the environmental impact of digital transition. By keeping <strong>students at the forefront</strong> of this movement, the Green Tech Drive proves that technological advancement and environmental sustainability can go hand-in-hand.</p>
                 </div>
 
-                <!-- GREEN TECH DRIVE PHOTO SHOWCASE -->
-                <div class="showcase-img-card">
-                    <div class="showcase-img-wrapper" onclick="openLogoModal('green-tech-drive.jpg', 'MAZ International Green Tech Drive Team &amp; E-Waste Collection')">
-                        <img src="green-tech-drive.jpg" alt="MAZ Green Tech Drive Student Team and E-Waste Collection">
+                <!-- GREEN TECH DRIVE PHOTO SHOWCASE GALLERY -->
+                <div class="showcase-gallery-grid">
+                    <div class="showcase-img-card">
+                        <div class="showcase-img-wrapper" onclick="openLogoModal('IMG_3501.jpg', 'Student E-Waste Information Booth &amp; Interactive Presentations')">
+                            <img src="IMG_3501.jpg" alt="Student E-Waste Information Booth and Presentation">
+                        </div>
+                        <div class="showcase-img-caption">
+                            <span><strong>Student Advocacy &amp; Information Booth:</strong> Student leaders explaining e-waste impact and presenting recycling strategies to visitors.</span>
+                            <span class="status-tag" style="margin-bottom: 0;">Presentation Booth</span>
+                        </div>
                     </div>
-                    <div class="showcase-img-caption">
-                        <span><strong>Green Tech Drive Student Leaders &amp; Faculty:</strong> E-waste donation drive team at MAZ International School.</span>
-                        <span class="status-tag" style="margin-bottom: 0;">16 Sept 2026</span>
+
+                    <div class="showcase-img-card">
+                        <div class="showcase-img-wrapper" onclick="openLogoModal('IMG_3494.jpg', 'E-Waste Awareness Showcase &amp; Community Engagement')">
+                            <img src="IMG_3494.jpg" alt="E-Waste Awareness Showcase and Community Engagement">
+                        </div>
+                        <div class="showcase-img-caption">
+                            <span><strong>Interactive Learning Zone:</strong> Informational displays educating students and parents on circular technology and safe collection.</span>
+                            <span class="status-tag" style="margin-bottom: 0;">Community Education</span>
+                        </div>
+                    </div>
+
+                    <div class="showcase-img-card">
+                        <div class="showcase-img-wrapper" onclick="openLogoModal('IMG_3320.jpg', 'MAZ Green Tech Drive Student Team &amp; Faculty Leadership')">
+                            <img src="IMG_3320.jpg" alt="MAZ Green Tech Drive Student Team and Faculty Leadership">
+                        </div>
+                        <div class="showcase-img-caption">
+                            <span><strong>Green Tech Drive Team:</strong> Student organizers and faculty leading the campus e-waste recycling movement.</span>
+                            <span class="status-tag" style="margin-bottom: 0;">Drive Organizers</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="grid-2">
                     <div class="info-panel">
                         <span class="status-tag">Completed Drive · 16 Sept 2026</span>
-                        <h4>Student-Led Digital Sustainability</h4>
-                        <p>With students at the forefront, teams designed interactive educational workshops for parents and guardians. They showcased how digital tracking and circular tech practices reduce e-waste hazards, recover precious metals, and align with global digital sustainability goals.</p>
+                        <h4>Student-Led E-Waste Presentations</h4>
+                        <p>With students at the forefront, teams prepared interactive presentations for parents, peers, and visitors. They delivered detailed briefings on how toxic elements in unmanaged electronic waste affect ecosystems, while demonstrating how digital tracking and circular tech practices drastically reduce e-waste hazards and recover valuable precious metals.</p>
                     </div>
 
                     <div class="info-panel">
                         <span class="status-tag">DOE-Approved Management</span>
-                        <h4>Digital Management & Responsible Recycling</h4>
-                        <p>All collected e-waste was inventoried digitally and sorted by student volunteers in designated collection rooms before being handed over to a Department of Environment (DOE)-approved organization for compliant recycling.</p>
+                        <h4>Encouraging Community E-Recycling</h4>
+                        <p>Student advocates actively encouraged community members to bring in disused electronics—from old smartphones to cables and computer components. All collected items were inventoried digitally and sorted by student volunteers in designated collection rooms before being handed over to a Department of Environment (DOE)-approved recycler.</p>
                     </div>
                 </div>
 
@@ -1829,16 +1862,16 @@
                     <h3>Key Highlights of the Greener Future Drive</h3>
                     <div class="value-box-grid">
                         <div class="value-card">
-                            <h4>📱 E-Waste & Digital Literacy</h4>
-                            <p>Educating the community on responsible technology usage and proper recycling of modern digital hardware.</p>
+                            <h4>📱 E-Waste Literacy Presentations</h4>
+                            <p>Students presented key insights into safe electronic disposal, highlighting how recycling reclaims valuable materials and prevents environmental contamination.</p>
                         </div>
                         <div class="value-card">
-                            <h4>📝 Digital Commitment Wall</h4>
-                            <p>Parents and students made personal sustainability pledges on an interactive board to reinforce long-term circular tech habits.</p>
+                            <h4>📝 Digital Commitment & Pledges</h4>
+                            <p>Parents and students made personal sustainability pledges on an interactive board, promising to adopt responsible e-waste recycling habits at home.</p>
                         </div>
                         <div class="value-card">
-                            <h4>♻️ Student-Led Sorting</h4>
-                            <p>Systematic sorting and inventorying of donated devices by student leaders prior to DOE-compliant handling.</p>
+                            <h4>♻️ Student-Led Collection & Sorting</h4>
+                            <p>Systematic sorting and digital inventorying of donated devices by student leaders prior to DOE-compliant handling.</p>
                         </div>
                     </div>
                 </div>
@@ -1849,7 +1882,7 @@
                     </div>
                     <div>
                         <h4>"Powering a Greener Digital World — Led by Students."</h4>
-                        <p>The Green Tech Drive demonstrated how MAZ International combines technological transition with eco-consciousness, putting students at the helm to drive meaningful, sustainable change for Malaysia and the digital world.</p>
+                        <p>The Green Tech Drive demonstrated how MAZ International combines technological transition with eco-consciousness, putting students at the helm to present real solutions, inspire e-recycling, and drive meaningful, sustainable change for Malaysia and the digital world.</p>
                     </div>
                 </div>
             </div>
@@ -2255,7 +2288,7 @@
             <button class="modal-close-btn" onclick="closeLogoModal(event)" title="Close">&times;</button>
             <img id="modalImg" class="modal-logo-img" src="" alt="Enlarged Logo View">
             <h3 id="modalTitle" class="modal-title">MAZ InnoVision</h3>
-            <p id="modalSubtext" class="modal-subtext">Official High-Resolution Emblem — MAZ International School</p>
+            <p id="modalSubtext" class="modal-subtext">Official High-Resolution View — MAZ International School</p>
         </div>
     </div>
 
