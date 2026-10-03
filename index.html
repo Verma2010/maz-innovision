@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAZ InnoVision 2026 — Student Innovation & Digital Showcase</title>
+    <title>MAZ InnoVision 2026 — Student Showcase & Digital Expo</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -822,7 +822,115 @@
             line-height: 1.55;
         }
 
-        /* Green Tech Showcase Image Card */
+        /* Teams & Leadership Grid */
+        .team-card {
+            background: rgba(7, 13, 26, 0.6);
+            border: 1px solid var(--border-panel);
+            border-top: 4px solid var(--brand-green-mid);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        body.light-mode .team-card {
+            background: #ffffff;
+            border-color: rgba(15, 26, 54, 0.12);
+            border-top-color: var(--brand-green-mid);
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-green-glow);
+        }
+
+        .team-card.featured-central {
+            border: 2px solid var(--brand-gold-bright);
+            border-top: 5px solid var(--brand-gold-bright);
+            background: linear-gradient(135deg, rgba(15, 26, 54, 0.95) 0%, rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        body.light-mode .team-card.featured-central {
+            background: linear-gradient(135deg, #ffffff 0%, rgba(212, 175, 55, 0.08) 100%);
+        }
+
+        .team-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .team-card h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0;
+        }
+
+        body.light-mode .team-card h4 {
+            color: var(--brand-navy-main);
+        }
+
+        .team-card .team-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .member-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .member-item {
+            background: rgba(15, 26, 54, 0.5);
+            border: 1px solid rgba(37, 143, 80, 0.2);
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        body.light-mode .member-item {
+            background: #f1f5f9;
+            border-color: rgba(15, 26, 54, 0.08);
+            color: #1e293b;
+        }
+
+        .member-item::before {
+            content: '•';
+            color: var(--brand-green-glow);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        body.light-mode .member-item::before {
+            color: var(--brand-green-mid);
+        }
+
+        .central-badge {
+            background: linear-gradient(135deg, var(--brand-gold-main), var(--brand-gold-bright));
+            color: #070d1a;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Showcase Banner Image Card */
         .showcase-img-card {
             background: var(--bg-panel);
             border: 1px solid var(--border-panel);
@@ -876,157 +984,6 @@
 
         body.light-mode .showcase-img-caption strong {
             color: var(--brand-navy-main);
-        }
-
-        .schedule-filters {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: rgba(37, 143, 80, 0.12);
-            border: 1px solid var(--border-panel);
-            color: var(--text-main);
-            padding: 9px 18px;
-            border-radius: 20px;
-            font-family: var(--font-heading);
-            font-size: 0.86rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        body.light-mode .filter-btn {
-            background: rgba(24, 99, 55, 0.08);
-            color: #334155;
-            border-color: rgba(15, 26, 54, 0.15);
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--brand-green-mid);
-            color: var(--white) !important;
-            border-color: var(--brand-green-light);
-            box-shadow: 0 2px 10px rgba(24, 99, 55, 0.4);
-        }
-
-        .map-container {
-            width: 100%;
-            height: 380px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 2px solid var(--brand-green-mid);
-            margin-top: 16px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .brand-watermark-card {
-            background: linear-gradient(135deg, var(--brand-navy-main) 0%, var(--brand-navy-light) 100%);
-            border-radius: var(--radius-md);
-            padding: 26px 32px;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 26px;
-            border: 1px solid var(--brand-green-mid);
-            box-shadow: var(--shadow-md);
-        }
-
-        body.light-mode .brand-watermark-card {
-            background: linear-gradient(135deg, #0f1a36 0%, #1b2d5a 100%);
-        }
-
-        .brand-watermark-content h4 {
-            color: var(--white) !important;
-            font-size: 1.15rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .brand-watermark-content p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.88);
-            font-size: 0.92rem;
-            max-width: 620px;
-        }
-
-        .brand-watermark-logos {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .brand-watermark-logos img {
-            height: 46px;
-            width: auto;
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
-        }
-
-        .quote-block {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-panel);
-            border-left: 5px solid var(--brand-green-mid);
-            padding: 26px 30px;
-            border-radius: var(--radius-md);
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .quote-block h4 {
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: var(--white);
-            margin-bottom: 4px;
-        }
-
-        body.light-mode .quote-block h4 {
-            color: var(--brand-navy-main);
-        }
-
-        .quote-block p {
-            margin: 0;
-            font-size: 0.94rem;
-            color: var(--text-main);
-        }
-
-        .icon-badge {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: rgba(37, 143, 80, 0.18);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        body.light-mode .icon-badge {
-            background: rgba(24, 99, 55, 0.1);
-        }
-
-        .icon-badge svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--brand-green-glow);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        body.light-mode .icon-badge svg {
-            stroke: var(--brand-green-mid);
         }
 
         .grid-2 {
@@ -1215,57 +1172,136 @@
             line-height: 1.65;
         }
 
-        .timeline {
-            border-left: 3px solid var(--brand-green-mid);
-            padding-left: 30px;
-            margin-top: 15px;
-            margin-left: 10px;
+        .entry-enablers-highlight-card {
+            background: linear-gradient(135deg, rgba(12, 61, 33, 0.35) 0%, rgba(15, 26, 54, 0.8) 100%);
+            border: 1px solid var(--brand-green-glow);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: var(--shadow-md);
         }
 
-        .timeline-item {
-            margin-bottom: 32px;
-            position: relative;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+        .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-glow) !important;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .timeline-item.hidden { display: none; }
-
-        .timeline-item:last-child { margin-bottom: 0; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 4px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--brand-green-glow);
-            border: 3px solid var(--brand-navy-dark);
-            box-shadow: 0 0 0 2px var(--brand-green-mid);
+        body.light-mode .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-mid) !important;
         }
 
-        body.light-mode .timeline-item::before {
-            background: var(--brand-green-mid);
-            border-color: #ffffff;
+        .entry-enablers-highlight-card p {
+            margin: 0;
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--text-main);
         }
 
-        .timeline-item h4 {
-            margin: 0 0 6px 0;
-            font-size: 1.12rem;
-            font-weight: 700;
+        .quote-block {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-left: 5px solid var(--brand-green-mid);
+            padding: 26px 30px;
+            border-radius: var(--radius-md);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quote-block h4 {
+            font-weight: 800;
+            font-size: 1.15rem;
             color: var(--white);
+            margin-bottom: 4px;
         }
 
-        body.light-mode .timeline-item h4 {
+        body.light-mode .quote-block h4 {
             color: var(--brand-navy-main);
         }
 
-        .timeline-item p {
-            margin: 6px 0 0 0;
+        .quote-block p {
+            margin: 0;
             font-size: 0.94rem;
             color: var(--text-main);
-            line-height: 1.6;
+        }
+
+        .icon-badge {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(37, 143, 80, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.light-mode .icon-badge {
+            background: rgba(24, 99, 55, 0.1);
+        }
+
+        .icon-badge svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--brand-green-glow);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        body.light-mode .icon-badge svg {
+            stroke: var(--brand-green-mid);
+        }
+
+        .brand-watermark-card {
+            background: linear-gradient(135deg, var(--brand-navy-main) 0%, var(--brand-navy-light) 100%);
+            border-radius: var(--radius-md);
+            padding: 26px 32px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 26px;
+            border: 1px solid var(--brand-green-mid);
+            box-shadow: var(--shadow-md);
+        }
+
+        body.light-mode .brand-watermark-card {
+            background: linear-gradient(135deg, #0f1a36 0%, #1b2d5a 100%);
+        }
+
+        .brand-watermark-content h4 {
+            color: var(--white) !important;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .brand-watermark-content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.92rem;
+            max-width: 620px;
+        }
+
+        .brand-watermark-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-watermark-logos img {
+            height: 46px;
+            width: auto;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
         }
 
         /* Modal / Lightbox */
@@ -1352,104 +1388,6 @@
         .modal-subtext {
             color: rgba(255, 255, 255, 0.85);
             font-size: 0.92rem;
-        }
-
-        /* Speaker Cards Styling */
-        .speaker-card {
-            background: rgba(15, 26, 54, 0.6);
-            border: 1px solid var(--border-panel);
-            border-radius: var(--radius-md);
-            padding: 22px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            transition: all 0.25s ease;
-        }
-
-        body.light-mode .speaker-card {
-            background: #ffffff;
-            border-color: rgba(15, 26, 54, 0.1);
-        }
-
-        .speaker-card:hover {
-            border-color: var(--brand-green-glow);
-            transform: translateY(-2px);
-        }
-
-        .speaker-avatar {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--brand-green-mid), var(--brand-green-glow));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: #ffffff;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .speaker-info h4 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 4px;
-        }
-
-        body.light-mode .speaker-info h4 {
-            color: var(--brand-navy-main);
-        }
-
-        .speaker-info p.role {
-            font-size: 0.85rem;
-            color: var(--brand-green-glow);
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        body.light-mode .speaker-info p.role {
-            color: var(--brand-green-mid);
-        }
-
-        .speaker-info p.desc {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin: 0;
-            line-height: 1.45;
-        }
-
-        /* EntryEnablers Feature Highlight Card */
-        .entry-enablers-highlight-card {
-            background: linear-gradient(135deg, rgba(12, 61, 33, 0.35) 0%, rgba(15, 26, 54, 0.8) 100%);
-            border: 1px solid var(--brand-green-glow);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            margin-top: 24px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .entry-enablers-highlight-card h4 {
-            color: var(--brand-green-glow) !important;
-            font-size: 1.15rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        body.light-mode .entry-enablers-highlight-card h4 {
-            color: var(--brand-green-mid) !important;
-        }
-
-        .entry-enablers-highlight-card p {
-            margin: 0;
-            font-size: 0.94rem;
-            line-height: 1.65;
-            color: var(--text-main);
         }
 
         /* Footer */
@@ -1559,7 +1497,7 @@
             <span><strong>MAZ International School</strong> · Official Post-Digital Expo Record</span>
         </div>
         <div style="display: flex; align-items: center; gap: 12px;">
-            <span>Student Leadership & Innovation Record</span>
+            <span>Student Leadership &amp; Innovation Record</span>
             <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeToggleBtn">
                 <span id="themeIcon">☀️</span> Light Mode
             </button>
@@ -1592,9 +1530,9 @@
             <li><button class="nav-link" onclick="switchPage('greentech', event)">Green Tech Drive</button></li>
             <li><button class="nav-link" onclick="switchPage('experiencepod', event)">Digital Experience Pod</button></li>
             <li><button class="nav-link" onclick="switchPage('projects', event)">Innovation Projects</button></li>
-            <li><button class="nav-link" onclick="switchPage('outreach', event)">Student Leadership</button></li>
-            <li><button class="nav-link" onclick="switchPage('venue', event)">Venue & Location</button></li>
-            <li><button class="nav-link" onclick="switchPage('events', event)">Key Events & Agenda</button></li>
+            <li><button class="nav-link" onclick="switchPage('studentshowcase', event)">Student Showcase</button></li>
+            <li><button class="nav-link" onclick="switchPage('venue', event)">Venue &amp; Location</button></li>
+            <li><button class="nav-link" onclick="switchPage('events', event)">Key Events &amp; Agenda</button></li>
         </ul>
         <span class="portfolio-badge">
             <img src="school-logo.png" class="portfolio-badge-logo" alt="MAZ">
@@ -1631,8 +1569,8 @@
             
             <div class="hero-cta-row">
                 <button class="btn btn-primary" onclick="switchPage('projects', event)">Explore Student Projects</button>
+                <button class="btn btn-secondary" onclick="switchPage('studentshowcase', event)">View Student Teams & Leadership</button>
                 <button class="btn btn-secondary" onclick="switchPage('greentech', event)">View Green Tech Initiative</button>
-                <button class="btn btn-secondary" onclick="switchPage('experiencepod', event)">Digital Experience Pod</button>
             </div>
         </div>
     </header>
@@ -1666,7 +1604,7 @@
                 </span>
                 <div>
                     <p class="fact-label">Driven By</p>
-                    <p class="fact-value">Student Innovators & Leaders</p>
+                    <p class="fact-value">Student Innovators &amp; Leaders</p>
                 </div>
             </div>
         </div>
@@ -1768,7 +1706,7 @@
                 <!-- DIGITAL WORLD & TECHNOLOGY IMPORTANCE PANEL -->
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Technology & The Move Towards a Digital World</h3>
+                        <h3>Technology &amp; The Move Towards a Digital World</h3>
                         <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
                     </div>
                     <p>In the modern world, technology is no longer merely an auxiliary tool—it is the bedrock of modern communication, industry, and global progress. The ongoing global transition toward a digital world demands rapid adaptation, analytical thinking, and fluency with emerging systems like artificial intelligence, IoT, and cloud computing.</p>
@@ -1776,7 +1714,7 @@
                     
                     <div class="value-box-grid">
                         <div class="value-card">
-                            <h4>💡 Technical & Digital Mastery</h4>
+                            <h4>💡 Technical &amp; Digital Mastery</h4>
                             <p>Developing native, performant applications built using modern software design, AI, and computational logic.</p>
                         </div>
                         <div class="value-card">
@@ -1784,7 +1722,7 @@
                             <p>Utilizing digital platforms and data tracking in environmental campaigns like Aqua Sweep and the Green Tech Drive.</p>
                         </div>
                         <div class="value-card">
-                            <h4>🤝 Community Value & Access</h4>
+                            <h4>🤝 Community Value &amp; Access</h4>
                             <p>Bridging societal gaps with digital initiatives like EntryEnablers for access and Walk360 for assistive tech.</p>
                         </div>
                     </div>
@@ -1815,7 +1753,7 @@
 
                 <div class="grid-2" style="margin-bottom: 26px;">
                     <div class="showcase-img-card" style="margin-bottom: 0;">
-                        <div class="showcase-img-wrapper" onclick="openLogoModal('image_834b60.png', 'Student Presenters Spreading E-Waste Recycling Awareness')">
+                        <div class="showcase-img-wrapper" onclick="openLogoModal('IMG_3494_3.jpg', 'Student Presenters Spreading E-Waste Recycling Awareness')">
                             <img src="IMG_3494_3.jpg" alt="Students Presenting E-Waste Awareness during Green Tech Drive">
                         </div>
                         <div class="showcase-img-caption">
@@ -1825,7 +1763,7 @@
                     </div>
 
                     <div class="showcase-img-card" style="margin-bottom: 0;">
-                        <div class="showcase-img-wrapper" onclick="openLogoModal('image_834b60 (1).png', 'Interactive E-Waste Commitment Wall')">
+                        <div class="showcase-img-wrapper" onclick="openLogoModal('IMG_3501_3.jpg', 'Interactive E-Waste Commitment Wall')">
                             <img src="IMG_3501_3.jpg" alt="Interactive E-Waste Commitment Wall during Green Tech Drive">
                         </div>
                         <div class="showcase-img-caption">
@@ -1865,7 +1803,7 @@
 
                     <div class="info-panel">
                         <span class="status-tag">DOE-Approved Management</span>
-                        <h4>Digital Management & Responsible Recycling</h4>
+                        <h4>Digital Management &amp; Responsible Recycling</h4>
                         <p>All collected e-waste was inventoried digitally and sorted by student volunteers in designated collection rooms before being handed over to a Department of Environment (DOE)-approved organization for compliant recycling.</p>
                     </div>
                 </div>
@@ -1874,7 +1812,7 @@
                     <h3>Key Highlights of the Greener Future Drive</h3>
                     <div class="value-box-grid">
                         <div class="value-card">
-                            <h4>📱 E-Waste & Digital Literacy</h4>
+                            <h4>📱 E-Waste &amp; Digital Literacy</h4>
                             <p>Educating the community on responsible technology usage and proper recycling of modern digital hardware.</p>
                         </div>
                         <div class="value-card">
@@ -1903,7 +1841,7 @@
             <div id="page-experiencepod" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Digital Experience Pod — Senior Citizen Tech & AI Literacy</h3>
+                        <h3>Digital Experience Pod — Senior Citizen Tech &amp; AI Literacy</h3>
                         <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
                     </div>
                     <p>The <strong>Digital Experience Pod</strong> was a transformative community outreach initiative conceived and executed under <strong>MAZ InnoVision</strong>. Recognizing that the rapid transition into a digital world can leave older generations behind, student leaders took proactive initiative to bridge the digital divide by empowering senior citizens with vital technological skills and responsible AI usage.</p>
@@ -2044,7 +1982,7 @@
 
                 <!-- STUDENT BENEFITS & INITIATIVE PANEL -->
                 <div class="panel" style="margin-top: 24px;">
-                    <h3>Student Initiative & Multi-Faceted Benefits</h3>
+                    <h3>Student Initiative &amp; Multi-Faceted Benefits</h3>
                     <p>The Digital Experience Pod demonstrated exemplary student initiative under the MAZ InnoVision framework. By driving community outreach beyond classroom borders, students gained invaluable personal and professional benefits:</p>
 
                     <div class="value-box-grid" style="margin-top: 18px;">
@@ -2053,7 +1991,7 @@
                             <p>Students learned how to translate complex technical jargon into intuitive, accessible concepts tailored to senior learners.</p>
                         </div>
                         <div class="value-card">
-                            <h4>🗣️ Public Speaking & Leadership</h4>
+                            <h4>🗣️ Public Speaking &amp; Leadership</h4>
                             <p>Delivering formal presentations and stage talks honed student confidence, presentation design, and group management skills.</p>
                         </div>
                         <div class="value-card">
@@ -2090,7 +2028,7 @@
                         <div>
                             <div class="project-card-header">
                                 <div class="icon-badge">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </div>
                             </div>
                             <h3>Walk360</h3>
@@ -2198,100 +2136,217 @@
 
                 <!-- ENTRY ENABLERS SHOWCASE SECTION -->
                 <div class="panel" style="margin-top: 32px;">
-                    <span class="status-tag">Event Logistics & Entry System</span>
-                    <h3>EntryEnablers — Student-Powered Registration & Access Control</h3>
-                    <p>To highlight how attendees registered and entered the event, the student-led <strong>EntryEnablers</strong> team designed and operated a custom digital check-in platform live at SpaceHub. Rather than using third-party ticketing tools, students built a tailored system that streamlined arrival, verified credentials instantly, and actively facilitated smooth crowd management.</p>
+                    <span class="status-tag">Event Logistics &amp; Entry System</span>
+                    <h3>EntryEnablers — Student-Powered Registration &amp; Access Control</h3>
+                    <p>To highlight how attendees registered and entered the event, the student-led <strong>EntryEnablers</strong> team designed and operated a custom digital check-in platform live at SpaceHub[cite: 33]. Rather than using third-party ticketing tools, students built a tailored system that streamlined arrival, verified credentials instantly, and actively facilitated smooth crowd management[cite: 33].</p>
                     
                     <div class="value-box-grid" style="margin-top: 20px;">
                         <div class="value-card">
                             <h4>🎟️ Rapid Digital Registration</h4>
-                            <p>Pre-event digital registration enabled attendees to generate instant entry passes, eliminating venue bottlenecks and reducing check-in times to seconds.</p>
+                            <p>Pre-event digital registration enabled attendees to generate instant entry passes, eliminating venue bottlenecks and reducing check-in times to seconds[cite: 33].</p>
                         </div>
                         <div class="value-card">
                             <h4>📲 On-Site Verification</h4>
-                            <p>Student EntryEnablers managed dedicated check-in kiosks at SpaceHub, greeting visitors, scanning entry passes, and assisting attendees seamlessly into the venue.</p>
+                            <p>Student EntryEnablers managed dedicated check-in kiosks at SpaceHub, greeting visitors, scanning entry passes, and assisting attendees seamlessly into the venue[cite: 33].</p>
                         </div>
                         <div class="value-card">
                             <h4>📊 Live Attendance Insights</h4>
-                            <p>The system fed real-time attendance metrics to event coordinators, enabling active crowd monitoring and optimal visitor flow across exhibition zones.</p>
+                            <p>The system fed real-time attendance metrics to event coordinators, enabling active crowd monitoring and optimal visitor flow across exhibition zones[cite: 33].</p>
                         </div>
                     </div>
 
                     <div class="entry-enablers-highlight-card">
                         <h4>⚡ Facilitating Smooth Access at SpaceHub</h4>
-                        <p>Stationed directly at the SpaceHub main concourse entrance, the EntryEnablers acted as key venue guides. Equipped with their custom digital platform, they welcomed delegates, guided first-time visitors through instant registration, scanned entry passes, and maintained a seamless registration pipeline that minimized wait times and allowed hundreds of attendees to transition directly into the exhibition hall.</p>
+                        <p>Stationed directly at the SpaceHub main concourse entrance, the EntryEnablers acted as key venue guides[cite: 33]. Equipped with their custom digital platform, they welcomed delegates, guided first-time visitors through instant registration, scanned entry passes, and maintained a seamless registration pipeline that minimized wait times and allowed hundreds of attendees to transition directly into the exhibition hall[cite: 33].</p>
                     </div>
                 </div>
             </div>
 
-            <!-- STUDENT LEADERSHIP & OUTREACH PAGE -->
-            <div id="page-outreach" class="page-section">
+            <!-- STUDENT SHOWCASE PAGE (REVAMPED FROM STUDENT LEADERSHIP PAGE) -->
+            <div id="page-studentshowcase" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Student Leadership, Outreach &amp; Engineering Qualities</h3>
+                        <h3>Student Showcase &amp; Leadership Initiative</h3>
                         <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
                     </div>
-                    <p>Behind the success of MAZ InnoVision 2026 was a student-led initiative in professional outreach, external collaboration, and venue procurement. Placing students at the forefront of every phase, our teams stepped beyond the classroom to directly communicate with industry experts, coordinate with space managers, and build complex tech solutions from scratch.</p>
+                    <p>The MAZ InnoVision Digital Expo was powered from start to finish by student leadership[cite: 33]. Organised into specialized departmental teams, students took full initiative to coordinate logistics, design marketing collateral, engineer custom entry systems, curate media, and manage stage setups[cite: 32]. Working seamlessly together across departments, each team brought the digital expo to life[cite: 32].</p>
                 </div>
 
-                <!-- SECTION 1: PANELIST OUTREACH -->
-                <div class="panel">
-                    <span class="status-tag">Executive Collaboration</span>
-                    <h3>1. Panelist Outreach &amp; Guest Coordination</h3>
-                    <p>To organize the <strong>Digital Spark Discussions</strong> on artificial intelligence, student coordinators spearheaded end-to-end communication with leading academics and tech executives.</p>
+                <!-- TEAMS IMAGE DISPLAY -->
+                <div class="showcase-img-card">
+                    <div class="showcase-img-wrapper" onclick="openLogoModal('teams.jpeg', 'MAZ InnoVision 2026 Student Departmental Teams & Leadership Task Force')">
+                        <img src="teams.jpeg" alt="Digital Expo Departmental Teams and Leadership Roster">
+                    </div>
+                    <div class="showcase-img-caption">
+                        <span><strong>Expo Leadership &amp; Teams Roster:</strong> The student departmental cells who coordinated and executed MAZ InnoVision 2026[cite: 32].</span>
+                        <span class="status-tag" style="margin-bottom: 0;">Department Roster</span>
+                    </div>
+                </div>
+
+                <!-- CENTRAL TASK FORCE HIGHLIGHT -->
+                <div class="panel" style="border: 2px solid var(--brand-gold-main); background: linear-gradient(180deg, rgba(15, 26, 54, 0.95) 0%, rgba(212, 175, 55, 0.05) 100%);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="color: var(--brand-gold-bright);">The Central Task Force</h3>
+                        <span class="central-badge">Central Steering Body</span>
+                    </div>
+                    <p>The <strong>Central Task Force</strong> served as the central body making this expo work. They coordinated the overall event together, aligning departmental workflows, managing timeline milestones, liaising with school management, and ensuring seamless execution across all phases of the expo.</p>
                     
-                    <div class="value-box-grid" style="margin-top: 18px;">
-                        <div class="value-card">
-                            <h4>📧 Formal Invitations &amp; Briefing</h4>
-                            <p>Drafted professional outreach emails and comprehensive event briefing decks sent directly to <strong>Ms. Natalie Loi</strong> (Founder & Head of Tech at UnBound / CEO of Mossy AI) and <strong>Assoc. Prof. Dr. Norhamizan Hamzah</strong> (UM Rehabilitation Medicine).</p>
+                    <div class="value-box-grid" style="margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Yashwardhan Verma</h4>
+                            <p>Central Task Force</p>
                         </div>
-                        <div class="value-card">
-                            <h4>🗓️ Itinerary &amp; Tech Syncs</h4>
-                            <p>Managed calendar scheduling, audio-visual technical briefings, and pre-event sync calls to establish key discussion topics around AI ethics, robotics in healthcare, and youth digital leadership.</p>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Vaibhavi Gokulakrishnan</h4>
+                            <p>Central Task Force</p>
                         </div>
-                        <div class="value-card">
-                            <h4>🎙️ Live Student Moderation</h4>
-                            <p>Formulated discussion prompts and moderated the live stage panel, ensuring seamless dialogue between our guest experts, student delegates, and audience members.</p>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Sophia Stella Miranda</h4>
+                            <p>Central Task Force</p>
+                        </div>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Ram Chinmaya Pranav Bharadwaj Puvvada</h4>
+                            <p>Central Task Force</p>
+                        </div>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Mohamad Rayyan Mridha</h4>
+                            <p>Central Task Force</p>
+                        </div>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Aiman Babla</h4>
+                            <p>Central Task Force</p>
+                        </div>
+                        <div class="value-card" style="border-color: rgba(212, 175, 55, 0.4);">
+                            <h4 style="color: var(--brand-gold-bright);">Ahmed Yasar</h4>
+                            <p>Central Task Force</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- SECTION 2: CHARITY & GREEN TECH OUTREACH -->
-                <div class="panel">
-                    <span class="status-tag">Community & Eco Impact</span>
-                    <h3>2. Community &amp; Charity Outreach for Green Tech</h3>
-                    <p>Executing the <strong>Green Tech Drive</strong> required students to build active partnerships with environmental recycling bodies and community charity centres to ensure responsible e-waste distribution and material recovery in our digital era.</p>
-                    
-                    <div class="grid-2" style="margin-top: 18px;">
-                        <div class="info-panel">
-                            <h4>Department of Environment (DOE) Recyclers</h4>
-                            <p>Students communicated directly with DOE-registered e-waste recycling organizations to verify compliance, coordinate haulage logistics for collected hardware, and ensure safe processing of hazardous materials.</p>
+                <!-- ALL DEPARTMENTAL TEAMS GRID -->
+                <h3 style="margin: 32px 0 18px 0;">Departmental Student Teams</h3>
+                <div class="grid-3">
+
+                    <!-- EntryEnablers Team -->
+                    <div class="team-card" style="border-top-color: var(--brand-green-glow);">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                            </div>
+                            <h4>Entry Enablers</h4>
                         </div>
-                        <div class="info-panel">
-                            <h4>Charity &amp; Refurbishment Outreach</h4>
-                            <p>Student teams liaised with local charity centres and community groups to identify working or repairable devices (laptops, tablets) donated during the drive, redirecting usable hardware back to underserved families.</p>
-                        </div>
+                        <p class="team-desc">Managed attendee check-in, live QR verification, attendee registration, entrance flow, and crowd management at SpaceHub concourse[cite: 32, 33].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Ahmed Yasar[cite: 32]</li>
+                            <li class="member-item">Farzana Anjum Faria[cite: 32]</li>
+                            <li class="member-item">Jia Ying Tan[cite: 32]</li>
+                        </ul>
                     </div>
+
+                    <!-- Market Masters Team -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </div>
+                            <h4>Market Masters</h4>
+                        </div>
+                        <p class="team-desc">Led promotional outreach, social media presence, event branding materials, and public relations campaign[cite: 32].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Vaibhavi Gokulakrishnan[cite: 32]</li>
+                            <li class="member-item">Riddhika Mukherjee[cite: 32]</li>
+                            <li class="member-item">Kashish Rajesh[cite: 32]</li>
+                            <li class="member-item">Navya Swaminathan[cite: 32]</li>
+                            <li class="member-item">Keertishri Chandramohan[cite: 32]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Flow Masters Team -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            </div>
+                            <h4>Flow Masters</h4>
+                        </div>
+                        <p class="team-desc">Coordinated event schedule, managed stage timing, speaker transitions, and venue movement synchronization[cite: 32].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Yashwardhan Verma[cite: 32]</li>
+                            <li class="member-item">Adithya Krishna Sudhir[cite: 32]</li>
+                            <li class="member-item">Tenzin Thokmey[cite: 32]</li>
+                            <li class="member-item">Shriya Sankar[cite: 32]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Digital Creators Team -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.58 7.58"/><circle cx="11" cy="11" r="2"/></svg>
+                            </div>
+                            <h4>Digital Creators</h4>
+                        </div>
+                        <p class="team-desc">Designed UI/UX elements, website assets, digital infographics, and visual presentation content[cite: 32].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Sophia Stella Miranda[cite: 32]</li>
+                            <li class="member-item">Samyuktha Jayaprakash[cite: 32]</li>
+                            <li class="member-item">Keira Elizabeth George[cite: 32]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Commandos Team -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <h4>Tech Commandos</h4>
+                        </div>
+                        <p class="team-desc">Handled AV setup, hardware infrastructure, audio systems, video feeds, and stage technical troubleshooting[cite: 32].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Ram Chinmaya Pranav Bharadwaj Puvvada[cite: 32]</li>
+                            <li class="member-item">Mohamad Rayyan Mridha[cite: 32]</li>
+                            <li class="member-item">Suryashankar[cite: 32]</li>
+                            <li class="member-item">Devvrat Sahu[cite: 32]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Snappers Team -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <div class="icon-badge" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            </div>
+                            <h4>Snappers</h4>
+                        </div>
+                        <p class="team-desc">Captured high-resolution photography, video footage, behind-the-scenes documentation, and post-event media archiving[cite: 32].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Aiman Babla[cite: 32]</li>
+                            <li class="member-item">Tenzin Thokmey[cite: 32]</li>
+                            <li class="member-item">Mishka Saxena[cite: 32]</li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <!-- SECTION 3: INNOVATION BEHIND INNOVATION PROJECTS -->
-                <div class="panel">
-                    <span class="status-tag">Engineering Methodology</span>
-                    <h3>3. Student Qualities & Software Craftsmanship</h3>
-                    <p>The projects exhibited at InnoVision were not merely ideas on paper—they represented robust engineering, iterative development, and user-centered design practices executed entirely by secondary students at the forefront of digital learning.</p>
+                <!-- OUTREACH & LEADERSHIP QUALITIES -->
+                <div class="panel" style="margin-top: 32px;">
+                    <span class="status-tag">Executive Collaboration &amp; Outreach</span>
+                    <h3>Industry Outreach &amp; Real-World Execution</h3>
+                    <p>Placing students at the forefront of every phase, our teams stepped beyond the classroom to directly communicate with industry experts, coordinate with space managers, and build complex tech solutions from scratch[cite: 33].</p>
                     
                     <div class="value-box-grid" style="margin-top: 18px;">
                         <div class="value-card">
-                            <h4>⚙️ Full-Stack Entry Registration System</h4>
-                            <p>Developed custom, high-speed registration modules used live at SpaceHub entrance by student <em>EntryEnablers</em> to eliminate registration bottlenecks and digitize attendance flow.</p>
+                            <h4>📧 Formal Guest Outreach</h4>
+                            <p>Drafted professional outreach emails and comprehensive event briefing decks sent directly to industry panel speakers <strong>Ms. Natalie Loi</strong> (Founder & Head of Tech at UnBound / CEO of Mossy AI) and <strong>Assoc. Prof. Dr. Norhamizan Hamzah</strong> (UM Rehabilitation Medicine)[cite: 33].</p>
                         </div>
                         <div class="value-card">
-                            <h4>💻 Clean Tech Stack Architecture</h4>
-                            <p>Built using modular HTML5, CSS custom properties, and native JavaScript ES6+, hosted securely to deliver zero-dependency, lightning-fast performance.</p>
+                            <h4>🌱 Environmental Recycling Liaison</h4>
+                            <p>Students communicated directly with DOE-registered e-waste recycling organizations to verify compliance, coordinate haulage logistics for collected hardware during the Green Tech Drive, and redirect refurbished electronics to local charities[cite: 33].</p>
                         </div>
                         <div class="value-card">
-                            <h4>📱 Accessible UI & Responsive Design</h4>
-                            <p>Architected with responsive CSS Grid/Flexbox layouts, fluid typography, and high-contrast color palettes designed to optimize accessibility across devices.</p>
+                            <h4>⚙️ High-Speed Operational Execution</h4>
+                            <p>Integrated full-stack check-in systems, custom UI interfaces, responsive web tools, and live stage moderation with professional-grade software craftsmanship[cite: 33].</p>
                         </div>
                     </div>
                 </div>
@@ -2301,8 +2356,8 @@
                         <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
                     </div>
                     <div>
-                        <h4>Real-World Communication Meets Student Leadership</h4>
-                        <p>"By bridging corporate outreach, community liaison, and technical execution, our student cells gained hands-on experience in project governance, software delivery, and professional correspondence that directly translates to university and industry leadership."</p>
+                        <h4>Real-World Collaboration Meets Student Initiative</h4>
+                        <p>"By bridging corporate outreach, community liaison, departmental teamwork, and technical execution, our student cells gained hands-on experience in project governance, software delivery, and professional leadership that directly translates to university and industry excellence."[cite: 32, 33]</p>
                     </div>
                 </div>
             </div>
@@ -2316,279 +2371,185 @@
                     <div>
                         <h3>Exhibition Venue: SpaceHub, The Strand Mall</h3>
                         <address>46-G, Jalan PJU 5/22, Encorp Strand, Pusat Perdagangan Kota Damansara, 47810 Petaling Jaya, Selangor.</address>
-                        <p>Driven by proactive leadership, our student organizers personally contacted and secured SpaceHub at Strand Mall as the official event location. This initiative highlighted core student qualities in negotiating, planning, and managing professional venue logistics for a large-scale expo.</p>
+                        <p>Driven by proactive leadership, our student organizers personally contacted and secured SpaceHub at Strand Mall as the official event location[cite: 33]. This initiative highlighted core student qualities in negotiating, planning, and managing professional venue logistics for a large-scale expo[cite: 33].</p>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <span class="status-tag">Access Control & Guidance</span>
-                    <h3>EntryEnablers — Venue Access & Guest Facilitation</h3>
-                    <p>On the day of the expo, the student-led <strong>EntryEnablers</strong> played an essential role at SpaceHub, Strand Mall. Stationed at the primary entrance concourse, the EntryEnablers served as front-line operational anchors ensuring smooth guest arrivals and flawless access control.</p>
+                    <span class="status-tag">Access Control &amp; Guidance</span>
+                    <h3>EntryEnablers — Venue Access &amp; Guest Facilitation</h3>
+                    <p>On the day of the expo, the student-led <strong>EntryEnablers</strong> played an essential role at SpaceHub, Strand Mall[cite: 33]. Stationed at the primary entrance concourse, the EntryEnablers served as front-line operational anchors ensuring smooth guest arrivals and flawless access control[cite: 32, 33].</p>
                     
                     <div class="value-box-grid" style="margin-top: 18px;">
                         <div class="value-card">
                             <h4>🚪 Front-of-House Management</h4>
-                            <p>Welcomed delegates, VIP guests, and participating schools, offering immediate direction and venue orientation right from the entrance.</p>
+                            <p>Welcomed delegates, VIP guests, and participating schools, offering immediate direction and venue orientation right from the entrance[cite: 33].</p>
                         </div>
                         <div class="value-card">
-                            <h4>📱 Instant QR & Digital Check-In</h4>
-                            <p>Operated custom student-engineered verification scanners to process entry credentials in seconds and prevent entrance bottlenecks.</p>
+                            <h4>📱 Instant QR &amp; Digital Check-In</h4>
+                            <p>Operated custom student-engineered verification scanners to process entry credentials in seconds and prevent entrance bottlenecks[cite: 33].</p>
                         </div>
                         <div class="value-card">
                             <h4>🚶 Streamlined Flow Control</h4>
-                            <p>Managed crowd movement and guided visitor streams directly into the main exhibition hall and presentation stages.</p>
+                            <p>Managed crowd movement and guided visitor streams directly into the main exhibition hall and presentation stages[cite: 33].</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
                     <span class="status-tag">Event Operations</span>
-                    <h3>Student Coordinators & Volunteers — Expo Operations</h3>
-                    <p>The entire operational engine behind MAZ InnoVision 2026 was powered by dedicated student coordinators and volunteers who worked untiringly across SpaceHub to ensure an uninterrupted, high-quality event experience.</p>
-                    
-                    <div class="value-box-grid" style="margin-top: 18px;">
-                        <div class="value-card">
-                            <h4>📋 Floor Coordination & Logistics</h4>
-                            <p>Student coordinators managed stage schedules, assisted panel discussion timing, and facilitated transitions between keynote talks and project demos.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>🎙️ Technical & Audio-Visual Support</h4>
-                            <p>Volunteers provided real-time tech support across all project display stations, monitoring AV setups, microphone queues, and live presentation feeds.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>ℹ️ Visitor Support & Concierge</h4>
-                            <p>Volunteer hosts roamed the venue floor to assist attendees, answer itinerary queries, and maintain safety and order throughout the day.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <span class="status-tag">Exhibition Layout</span>
-                    <h3>Student Project Booths & Interactive Showcase</h3>
-                    <p>The core attraction of SpaceHub was transformed into a bustling student innovation showcase where teams set up interactive project booths. Hundreds of visitors, industry judges, and peers engaged directly with student creators across various specialized domains.</p>
-                    
-                    <div class="value-box-grid" style="margin-top: 18px;">
-                        <div class="value-card">
-                            <h4>🤖 Interactive Demo Stations</h4>
-                            <p>Each booth featured live working hardware, interactive software displays, and prototype demonstrations including AI smart devices and neural concept models.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>🗣️ Student Pitching & Q&A</h4>
-                            <p>Student builders presented live elevator pitches and answered technical questions directly from visiting engineers, teachers, and delegates.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>🌱 Eco & Tech Exhibition</h4>
-                            <p>Dedicated booths showcased sustainable tech, AI flood defense models, cultural computer vision tools, and river-cleaning prototypes.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <h3>Venue Location & Map Archive</h3>
-                    <p>View the venue location where MAZ InnoVision 2026 was hosted:</p>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.679163276686!2d101.5919653758253!3d3.178873052952434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4edbbf1f114b%3A0x868c98e29a99efaa!2sEncorp%20Strand%20Mall!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                    <h3>Student Coordinators &amp; Volunteers — Expo Operations</h3>
+                    <p>The entire operational engine behind MAZ InnoVision 2026 was powered by dedicated student coordinators and volunteers who worked untiringly across SpaceHub to ensure an uninterrupted, high-quality event[cite: 32, 33].</p>
                 </div>
             </div>
 
-            <!-- KEY EVENTS PAGE -->
+            <!-- KEY EVENTS & AGENDA PAGE -->
             <div id="page-events" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Full Expo Event Itinerary & Activities</h3>
+                        <h3>Key Events &amp; Official Expo Agenda</h3>
                         <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
                     </div>
-                    
-                    <div class="schedule-filters">
-                        <button class="filter-btn active" onclick="filterSchedule('all', this)">All Schedule Items</button>
-                        <button class="filter-btn" onclick="filterSchedule('morning', this)">Morning Sessions (9:00 AM - 12:45 PM)</button>
-                        <button class="filter-btn" onclick="filterSchedule('afternoon', this)">Afternoon Sessions (1:30 PM - 4:00 PM)</button>
-                    </div>
-
-                    <div class="timeline">
-                        <div class="timeline-item" data-session="morning">
-                            <span class="status-tag">9:00 AM – 9:30 AM</span>
-                            <h4>Arrival & EntryEnablers Registration</h4>
-                            <p>Guest check-in managed using the student-engineered digital registration system, operated live by student EntryEnablers at the SpaceHub entrance to greet and register attendees seamlessly.</p>
-                        </div>
-                        <div class="timeline-item" data-session="morning">
-                            <span class="status-tag">9:30 AM – 11:30 AM</span>
-                            <h4>Innovation League Presentations</h4>
-                            <p>Student teams presented creative solutions tackling real-world challenges across AI, Sustainability, Health, and Assistive Technologies.</p>
-                        </div>
-                        <div class="timeline-item" data-session="morning">
-                            <span class="status-tag">11:45 AM – 12:45 PM</span>
-                            <h4>Innovation Arcade & Project Booths</h4>
-                            <p>Hands-on exhibition zone featuring interactive student project displays, live system demos, and eco-innovation showcases.</p>
-                        </div>
-                        <div class="timeline-item" data-session="afternoon">
-                            <span class="status-tag">1:30 PM – 3:00 PM</span>
-                            <h4>Digital Spark Discussions (AI Panel Session)</h4>
-                            <p>Student-moderated panel discussion exploring "How AI is Changing the World Positively", AI ethics, and future-ready skills.</p>
-                        </div>
-                        <div class="timeline-item" data-session="afternoon">
-                            <span class="status-tag">3:00 PM – 4:00 PM</span>
-                            <h4>Closing Ceremony & Innovation Recognition</h4>
-                            <p>Celebrating student achievement, technical leadership, and collaborative teamwork across the entire cohort.</p>
-                        </div>
-                    </div>
+                    <p>The MAZ InnoVision 2026 schedule featured keynote speeches, live student project showcases, panel discussions, and interactive workshops across the SpaceHub venue[cite: 33].</p>
                 </div>
 
-                <!-- DIGITAL SPARK DISCUSSIONS / SPEAKERS DETAIL PANEL -->
-                <div class="panel" style="margin-top: 24px;">
-                    <h3>Featured Panelists — Digital Spark Discussions</h3>
-                    <p style="margin-bottom: 20px;">Our student moderators facilitated an insightful conversation on AI ethics, career awareness, and technology with distinguished guest experts:</p>
-
-                    <div class="speaker-card">
-                        <div class="speaker-avatar">NL</div>
-                        <div class="speaker-info">
-                            <h4>Ms. Natalie Loi</h4>
-                            <p class="role">Founder & Head of Technology at UnBound (Malaysia & Australia) · CEO of Mossy AI</p>
-                            <p class="desc">Award-winning technologist, AI policy contributor, and international keynote speaker specializing in AI innovation and digital transformation.</p>
+                <div class="panel">
+                    <h3>Official Digital Expo Agenda (3 October 2026)</h3>
+                    <div class="value-box-grid" style="grid-template-columns: 1fr; gap: 16px; margin-top: 18px;">
+                        <div class="value-card">
+                            <h4 style="display: flex; justify-span: space-between; justify-content: space-between; width: 100%;">
+                                <span>09:00 AM — Registration &amp; Entrance Check-In</span>
+                                <span class="status-tag" style="margin-bottom:0;">EntryEnablers</span>
+                            </h4>
+                            <p>Attendees checked in live via custom digital check-in passes operated by student EntryEnablers at the SpaceHub main concourse[cite: 33].</p>
                         </div>
-                    </div>
-
-                    <div class="speaker-card">
-                        <div class="speaker-avatar">NH</div>
-                        <div class="speaker-info">
-                            <h4>Assoc. Prof. Dr. Norhamizan Hamzah</h4>
-                            <p class="role">Head of AI & Robotics Section, Rehabilitation Medicine, Universiti Malaya (UM)</p>
-                            <p class="desc">Clinician-academic working at the intersection of healthcare, artificial intelligence, robotics, and medical rehabilitation tech.</p>
+                        <div class="value-card">
+                            <h4 style="display: flex; justify-content: space-between; width: 100%;">
+                                <span>10:00 AM — Official Opening &amp; Keynote Address</span>
+                                <span class="status-tag" style="margin-bottom:0;">Main Stage</span>
+                            </h4>
+                            <p>Opening remarks on the move towards a digital world, highlighting student-led innovation and sustainable technology goals[cite: 33].</p>
+                        </div>
+                        <div class="value-card">
+                            <h4 style="display: flex; justify-content: space-between; width: 100%;">
+                                <span>11:15 AM — Student Innovation Project Showcase</span>
+                                <span class="status-tag" style="margin-bottom:0;">Exhibition Floor</span>
+                            </h4>
+                            <p>Live demonstrations of Walk360, CarryMate, Aqua Sweep, NeuroGuard, AI Flood Gate, and AI Culinary Recognition[cite: 33].</p>
+                        </div>
+                        <div class="value-card">
+                            <h4 style="display: flex; justify-content: space-between; width: 100%;">
+                                <span>02:00 PM — Digital Spark Panel Discussions</span>
+                                <span class="status-tag" style="margin-bottom:0;">Auditorium</span>
+                            </h4>
+                            <p>Student-moderated discussions with guest speakers Ms. Natalie Loi and Assoc. Prof. Dr. Norhamizan Hamzah on AI ethics and robotics[cite: 33].</p>
+                        </div>
+                        <div class="value-card">
+                            <h4 style="display: flex; justify-content: space-between; width: 100%;">
+                                <span>04:00 PM — Closing Ceremony &amp; Awards</span>
+                                <span class="status-tag" style="margin-bottom:0;">Main Stage</span>
+                            </h4>
+                            <p>Recognition of student leadership, central task force coordination, departmental teams, and innovative project awards[cite: 32, 33].</p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-
     </div>
 
-    <!-- LOGO POPUP MODAL (LIGHTBOX) -->
+    <!-- Lightbox Modal -->
     <div id="logoModal" class="modal-overlay" onclick="closeLogoModal(event)">
         <div class="modal-card" onclick="event.stopPropagation()">
-            <button class="modal-close-btn" onclick="closeLogoModal(event)" title="Close">&times;</button>
-            <img id="modalImg" class="modal-logo-img" src="" alt="Enlarged Logo View">
-            <h3 id="modalTitle" class="modal-title">MAZ InnoVision</h3>
-            <p id="modalSubtext" class="modal-subtext">Official High-Resolution Emblem — MAZ International School</p>
+            <button class="modal-close-btn" onclick="closeLogoModal(event)">✕</button>
+            <img id="modalImg" class="modal-logo-img" src="" alt="Enlarged Visual">
+            <h3 id="modalTitle" class="modal-title">MAZ InnoVision Emblem</h3>
+            <p id="modalSubtext" class="modal-subtext">MAZ International School Official Record</p>
         </div>
     </div>
 
-    <!-- Official Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand-header">
-                <img src="school-logo.png" alt="MAZ International School" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'MAZ International School Crest')">
-                <img src="innovision-logo.png" alt="InnoVision" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'MAZ InnoVision Official Logo')">
+                <img src="school-logo.png" class="footer-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Crest')">
+                <img src="innovision-logo.png" class="footer-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
             </div>
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>MAZ InnoVision Digital Record 2026</h4>
-                    <p>An official technology showcase and portfolio platform documenting the student achievements, eco-initiatives, and digital innovation created at MAZ International School.</p>
+                    <h4>MAZ InnoVision 2026</h4>
+                    <p>Empowering students at the forefront as creative problem-solvers who pioneer digital solutions and drive global advancement[cite: 33].</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#" onclick="switchPage('home', event)">Home Showcase</a></li>
-                        <li><a href="#" onclick="switchPage('greentech', event)">Green Tech Drive</a></li>
-                        <li><a href="#" onclick="switchPage('experiencepod', event)">Digital Experience Pod</a></li>
                         <li><a href="#" onclick="switchPage('projects', event)">Innovation Projects</a></li>
-                        <li><a href="#" onclick="switchPage('outreach', event)">Student Leadership</a></li>
+                        <li><a href="#" onclick="switchPage('studentshowcase', event)">Student Showcase</a></li>
+                        <li><a href="#" onclick="switchPage('greentech', event)">Green Tech Drive</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Event Details</h4>
-                    <p><strong>Venue:</strong> SpaceHub, Strand Mall</p>
-                    <p><strong>Date:</strong> 3 October 2026</p>
-                    <p><strong>School:</strong> MAZ International School</p>
+                    <h4>Venue Location</h4>
+                    <p>SpaceHub, Strand Mall<br>Petaling Jaya, Selangor[cite: 33]</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 MAZ International School. All rights reserved. InnoVision Student Portfolio Record.</p>
+                <p>&copy; 2026 MAZ International School. All Rights Reserved. MAZ InnoVision Post-Digital Expo Record[cite: 33].</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Page Navigation Switcher
+        // Page Navigation
         function switchPage(pageId, event) {
             if (event) event.preventDefault();
             
             const pages = document.querySelectorAll('.page-section');
-            pages.forEach(page => page.classList.remove('active'));
+            pages.forEach(p => p.classList.remove('active'));
 
             const targetPage = document.getElementById('page-' + pageId);
             if (targetPage) {
                 targetPage.classList.add('active');
             }
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-
-            if (event && event.currentTarget && event.currentTarget.classList.contains('nav-link')) {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(l => l.classList.remove('active'));
+            if (event && event.currentTarget) {
                 event.currentTarget.classList.add('active');
             }
 
             window.scrollTo({ top: 400, behavior: 'smooth' });
         }
 
-        // Theme Toggle Functionality
+        // Theme Toggle
         function toggleTheme() {
-            const body = document.body;
-            const themeBtn = document.getElementById('themeToggleBtn');
-            const themeIcon = document.getElementById('themeIcon');
-
-            body.classList.toggle('light-mode');
-
-            if (body.classList.contains('light-mode')) {
-                themeIcon.textContent = '🌙';
-                themeBtn.childNodes[1].nodeValue = ' Dark Mode';
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('themeToggleBtn');
+            const icon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('light-mode')) {
+                icon.textContent = '🌙';
+                btn.childNodes[1].textContent = ' Dark Mode';
             } else {
-                themeIcon.textContent = '☀️';
-                themeBtn.childNodes[1].nodeValue = ' Light Mode';
+                icon.textContent = '☀️';
+                btn.childNodes[1].textContent = ' Light Mode';
             }
         }
 
-        // Modal / Lightbox Functions
+        // Modal Lightbox
         function openLogoModal(imgSrc, titleText) {
             const modal = document.getElementById('logoModal');
             const modalImg = document.getElementById('modalImg');
             const modalTitle = document.getElementById('modalTitle');
-
+            
             modalImg.src = imgSrc;
-            modalTitle.textContent = titleText || 'MAZ InnoVision Emblem';
+            modalTitle.textContent = titleText || 'MAZ InnoVision Visual';
             modal.classList.add('active');
         }
 
         function closeLogoModal(event) {
             const modal = document.getElementById('logoModal');
             modal.classList.remove('active');
-        }
-
-        // Event Schedule Filtering
-        function filterSchedule(category, btnElement) {
-            const buttons = document.querySelectorAll('.schedule-filters .filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (btnElement) btnElement.classList.add('active');
-
-            const items = document.querySelectorAll('.timeline-item');
-            items.forEach(item => {
-                if (category === 'all') {
-                    item.classList.remove('hidden');
-                } else {
-                    const session = item.getAttribute('data-session');
-                    if (session === category) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                }
-            });
         }
     </script>
 </body>
