@@ -822,92 +822,634 @@
             line-height: 1.55;
         }
 
-        /* Showcase Styling for Student Teams */
-        .central-taskforce-card {
-            background: linear-gradient(135deg, rgba(15, 26, 54, 0.9) 0%, rgba(12, 61, 33, 0.5) 100%);
-            border: 2px solid var(--brand-gold-bright);
+        /* Green Tech Showcase Image Card */
+        .showcase-img-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
             border-radius: var(--radius-md);
-            padding: 32px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 26px;
+            transition: all 0.25s ease;
         }
 
-        .central-taskforce-card h4 {
-            color: var(--brand-gold-bright) !important;
-            font-size: 1.3rem;
+        .showcase-img-card:hover {
+            border-color: var(--brand-green-glow);
+            transform: translateY(-3px);
+        }
+
+        .showcase-img-wrapper {
+            position: relative;
+            width: 100%;
+            max-height: 480px;
+            overflow: hidden;
+            background: rgba(7, 13, 26, 0.8);
+            cursor: pointer;
+        }
+
+        .showcase-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .showcase-img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .showcase-img-caption {
+            padding: 16px 24px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-panel);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .showcase-img-caption strong {
+            color: var(--white);
+        }
+
+        body.light-mode .showcase-img-caption strong {
+            color: var(--brand-navy-main);
+        }
+
+        .schedule-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(37, 143, 80, 0.12);
+            border: 1px solid var(--border-panel);
+            color: var(--text-main);
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-family: var(--font-heading);
+            font-size: 0.86rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        body.light-mode .filter-btn {
+            background: rgba(24, 99, 55, 0.08);
+            color: #334155;
+            border-color: rgba(15, 26, 54, 0.15);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--brand-green-mid);
+            color: var(--white) !important;
+            border-color: var(--brand-green-light);
+            box-shadow: 0 2px 10px rgba(24, 99, 55, 0.4);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 380px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 2px solid var(--brand-green-mid);
+            margin-top: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .brand-watermark-card {
+            background: linear-gradient(135deg, var(--brand-navy-main) 0%, var(--brand-navy-light) 100%);
+            border-radius: var(--radius-md);
+            padding: 26px 32px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 26px;
+            border: 1px solid var(--brand-green-mid);
+            box-shadow: var(--shadow-md);
+        }
+
+        body.light-mode .brand-watermark-card {
+            background: linear-gradient(135deg, #0f1a36 0%, #1b2d5a 100%);
+        }
+
+        .brand-watermark-content h4 {
+            color: var(--white) !important;
+            font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+        }
+
+        .brand-watermark-content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.92rem;
+            max-width: 620px;
+        }
+
+        .brand-watermark-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-watermark-logos img {
+            height: 46px;
+            width: auto;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+        }
+
+        .quote-block {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-left: 5px solid var(--brand-green-mid);
+            padding: 26px 30px;
+            border-radius: var(--radius-md);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quote-block h4 {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        body.light-mode .quote-block h4 {
+            color: var(--brand-navy-main);
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: var(--text-main);
+        }
+
+        .icon-badge {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(37, 143, 80, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.light-mode .icon-badge {
+            background: rgba(24, 99, 55, 0.1);
+        }
+
+        .icon-badge svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--brand-green-glow);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        body.light-mode .icon-badge svg {
+            stroke: var(--brand-green-mid);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .info-panel {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-top: 4px solid var(--brand-green-mid);
+            padding: 28px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .info-panel:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-panel h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        body.light-mode .info-panel h4 {
+            color: var(--brand-navy-main);
+        }
+
+        .info-panel p {
+            margin: 0;
+            font-size: 0.93rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .status-tag {
+            display: inline-block;
+            background: rgba(37, 143, 80, 0.22);
+            color: var(--brand-green-glow);
+            border: 1px solid rgba(37, 143, 80, 0.5);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        body.light-mode .status-tag {
+            background: rgba(24, 99, 55, 0.1);
+            color: var(--brand-green-mid);
+            border-color: rgba(24, 99, 55, 0.3);
+        }
+
+        .project-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-green-mid);
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        body.light-mode .project-card h3 {
+            color: var(--brand-navy-main);
+        }
+
+        .project-card p {
+            margin: 0 0 16px 0;
+            font-size: 0.93rem;
+            color: var(--text-main);
+            line-height: 1.65;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .project-tag {
+            background: rgba(16, 31, 66, 0.6);
+            border: 1px solid rgba(37, 143, 80, 0.3);
+            color: var(--brand-green-glow);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        body.light-mode .project-tag {
+            background: rgba(24, 99, 55, 0.08);
+            border-color: rgba(24, 99, 55, 0.2);
+            color: var(--brand-green-mid);
+        }
+
+        .venue-block {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-bottom: 26px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .venue-block .icon-badge { 
+            width: 54px;
+            height: 54px;
+        }
+
+        .venue-block h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        body.light-mode .venue-block h3 {
+            color: var(--brand-navy-main);
+        }
+
+        .venue-block address {
+            font-style: normal;
+            color: var(--brand-green-glow);
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: rgba(37, 143, 80, 0.12);
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-panel);
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        body.light-mode .venue-block address {
+            color: var(--brand-green-mid);
+            background: rgba(24, 99, 55, 0.08);
+        }
+
+        .venue-block p {
+            margin: 4px 0 0 0;
+            font-size: 0.94rem;
+            color: var(--text-main);
+            line-height: 1.65;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--brand-green-mid);
+            padding-left: 30px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 32px;
+            position: relative;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .timeline-item.hidden { display: none; }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--brand-green-glow);
+            border: 3px solid var(--brand-navy-dark);
+            box-shadow: 0 0 0 2px var(--brand-green-mid);
+        }
+
+        body.light-mode .timeline-item::before {
+            background: var(--brand-green-mid);
+            border-color: #ffffff;
+        }
+
+        .timeline-item h4 {
+            margin: 0 0 6px 0;
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        body.light-mode .timeline-item h4 {
+            color: var(--brand-navy-main);
+        }
+
+        .timeline-item p {
+            margin: 6px 0 0 0;
+            font-size: 0.94rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Modal / Lightbox */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(7, 13, 26, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--brand-navy-main);
+            border: 2px solid var(--brand-green-mid);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transform: scale(0.85);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--brand-green-mid);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .modal-logo-img {
+            max-height: 380px;
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto 20px auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+        }
+
+        .modal-title {
+            color: var(--white) !important;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .modal-subtext {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.92rem;
+        }
+
+        /* Speaker Cards Styling */
+        .speaker-card {
+            background: rgba(15, 26, 54, 0.6);
+            border: 1px solid var(--border-panel);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            transition: all 0.25s ease;
+        }
+
+        body.light-mode .speaker-card {
+            background: #ffffff;
+            border-color: rgba(15, 26, 54, 0.1);
+        }
+
+        .speaker-card:hover {
+            border-color: var(--brand-green-glow);
+            transform: translateY(-2px);
+        }
+
+        .speaker-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand-green-mid), var(--brand-green-glow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ffffff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .speaker-info h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        body.light-mode .speaker-info h4 {
+            color: var(--brand-navy-main);
+        }
+
+        .speaker-info p.role {
+            font-size: 0.85rem;
+            color: var(--brand-green-glow);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        body.light-mode .speaker-info p.role {
+            color: var(--brand-green-mid);
+        }
+
+        .speaker-info p.desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        /* EntryEnablers Feature Highlight Card */
+        .entry-enablers-highlight-card {
+            background: linear-gradient(135deg, rgba(12, 61, 33, 0.35) 0%, rgba(15, 26, 54, 0.8) 100%);
+            border: 1px solid var(--brand-green-glow);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-glow) !important;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        body.light-mode .entry-enablers-highlight-card h4 {
+            color: var(--brand-green-mid) !important;
         }
 
-        .team-card {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-panel);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.25s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .team-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--brand-green-glow);
-            box-shadow: var(--shadow-md);
-        }
-
-        .team-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-panel);
-            padding-bottom: 12px;
-            margin-bottom: 14px;
-        }
-
-        .team-card-header h4 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--white);
-        }
-
-        body.light-mode .team-card-header h4 {
-            color: var(--brand-navy-main);
-        }
-
-        .member-list {
-            list-style: none;
-            padding: 0;
-            margin: 12px 0 0 0;
-        }
-
-        .member-list li {
-            font-size: 0.9rem;
+        .entry-enablers-highlight-card p {
+            margin: 0;
+            font-size: 0.94rem;
+            line-height: 1.65;
             color: var(--text-main);
-            padding: 4px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .member-list li::before {
-            content: "•";
-            color: var(--brand-green-glow);
-            font-weight: bold;
-        }
-
-        body.light-mode .member-list li::before {
-            color: var(--brand-green-mid);
         }
 
         /* Footer */
@@ -1050,7 +1592,7 @@
             <li><button class="nav-link" onclick="switchPage('greentech', event)">Green Tech Drive</button></li>
             <li><button class="nav-link" onclick="switchPage('experiencepod', event)">Digital Experience Pod</button></li>
             <li><button class="nav-link" onclick="switchPage('projects', event)">Innovation Projects</button></li>
-            <li><button class="nav-link" onclick="switchPage('outreach', event)">Student Showcase</button></li>
+            <li><button class="nav-link" onclick="switchPage('outreach', event)">Student Leadership</button></li>
             <li><button class="nav-link" onclick="switchPage('venue', event)">Venue & Location</button></li>
             <li><button class="nav-link" onclick="switchPage('events', event)">Key Events & Agenda</button></li>
         </ul>
@@ -1183,7 +1725,7 @@
                         </div>
                         <div class="pillar-box">
                             <div class="pillar-icon">
-                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 1 0 7.75"/></svg>
                             </div>
                             <div class="pillar-content">
                                 <h4>3. Collaborative Rigour</h4>
@@ -1249,207 +1791,291 @@
                 </div>
             </div>
 
-            <!-- STUDENT SHOWCASE PAGE (REVAMPED OUTREACH PAGE) -->
+            <!-- GREEN TECH DRIVE PAGE -->
+            <div id="page-greentech" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>MAZ International Green Tech Drive</h3>
+                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
+                    </div>
+                    <p>As a crucial prelude and core sustainability pillar of <strong>MAZ InnoVision 2026</strong>, our student leaders spearheaded the <strong>Green Tech Drive</strong> on <strong>Wednesday, 16 September 2026</strong> at MAZ International School PJ. Timed around Malaysia Day, this student-led initiative mobilized the entire school community to take responsibility for electronic waste (e-waste) management and environmental preservation.</p>
+                    
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div class="info-panel">
+                            <span class="status-tag">E-Waste Recycling</span>
+                            <h4>Safe Disposal & Material Recovery</h4>
+                            <p>Students collected discarded computers, circuit boards, cables, and mobile devices, ensuring dangerous heavy metals were kept out of landfills and precious reusable elements were safely reclaimed.</p>
+                        </div>
+                        <div class="info-panel">
+                            <span class="status-tag">Community Action</span>
+                            <h4>Youth Environmental Advocacy</h4>
+                            <p>By organizing workshops and collection drives, young innovators demonstrated that environmental stewardship goes hand-in-hand with technological progress in a digital world.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-img-card">
+                    <div class="showcase-img-wrapper" onclick="openLogoModal('green-tech-drive.jpg', 'MAZ Green Tech Drive Showcase')">
+                        <img src="green-tech-drive.jpg" alt="MAZ Green Tech Drive Event Photo">
+                    </div>
+                    <div class="showcase-img-caption">
+                        <span><strong>Green Tech Drive Action:</strong> Students organizing collected e-waste at MAZ International School.</span>
+                        <span style="color: var(--brand-green-glow); font-weight: 700;">16 September 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIGITAL EXPERIENCE POD PAGE -->
+            <div id="page-experiencepod" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Digital Experience Pod — Live Interactive Hub</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>The <strong>Digital Experience Pod</strong> served as the interactive nerve center during MAZ InnoVision 2026. Designed as an immersive space, visitors directly engaged with cutting-edge prototypes, real-time data visualizers, and student-designed simulations demonstrating digital solutions in real time.</p>
+                    
+                    <div class="grid-3" style="margin-top: 24px;">
+                        <div class="info-panel">
+                            <span class="status-tag">Interactive Tech</span>
+                            <h4>Hands-On Demonstrations</h4>
+                            <p>Attendees experienced hands-on control of robotics, AI model outputs, and custom software UI created entirely by MAZ students.</p>
+                        </div>
+                        <div class="info-panel">
+                            <span class="status-tag">Real-Time Data</span>
+                            <h4>IoT & Environmental Feeds</h4>
+                            <p>Live data streaming from water filtration sensors and automated tracking dashboards showcased practical IoT applications.</p>
+                        </div>
+                        <div class="info-panel">
+                            <span class="status-tag">Digital Engagement</span>
+                            <h4>Youth & Visitor Dialogue</h4>
+                            <p>Student builders presented technical breakdowns and hosted live Q&A sessions with visitors, educators, and tech industry peers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS PAGE -->
+            <div id="page-projects" class="page-section">
+                <div class="panel">
+                    <div class="panel-header-with-logo">
+                        <h3>Student Innovation Showcase Projects</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>Explore the flagship technology projects designed, engineered, and presented by MAZ International School students for InnoVision 2026.</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="project-card">
+                        <div>
+                            <div class="project-card-header">
+                                <h3>Aqua Sweep</h3>
+                                <span class="status-tag">Environmental Tech</span>
+                            </div>
+                            <p>An autonomous surface vessel engineered to clear water surface pollutants and plastic waste from localized water bodies using integrated mesh filtration and telemetry.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Robotics</span>
+                            <span class="project-tag">CleanTech</span>
+                            <span class="project-tag">IoT</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <div class="project-card-header">
+                                <h3>Walk360</h3>
+                                <span class="status-tag">Assistive Mobility</span>
+                            </div>
+                            <p>A smart mobility device for the visually impaired, combining ultrasonic distance sensors with haptic feedback motors for 360-degree obstacle detection.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Sensors</span>
+                            <span class="project-tag">Accessibility</span>
+                            <span class="project-tag">Embedded C++</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <div class="project-card-header">
+                                <h3>EntryEnablers</h3>
+                                <span class="status-tag">Digital Security</span>
+                            </div>
+                            <p>A smart campus entry management platform utilizing QR-based verification, automated visitor logging, and real-time attendance analytics.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Web Dev</span>
+                            <span class="project-tag">Database</span>
+                            <span class="project-tag">UI/UX</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <div class="project-card-header">
+                                <h3>EcoGrid Monitor</h3>
+                                <span class="status-tag">Energy Management</span>
+                            </div>
+                            <p>An intelligent power distribution dashboard that tracks real-time energy consumption in school facilities, suggesting optimal load-balancing routines.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Analytics</span>
+                            <span class="project-tag">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDENT LEADERSHIP / OUTREACH PAGE -->
             <div id="page-outreach" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Student Showcase — Leadership & Team Initiatives</h3>
-                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                        <h3>Student Leadership & EntryEnablers Team</h3>
+                        <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
                     </div>
-                    <p>MAZ InnoVision 2026 was powered entirely by student leadership. Every department collaborated seamlessly to bring this digital expo to life. From organizing logistics and streamlining entry to engineering projects and presenting cutting-edge technology, these dedicated student teams drove the event to success.</p>
-                </div>
-
-                <!-- CENTRAL TASK FORCE HIGHLIGHT -->
-                <div class="central-taskforce-card">
-                    <h4>⭐ Central Task Force</h4>
-                    <p style="color: var(--text-main); font-size: 0.96rem; margin-bottom: 16px;">The Central Task Force served as the core steering body for MAZ InnoVision 2026. This team coordinated all aspects of the expo, managing cross-departmental operations, timelines, and overall execution to ensure a successful event.</p>
-                    <ul class="member-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px;">
-                        <li>Yashwardhan Verma</li>
-                        <li>Vaibhavi Gokulakrishnan</li>
-                        <li>Sophia Stella Miranda</li>
-                        <li>Ram Chinmaya Pranav Bharadwaj Puvvada</li>
-                        <li>Mohamad Rayyan Mridha</li>
-                        <li>Aiman Babla</li>
-                        <li>Ahmed Yasar</li>
-                    </ul>
-                </div>
-
-                <!-- ENTRY ENABLERS FEATURE HIGHLIGHT -->
-                <div class="entry-enablers-highlight-card" style="margin-bottom: 30px;">
-                    <h4>🎟️ Entry Enablers Team</h4>
-                    <p>The Entry Enablers team played a vital role in managing smooth event operations on expo day. They efficiently greeted visitors, handled guest registrations, managed badge check-ins, and directed the continuous inflow of attendees to maintain a seamless visitor experience.</p>
-                    <ul class="member-list" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 16px;">
-                        <li>Tanvi Reddy Yasa</li>
-                        <li>Siti Salma Binti Hairul Azian</li>
-                        <li>Divya Kuhan</li>
-                        <li>Haya Fatima Khan</li>
-                    </ul>
-                </div>
-
-                <!-- ALL STUDENT TEAMS GRID -->
-                <div class="team-grid">
-
-                    <!-- Content & Media Enablers -->
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <h4>Content & Media Enablers</h4>
-                            <span class="status-tag">Department</span>
+                    <p>MAZ InnoVision 2026 was driven entirely by student initiatives, showcasing the power of youth-led digital transformation, team coordination, and technology stewardship.</p>
+                    
+                    <div class="speaker-card" style="margin-top: 20px;">
+                        <div class="speaker-avatar">EE</div>
+                        <div class="speaker-info">
+                            <h4>EntryEnablers Student Team & Volunteer Coordinators</h4>
+                            <p class="role">Campus Access, Logistics & Event Management Systems</p>
+                            <p class="desc">Engineered custom access workflows, managed event registration desks, and provided seamless technical support throughout SpaceHub, Strand Mall.</p>
                         </div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0 0 10px 0;">Responsible for media production, branding assets, documentation, and storytelling throughout the expo.</p>
-                        <ul class="member-list">
-                            <li>Lohish Raj R Rajasekar</li>
-                            <li>Taufiqur Rahman</li>
-                            <li>Aarav Mathur</li>
-                            <li>Aarav Sandeep Nair</li>
-                            <li>Arvin Deepan</li>
-                        </ul>
                     </div>
 
-                    <!-- Tech Enablers -->
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <h4>Tech Enablers</h4>
-                            <span class="status-tag">Department</span>
-                        </div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0 0 10px 0;">Handled technical infrastructure, digital hardware setup, software integration, and network support.</p>
-                        <ul class="member-list">
-                            <li>Prateek Brijesh Soni</li>
-                            <li>Shreyansh Dash</li>
-                            <li>Reyansh Dhasmana</li>
-                            <li>Arham Jain</li>
-                        </ul>
+                    <div class="entry-enablers-highlight-card">
+                        <h4>🔑 EntryEnablers Feature Highlight</h4>
+                        <p>The <strong>EntryEnablers</strong> team designed and deployed the digital check-in platform used at SpaceHub, demonstrating how young developers solve operational bottlenecks through smart software design and proactive leadership.</p>
                     </div>
-
-                    <!-- Venue Enablers -->
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <h4>Venue Enablers</h4>
-                            <span class="status-tag">Department</span>
-                        </div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0 0 10px 0;">Managed SpaceHub venue layout, physical display setups, floor coordination, and spatial logistics.</p>
-                        <ul class="member-list">
-                            <li>Mohammed Zinedine Mridha</li>
-                            <li>Advik Tripathy</li>
-                            <li>Aayush Dev Roy</li>
-                            <li>Shashwat Sharma</li>
-                        </ul>
-                    </div>
-
-                    <!-- Engagement Enablers -->
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <h4>Engagement Enablers</h4>
-                            <span class="status-tag">Department</span>
-                        </div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0 0 10px 0;">Driven interactive attendee engagement, moderated Q&A sessions, and guided visitors across project pods.</p>
-                        <ul class="member-list">
-                            <li>Soham Sen</li>
-                            <li>Iniyavan Thendral Senthil Kumar</li>
-                            <li>Tanmay Sahu</li>
-                            <li>Dianna Taha Shaath</li>
-                            <li>Syed Ashhad Ahmed</li>
-                        </ul>
-                    </div>
-
-                    <!-- Anchor Lead -->
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <h4>Anchor Lead</h4>
-                            <span class="status-tag">Leadership</span>
-                        </div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0 0 10px 0;">Led stage presentations, hosted key ceremonies, and facilitated overall event flow as master of ceremonies.</p>
-                        <ul class="member-list">
-                            <li>Ram Chinmaya Pranav Bharadwaj Puvvada</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- OTHER SECTIONS (Placeholder for full JS-driven tab functionality) -->
-            <div id="page-greentech" class="page-section">
-                <div class="panel">
-                    <h3>Green Tech Drive Initiative</h3>
-                    <p>Details on the Green Tech Drive initiative and environmental tech innovations...</p>
-                </div>
-            </div>
-
-            <div id="page-experiencepod" class="page-section">
-                <div class="panel">
-                    <h3>Digital Experience Pod</h3>
-                    <p>Explore interactive digital experience pod showcases...</p>
-                </div>
-            </div>
-
-            <div id="page-projects" class="page-section">
-                <div class="panel">
-                    <h3>Innovation Projects</h3>
-                    <p>Full breakdown of student innovation projects presented during the expo...</p>
-                </div>
-            </div>
-
+            <!-- VENUE & LOCATION PAGE -->
             <div id="page-venue" class="page-section">
+                <div class="venue-block">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    </div>
+                    <div>
+                        <h3>Official Exhibition Venue</h3>
+                        <address>SpaceHub, Strand Mall, Kota Damansara, Petaling Jaya</address>
+                        <p>SpaceHub provided a state-of-the-art facility featuring dedicated presentation areas, high-speed digital connectivity, and flexible exhibit spaces that comfortably accommodated student technology booths, live hardware demos, and visitor crowds.</p>
+                    </div>
+                </div>
+
                 <div class="panel">
-                    <h3>Venue & Location</h3>
-                    <p>Information about SpaceHub at Strand Mall and venue logistics...</p>
+                    <h3>Venue Location Map</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.788258380252!2d101.5912833147573!3d3.150411997705901!2m2!1d101.59347200000001!2d3.150412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ed32b3b85db%3A0x62955f013d31b26c!2sStrand%20Mall!5e0!3m2!1sen!2smy!4v1680000000000!5m2!1sen!2smy" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
 
+            <!-- KEY EVENTS & AGENDA PAGE -->
             <div id="page-events" class="page-section">
                 <div class="panel">
-                    <h3>Key Events & Agenda</h3>
-                    <p>Schedule of events, keynotes, and presentation timelines...</p>
+                    <div class="panel-header-with-logo">
+                        <h3>Event Agenda — 3 October 2026</h3>
+                        <img src="innovision-logo.png" class="panel-watermark-logo interactive-logo" alt="InnoVision Logo" onclick="openLogoModal(this.src, 'InnoVision Logo')">
+                    </div>
+                    <p>Filter the official event schedule by category below to explore specific segments of the Digital Expo day.</p>
+                    
+                    <div class="schedule-filters">
+                        <button class="filter-btn active" onclick="filterSchedule('all', this)">All Key Events</button>
+                        <button class="filter-btn" onclick="filterSchedule('ceremony', this)">Ceremonies</button>
+                        <button class="filter-btn" onclick="filterSchedule('keynote', this)">Keynotes</button>
+                        <button class="filter-btn" onclick="filterSchedule('expo', this)">Exhibitions</button>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item" data-category="ceremony">
+                            <h4>09:00 AM — Opening Ceremony & Welcome Address</h4>
+                            <p>Official welcome by school leaders and student coordinators, marking the opening of MAZ InnoVision 2026 at SpaceHub.</p>
+                        </div>
+                        <div class="timeline-item" data-category="keynote">
+                            <h4>10:00 AM — Keynote: Young Minds Spark Innovation</h4>
+                            <p>Presentation highlighting youth-driven solutions and the crucial role of education in preparing leaders for a digital world.</p>
+                        </div>
+                        <div class="timeline-item" data-category="expo">
+                            <h4>11:30 AM — Interactive Showcase & Digital Experience Pod Open</h4>
+                            <p>Live floor demonstrations of Aqua Sweep, Walk360, EntryEnablers, and EcoGrid Monitor with hands-on visitor engagement.</p>
+                        </div>
+                        <div class="timeline-item" data-category="keynote">
+                            <h4>02:00 PM — Green Tech Drive & Sustainability Forum</h4>
+                            <p>Recap and presentation of e-waste recycling results from the 16 September drive, featuring student panel discussions.</p>
+                        </div>
+                        <div class="timeline-item" data-category="ceremony">
+                            <h4>04:30 PM — Awards & Closing Ceremony</h4>
+                            <p>Recognition of outstanding student projects, mentor commendations, and official closing remarks.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <!-- Modal Lightbox -->
-    <div class="modal-overlay" id="logoModal" onclick="closeLogoModal(event)">
-        <div class="modal-card" onclick="event.stopPropagation()">
-            <button class="modal-close-btn" onclick="closeLogoModal(event)">✕</button>
-            <img src="" id="modalImg" class="modal-logo-img" alt="Enlarged view">
-            <div class="modal-title" id="modalTitle">MAZ International</div>
-            <div class="modal-subtext" id="modalSubtext">Official Event Emblem</div>
-        </div>
-    </div>
+        </div><!-- /container -->
+    </div><!-- /content-body-wrapper -->
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand-header">
-                <img src="school-logo.png" alt="MAZ Logo" class="footer-logo">
-                <img src="innovision-logo.png" alt="InnoVision Logo" class="footer-logo">
+                <img src="school-logo.png" alt="MAZ Logo" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'MAZ Crest')">
+                <img src="innovision-logo.png" alt="InnoVision Logo" class="footer-logo interactive-logo" onclick="openLogoModal(this.src, 'InnoVision Crest')">
+                <div>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">MAZ International School</h3>
+                    <p style="margin: 0; font-size: 0.8rem; color: var(--brand-green-glow);">InnoVision 2026 Archive</p>
+                </div>
             </div>
+            
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>MAZ International School</h4>
-                    <p>Empowering young minds to innovate, create, and lead the move towards a digital world.</p>
+                    <h4>MAZ InnoVision 2026 Record</h4>
+                    <p>An official digital repository documenting student innovation, sustainable technology drives, and leadership excellence from MAZ International School.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>Navigation</h4>
                     <ul>
                         <li><a href="#" onclick="switchPage('home', event)">Home Showcase</a></li>
-                        <li><a href="#" onclick="switchPage('projects', event)">Innovation Projects</a></li>
-                        <li><a href="#" onclick="switchPage('outreach', event)">Student Showcase</a></li>
+                        <li><a href="#" onclick="switchPage('greentech', event)">Green Tech Drive</a></li>
+                        <li><a href="#" onclick="switchPage('projects', event)">Student Projects</a></li>
+                        <li><a href="#" onclick="switchPage('venue', event)">Venue Details</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Event Info</h4>
-                    <p><strong>Date:</strong> 3 October 2026</p>
-                    <p><strong>Venue:</strong> SpaceHub, Strand Mall</p>
+                    <h4>Venue Location</h4>
+                    <p>SpaceHub, Strand Mall<br>Kota Damansara, Petaling Jaya<br>Selangor, Malaysia</p>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 MAZ International School. All Rights Reserved. Student Innovation Record.</p>
+                <p>&copy; 2026 MAZ International School. All Rights Reserved. Prepared for InnoVision Digital Expo Record.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Logo / Image Lightbox Modal -->
+    <div id="logoModal" class="modal-overlay" onclick="closeLogoModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeLogoModal(event)">&times;</button>
+            <img id="modalLogoImg" src="" alt="Expanded Image" class="modal-logo-img">
+            <h3 id="modalLogoTitle" class="modal-title"></h3>
+            <p id="modalLogoSubtext" class="modal-subtext">MAZ InnoVision 2026 Official Digital Media Record</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Navigation, Theme Toggle, Modal & Filter Logic -->
     <script>
+        // Page Switching Function
         function switchPage(pageId, event) {
             if (event) event.preventDefault();
+
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
 
@@ -1458,37 +2084,78 @@
                 targetSection.classList.add('active');
             }
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+            });
+
             if (event && event.currentTarget) {
                 event.currentTarget.classList.add('active');
+                event.currentTarget.setAttribute('aria-current', 'page');
             }
-            window.scrollTo({ top: 300, behavior: 'smooth' });
+
+            window.scrollTo({ top: 380, behavior: 'smooth' });
         }
 
+        // Dark / Light Theme Toggle Function
         function toggleTheme() {
-            document.body.classList.toggle('light-mode');
+            const body = document.body;
             const themeBtn = document.getElementById('themeToggleBtn');
             const themeIcon = document.getElementById('themeIcon');
-            if (document.body.classList.contains('light-mode')) {
+
+            body.classList.toggle('light-mode');
+
+            if (body.classList.contains('light-mode')) {
                 themeIcon.textContent = '🌙';
-                themeBtn.childNodes[1].nodeValue = ' Dark Mode';
+                themeBtn.childNodes[1].textContent = ' Dark Mode';
             } else {
                 themeIcon.textContent = '☀️';
-                themeBtn.childNodes[1].nodeValue = ' Light Mode';
+                themeBtn.childNodes[1].textContent = ' Light Mode';
             }
         }
 
-        function openLogoModal(src, title) {
+        // Schedule Filter Function
+        function filterSchedule(category, btnElement) {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Logo & Image Lightbox Modal Functions
+        function openLogoModal(imgSrc, titleText) {
             const modal = document.getElementById('logoModal');
-            document.getElementById('modalImg').src = src;
-            document.getElementById('modalTitle').textContent = title || 'MAZ International';
+            const modalImg = document.getElementById('modalLogoImg');
+            const modalTitle = document.getElementById('modalLogoTitle');
+
+            modalImg.src = imgSrc;
+            modalTitle.textContent = titleText || 'MAZ InnoVision Media';
             modal.classList.add('active');
         }
 
         function closeLogoModal(event) {
-            document.getElementById('logoModal').classList.remove('active');
+            const modal = document.getElementById('logoModal');
+            modal.classList.remove('active');
         }
+
+        // Keydown listener to close modal on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('logoModal');
+                if (modal && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                }
+            }
+        });
     </script>
 </body>
 </html>
