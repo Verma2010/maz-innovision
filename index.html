@@ -822,6 +822,114 @@
             line-height: 1.55;
         }
 
+        /* Team Showcase Cards */
+        .team-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-green-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-card.featured-central {
+            grid-column: 1 / -1;
+            border: 2px solid var(--brand-gold-bright);
+            background: linear-gradient(135deg, rgba(15, 26, 54, 0.95) 0%, rgba(24, 99, 55, 0.25) 100%);
+        }
+
+        .team-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-panel);
+        }
+
+        .team-card-header h4 {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .team-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .central-badge {
+            background: linear-gradient(135deg, var(--brand-gold-main), var(--brand-gold-bright));
+            color: var(--brand-navy-dark);
+            font-weight: 800;
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .member-item {
+            background: rgba(7, 13, 26, 0.6);
+            border: 1px solid rgba(37, 143, 80, 0.2);
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        body.light-mode .member-item {
+            background: #f1f5f9;
+            border-color: rgba(15, 26, 54, 0.1);
+        }
+
+        .member-item::before {
+            content: '•';
+            color: var(--brand-green-glow);
+            font-weight: bold;
+        }
+
+        body.light-mode .member-item::before {
+            color: var(--brand-green-mid);
+        }
+
+        .dev-note-box {
+            background: rgba(15, 26, 54, 0.8);
+            border: 1px solid var(--brand-green-glow);
+            border-radius: var(--radius-md);
+            padding: 18px 24px;
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        body.light-mode .dev-note-box {
+            background: #ffffff;
+            border-color: var(--brand-green-mid);
+        }
+
         /* Showcase Banner Image Card */
         .showcase-img-card {
             background: var(--bg-panel);
@@ -1957,11 +2065,10 @@
             <div id="page-studentshowcase" class="page-section">
                 <div class="panel">
                     <div class="panel-header-with-logo">
-                        <h3>Student Leadership &amp; Organizational Teams</h3>
+                        <h3>Student Showcase &amp; Departmental Task Forces</h3>
                         <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
                     </div>
-                    <p>The entire <strong>MAZ InnoVision 2026 Expo</strong> was planned, coordinated, and executed by dedicated student committees under the guidance of Miss Anjali. From project management and web engineering to venue logistics and community outreach, students demonstrated exceptional leadership.</p>
-                    <p style="margin-top: 12px; font-weight: 600; color: var(--brand-green-glow);"><em>Note: This digital archive was designed and created by <strong>Yashwardhan Verma</strong>, member of the central task force.</em></p>
+                    <p>The entire <strong>MAZ InnoVision 2026 Expo</strong> was planned, coordinated, and executed by dedicated student committees under the guidance of Miss Anjali[cite: 35]. Every student worked extensively on their respective departments to make this expo possible[cite: 34]. The <strong>Central Task Force</strong> served as the central department in charge of overall expo execution, management, and digital coordination[cite: 34].</p>
                 </div>
 
                 <!-- INNOVATION ARCADE HIGHLIGHT PANEL -->
@@ -1970,77 +2077,198 @@
                         <h3>The Innovation Arcade (Lower Secondary Showcase)</h3>
                         <span class="central-badge">Interactive Booths</span>
                     </div>
-                    <p>The <strong>Innovation Arcade</strong>, created and operated by lower secondary students, was an interactive booth setup allowing parents, faculty, and students to view student innovations firsthand and enjoy live hands-on demos. It served as a vibrant showcase of emerging young talent and hands-on technical creativity.</p>
+                    <p>The <strong>Innovation Arcade</strong>, created and operated by lower secondary students, was an interactive booth setup allowing parents, faculty, and students to view student innovations firsthand and enjoy live hands-on demos[cite: 35]. It served as a vibrant showcase of emerging young talent and hands-on technical creativity[cite: 35].</p>
                 </div>
 
                 <div class="grid-2">
+
+                    <!-- CENTRAL TASK FORCE -->
                     <div class="team-card featured-central">
                         <div class="team-card-header">
                             <h4>Central Task Force</h4>
-                            <span class="central-badge">Lead Executive</span>
+                            <span class="central-badge">Central Expo Leadership &amp; Management</span>
                         </div>
-                        <p class="team-desc">Responsible for overall event orchestration, web architecture, tech development, and executive coordination.</p>
+                        <p class="team-desc">The central department in charge of overall expo operations, strategic oversight, website architecture, and executive management[cite: 34].</p>
                         <ul class="member-list">
-                            <li class="member-item"><strong>Yashwardhan Verma</strong> (Digital Archive Designer &amp; Creator)</li>
-                            <li class="member-item">Executive Student Committee Members</li>
+                            <li class="member-item">Yashwardhan Verma</li>
+                            <li class="member-item">Vaibhavi Gokulakrishnan</li>
+                            <li class="member-item">Sophia Stella Miranda</li>
+                            <li class="member-item">Ram Chinmaya Pranav Bharadwaj Puvvada</li>
+                            <li class="member-item">Mohamad Rayyan Mridha</li>
+                            <li class="member-item">Aiman Babla</li>
+                            <li class="member-item">Ahmed Yasar</li>
                         </ul>
                     </div>
 
+                    <!-- ENTRY ENABLERS -->
                     <div class="team-card">
                         <div class="team-card-header">
-                            <h4>Aqua Sweep Team</h4>
+                            <h4>Entry Enablers</h4>
                         </div>
-                        <p class="team-desc">Engineered the automated water cleanup system prototype and hardware-software sensor integration.</p>
+                        <p class="team-desc">Responsible for managing event registration, guest reception, access flow, and ticketing logistics during the expo[cite: 34, 35].</p>
                         <ul class="member-list">
-                            <li class="member-item">Project Lead &amp; Developers</li>
-                            <li class="member-item">Hardware &amp; Sensor Engineers</li>
+                            <li class="member-item">Jishnu</li>
+                            <li class="member-item">Charu</li>
+                            <li class="member-item">Tejaswini</li>
+                            <li class="member-item">Arya</li>
+                            <li class="member-item">Aakash</li>
                         </ul>
                     </div>
 
+                    <!-- BUDGET GUARDIANS -->
                     <div class="team-card">
                         <div class="team-card-header">
-                            <h4>Walk360 Team</h4>
+                            <h4>Budget Guardians</h4>
                         </div>
-                        <p class="team-desc">Developed the assistive technology framework for spatial audio feedback and haptic guidance.</p>
+                        <p class="team-desc">Responsible for financial tracking, resource allocation, expenditure planning, and budget management across all departments[cite: 34].</p>
                         <ul class="member-list">
-                            <li class="member-item">Accessibility Tech Lead</li>
-                            <li class="member-item">Prototyping Specialists</li>
+                            <li class="member-item">Vaishnav</li>
+                            <li class="member-item">Atharva</li>
+                            <li class="member-item">Hrehaan</li>
                         </ul>
                     </div>
 
+                    <!-- BACKBONE BRIGADE -->
                     <div class="team-card">
                         <div class="team-card-header">
-                            <h4>EntryEnablers Team</h4>
+                            <h4>Backbone Brigade</h4>
                         </div>
-                        <p class="team-desc">Designed and built the digital visitor check-in application and event access portal UI/UX.</p>
+                        <p class="team-desc">Responsible for core operational support, venue setup, equipment logistics, and backstage infrastructure[cite: 34].</p>
                         <ul class="member-list">
-                            <li class="member-item">Full-Stack Web Developers</li>
-                            <li class="member-item">UI/UX Designers</li>
+                            <li class="member-item">Pranav</li>
+                            <li class="member-item">Parinay</li>
+                            <li class="member-item">Aakash</li>
+                            <li class="member-item">Tanish</li>
                         </ul>
                     </div>
 
+                    <!-- PHOTOGRAPHERS -->
                     <div class="team-card">
                         <div class="team-card-header">
-                            <h4>Digital Experience Pod Committee</h4>
+                            <h4>Photographers</h4>
                         </div>
-                        <p class="team-desc">Organized senior citizen AI literacy workshops, curriculum design, and outreach sessions.</p>
+                        <p class="team-desc">Responsible for event photography, media documentation, capturing key presentations, and visual media archiving[cite: 34].</p>
                         <ul class="member-list">
-                            <li class="member-item">Workshop Facilitators</li>
-                            <li class="member-item">Community Volunteers</li>
+                            <li class="member-item">Aakash</li>
+                            <li class="member-item">Frame</li>
                         </ul>
                     </div>
 
+                    <!-- SOUVENIR STARS -->
                     <div class="team-card">
                         <div class="team-card-header">
-                            <h4>Green Tech Drive Committee</h4>
+                            <h4>Souvenir Stars</h4>
                         </div>
-                        <p class="team-desc">Managed e-waste collection, digital inventory tracking, and environmental awareness pitching.</p>
+                        <p class="team-desc">Responsible for souvenir design, gift distribution, merchandise logistics, and attendee token management[cite: 34].</p>
                         <ul class="member-list">
-                            <li class="member-item">E-Waste Campaign Coordinators</li>
-                            <li class="member-item">Logistics Volunteers</li>
+                            <li class="member-item">Ayan</li>
+                            <li class="member-item">Kaysha</li>
+                            <li class="member-item">Fransisca</li>
+                            <li class="member-item">John</li>
+                            <li class="member-item">Jannat</li>
+                            <li class="member-item">Melisha</li>
+                            <li class="member-item">Saipriya</li>
+                            <li class="member-item">Vrishin</li>
+                            <li class="member-item">Manzil</li>
                         </ul>
+                    </div>
+
+                    <!-- SPARK DISCUSSIONS -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <h4>Spark Discussions</h4>
+                        </div>
+                        <p class="team-desc">Responsible for moderating Q&amp;A sessions, facilitating audience engagement, and leading panel discussions[cite: 34].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Sophia</li>
+                            <li class="member-item">Ardhra</li>
+                            <li class="member-item">Shreeyansh</li>
+                            <li class="member-item">Reshmma</li>
+                            <li class="member-item">Trinayini</li>
+                            <li class="member-item">Lamya</li>
+                        </ul>
+                    </div>
+
+                    <!-- INNOVATION LEAGUE -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <h4>Innovation League</h4>
+                        </div>
+                        <p class="team-desc">Responsible for showcasing advanced student tech prototypes, project demonstrations, and engineering models[cite: 34].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Vaibhavi</li>
+                            <li class="member-item">Harshika</li>
+                            <li class="member-item">Nikhil</li>
+                            <li class="member-item">Yasar</li>
+                            <li class="member-item">Lamya</li>
+                        </ul>
+                    </div>
+
+                    <!-- GREEN WARRIORS -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <h4>Green Warriors</h4>
+                        </div>
+                        <p class="team-desc">Responsible for coordinating the Green Tech Drive, e-waste collection, environmental advocacy, and eco-pledges[cite: 34, 35].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Bhumanyu</li>
+                            <li class="member-item">Nikki</li>
+                            <li class="member-item">Pragathiv</li>
+                            <li class="member-item">Aiman</li>
+                            <li class="member-item">Frame</li>
+                            <li class="member-item">Melisha</li>
+                            <li class="member-item">Ishmriti</li>
+                            <li class="member-item">Rayyan</li>
+                            <li class="member-item">Yash</li>
+                            <li class="member-item">Jishnu</li>
+                        </ul>
+                    </div>
+
+                    <!-- DIGITAL EXPERIENCE POD -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <h4>Digital Experience Pod</h4>
+                        </div>
+                        <p class="team-desc">Responsible for executing senior citizen digital literacy workshops, AI coaching, and intergenerational outreach[cite: 34, 35].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Rayyan</li>
+                            <li class="member-item">Daniel</li>
+                            <li class="member-item">Venkat</li>
+                            <li class="member-item">Dhananya</li>
+                            <li class="member-item">Unique</li>
+                            <li class="member-item">Adam</li>
+                            <li class="member-item">All our student volunteers</li>
+                        </ul>
+                    </div>
+
+                    <!-- EXPERIENCE GATHERERS -->
+                    <div class="team-card">
+                        <div class="team-card-header">
+                            <h4>Experience Gatherers</h4>
+                        </div>
+                        <p class="team-desc">Responsible for collecting visitor feedback, surveys, testimonials, and assessing community experience[cite: 34].</p>
+                        <ul class="member-list">
+                            <li class="member-item">Jannat</li>
+                            <li class="member-item">Jonathan</li>
+                            <li class="member-item">Kaysha</li>
+                            <li class="member-item">Ayan</li>
+                            <li class="member-item">Maasha</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- DEVELOPER NOTE AT BOTTOM OF WEBPAGE -->
+                <div class="dev-note-box">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--white); font-weight: 800; font-size: 1rem; margin-bottom: 2px;">Website Developer Note</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">This official MAZ InnoVision web showcase and digital archive was conceptualized, designed, and developed by <strong>Yashwardhan Verma</strong> (Central Task Force)[cite: 34, 35].</p>
                     </div>
                 </div>
+
             </div>
 
             <!-- VENUE & LOCATION PAGE -->
@@ -2050,7 +2278,7 @@
                         <h3>Exhibition Venue &amp; Event Location</h3>
                         <img src="school-logo.png" class="panel-watermark-logo interactive-logo" alt="MAZ Logo" onclick="openLogoModal(this.src, 'MAZ Logo')">
                     </div>
-                    <p>MAZ InnoVision 2026 was hosted at SpaceHub, Strand Mall—a premier modern technology exhibition venue offering flexible display spaces and digital presentation facilities.</p>
+                    <p>MAZ InnoVision 2026 was hosted at SpaceHub, Strand Mall—a premier modern technology exhibition venue offering flexible display spaces and digital presentation facilities[cite: 35].</p>
                 </div>
 
                 <div class="venue-block">
@@ -2060,7 +2288,7 @@
                     <div>
                         <h3>SpaceHub @ Strand Mall</h3>
                         <address>SpaceHub, The Strand Mall, Kota Damansara, 47810 Petaling Jaya, Selangor</address>
-                        <p><strong>Facilities:</strong> High-speed Wi-Fi network, presentation screens, interactive demonstration booths, and dedicated seating for community workshops.</p>
+                        <p><strong>Facilities:</strong> High-speed Wi-Fi network, presentation screens, interactive demonstration booths, and dedicated seating for community workshops[cite: 35].</p>
                     </div>
                 </div>
 
@@ -2068,13 +2296,13 @@
                     <div class="info-panel">
                         <span class="status-tag">Public Transit</span>
                         <h4>MRT &amp; Transport Access</h4>
-                        <p>Accessible via Surian MRT Station (SBK07) with direct pedestrian connectivity to Strand Mall and ample parking facilities for visitors.</p>
+                        <p>Accessible via Surian MRT Station (SBK07) with direct pedestrian connectivity to Strand Mall and ample parking facilities for visitors[cite: 35].</p>
                     </div>
 
                     <div class="info-panel">
                         <span class="status-tag">Accessibility</span>
                         <h4>Universal Design</h4>
-                        <p>The venue features barrier-free wheelchair access, spacious aisles, and dedicated assistance teams, supported by the EntryEnablers student project.</p>
+                        <p>The venue features barrier-free wheelchair access, spacious aisles, and dedicated assistance teams, supported by the EntryEnablers student project[cite: 35].</p>
                     </div>
                 </div>
             </div>
@@ -2107,7 +2335,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>About InnoVision 2026</h4>
-                    <p>MAZ InnoVision is an annual student-led technology showcase celebrating young minds sparking innovation. Designed and created by student Yashwardhan Verma (Central Task Force) under the mentorship of Miss Anjali.</p>
+                    <p>MAZ InnoVision is an annual student-led technology showcase celebrating young minds sparking innovation[cite: 35]. Designed and created by student Yashwardhan Verma (Central Task Force) under the mentorship of Miss Anjali[cite: 34, 35].</p>
                 </div>
 
                 <div class="footer-col">
